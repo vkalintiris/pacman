@@ -1,0 +1,39 @@
+SRCINFO(5)
+==========
+
+Name
+----
+SRCINFO - Simple key-value export of PKGBUILD metadata
+
+Description
+-----------
+This manual page describes the format of a .SRCINFO file found in a source
+package created by makepkg. The file contains a serialized description of the
+package's metadata. It is intended for reading source package metadata without
+evaluating bash code, e.g. in untrusted environments or from languages other
+than bash.
+
+File format
+-----------
+Information is formatted in hierarchical key-value pairs separated by a '=',
+one value per line. Arrays are represented by multiple keys with the same
+value. Unindented keys represent a .SRCINFO section header. Keys indented with
+a single tab character belong to the unindented section header preceding it.
+
+Comments are supported by beginning a line with the hash (#) symbol.
+
+The first section must be the 'pkgbase' key, and corresponds to the 'pkgbase'
+of the source PKGBUILD. This section will contain every global
+linkman:PKGBUILD[5] option or directive defined by the PKGBUILD, except for
+'pkgname'.
+
+All remaining sections must be a 'pkgname' key, and there will be one section
+for each element of the PKGBUILD's pkgname array. For each element of
+'pkgname', the section contents (if any) will be the split package packaging
+function's overridden values for supported options and directives.
+
+See Also
+--------
+linkman:makepkg[8], linkman:PKGBUILD[5]
+
+include::footer.asciidoc[]
