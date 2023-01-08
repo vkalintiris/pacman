@@ -374,12 +374,16 @@ static int sync_group(int level, alpm_list_t *syncs, alpm_list_t *targets)
 
 				if(level > 1) {
 					for(k = grp->packages; k; k = alpm_list_next(k)) {
-						printf("%s%s %s%s %s%s%s", colstr->groups, grp->name,
-								colstr->title, alpm_pkg_get_name(k->data),
-								colstr->version, alpm_pkg_get_version(k->data),
-								colstr->nocolor);
-						print_installed(db_local, k->data);
-						printf("\n");
+						if(!config->quiet) {
+							printf("%s%s %s%s %s%s%s", colstr->groups, grp->name,
+									colstr->title, alpm_pkg_get_name(k->data),
+									colstr->version, alpm_pkg_get_version(k->data),
+									colstr->nocolor);
+							print_installed(db_local, k->data);
+							printf("\n");
+						} else {
+							printf("%s\n", alpm_pkg_get_name(k->data));
+						}
 					}
 				} else {
 					/* print grp names only, no package names */

@@ -367,10 +367,14 @@ static int query_group(alpm_list_t *targets)
 				if(!filter(pkg)) {
 					continue;
 				}
-				printf("%s%s %s%s %s%s%s\n", colstr->groups, grp->name,
-						colstr->title, alpm_pkg_get_name(pkg),
-						colstr->version, alpm_pkg_get_version(pkg),
-						colstr->nocolor);
+				if(!config->quiet) {
+					printf("%s%s %s%s %s%s%s\n", colstr->groups, grp->name,
+							colstr->title, alpm_pkg_get_name(pkg),
+							colstr->version, alpm_pkg_get_version(pkg),
+							colstr->nocolor);
+				} else {
+					printf("%s\n", alpm_pkg_get_name(pkg));
+				}
 			}
 		}
 	} else {
