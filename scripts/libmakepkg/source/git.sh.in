@@ -82,6 +82,22 @@ extract_git() {
 	msg2 "$(gettext "Creating working copy of %s %s repo...")" "${repo}" "git"
 	pushd "$srcdir" &>/dev/null
 
+	local ref=origin/HEAD
+	if [[ -n $fragment ]]; then
+		case ${fragment%%=*} in
+			commit|tag)
+				ref=${fragment##*=}
+				;;
+			branch)
+				ref=origin/${fragment##*=}
+				;;
+			*)
+				error "$(gettext "Unrecognized reference: %s")" "${fragment}"
+				plainerr "$(gettext "Aborting...")"
+				exit 1
+		esac
+	fi
+
 	local updating=0
 	if [[ -d "${dir##*/}" ]]; then
 		updating=1
@@ -99,22 +115,6 @@ extract_git() {
 	fi
 
 	cd_safe "${dir##*/}"
-
-	local ref=origin/HEAD
-	if [[ -n $fragment ]]; then
-		case ${fragment%%=*} in
-			commit|tag)
-				ref=${fragment##*=}
-				;;
-			branch)
-				ref=origin/${fragment##*=}
-				;;
-			*)
-				error "$(gettext "Unrecognized reference: %s")" "${fragment}"
-				plainerr "$(gettext "Aborting...")"
-				exit 1
-		esac
-	fi
 
 	if [[ ${fragment%%=*} = tag ]]; then
 		tagname="$(git tag -l --format='%(tag)' "$ref")"
