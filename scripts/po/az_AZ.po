@@ -12,10 +12,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arch Linux Pacman package manager\n"
 "Report-Msgid-Bugs-To: http://bugs.archlinux.org/index.php?project=3\n"
-"POT-Creation-Date: 2022-09-26 21:09+1000\n"
+"POT-Creation-Date: 2023-11-09 10:27+1000\n"
 "PO-Revision-Date: 2011-08-08 22:35+0000\n"
 "Last-Translator: Xəyyam Qocayev <xxmn77@gmail.com>, 2021-2022\n"
-"Language-Team: Azerbaijani (Azerbaijan) (http://www.transifex.com/toofishes/"
+"Language-Team: Azerbaijani (Azerbaijan) (http://app.transifex.com/toofishes/"
 "archlinux-pacman/language/az_AZ/)\n"
 "Language: az_AZ\n"
 "MIME-Version: 1.0\n"
@@ -1311,7 +1311,7 @@ msgstr "Paketləmə problemləri yoxlanılır..."
 msgid "Package contains reference to %s"
 msgstr "Paket %s-ə/a istinaddan ibarətdir"
 
-#: scripts/libmakepkg/lint_package/dotfiles.sh.in:34
+#: scripts/libmakepkg/lint_package/dotfiles.sh.in:38
 msgid "Dotfile found in package root '%s'"
 msgstr "'%s' paket kökündə adı nöqtə ilə başlanan fayl tapıldı"
 
@@ -1531,7 +1531,7 @@ msgstr "Lazımsız fayllar təmizlənir..."
 msgid "Removing static library files..."
 msgstr "Statik kitabxana faylları silinir..."
 
-#: scripts/libmakepkg/tidy/strip.sh.in:119
+#: scripts/libmakepkg/tidy/strip.sh.in:136
 msgid "Stripping unneeded symbols from binaries and libraries..."
 msgstr "Binar faylları və kitabxanalar lazımsız simvollardan  təmizlənir..."
 

@@ -10,11 +10,11 @@
 # Igor <f2404@yandex.ru>, 2018
 # Ivan Yurasov <vdk@gmx.us>, 2011,2014
 # kyak <peselnik@gmail.com>, 2013
-# Sergiy Tereshchenko <serg.partizan@gmail.com>, 2011-2013
+# b0f1ee25bee9149da2bd99957ae8bf73_e2d9f93 <4641583347f725035beeebcc51de0bb5_2840>, 2011-2013
 # kyak <peselnik@gmail.com>, 2013
 # Sergey Shepelev <temotor@gmail.com>, 2014
-# Sergiy Tereshchenko <serg.partizan@gmail.com>, 2013-2015,2017
-# Sergiy Tereshchenko <serg.partizan@gmail.com>, 2012
+# b0f1ee25bee9149da2bd99957ae8bf73_e2d9f93 <4641583347f725035beeebcc51de0bb5_2840>, 2013-2015,2017
+# b0f1ee25bee9149da2bd99957ae8bf73_e2d9f93 <4641583347f725035beeebcc51de0bb5_2840>, 2012
 # be1bb8e720f95f5c175a5f1f3aa8f780, 2015
 # VVS <vitaliy.star@gmail.com>, 2011
 # xelk <haveiteasy@gmail.com>, 2014
@@ -23,10 +23,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arch Linux Pacman package manager\n"
 "Report-Msgid-Bugs-To: http://bugs.archlinux.org/index.php?project=3\n"
-"POT-Creation-Date: 2022-09-26 21:09+1000\n"
+"POT-Creation-Date: 2023-11-09 10:27+1000\n"
 "PO-Revision-Date: 2010-11-29 23:17+0000\n"
 "Last-Translator: Анатолий Валерианович <ffox909@mail.ru>, 2016\n"
-"Language-Team: Russian (http://www.transifex.com/toofishes/archlinux-pacman/"
+"Language-Team: Russian (http://app.transifex.com/toofishes/archlinux-pacman/"
 "language/ru/)\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -798,7 +798,7 @@ msgstr "для '%s' нет списка изменений.\n"
 msgid "Changelog for %s:\n"
 msgstr "Изменения для %s:\n"
 
-#: src/pacman/package.c:489 src/pacman/package.c:491
+#: src/pacman/package.c:485 src/pacman/package.c:487
 #, c-format
 msgid "installed"
 msgstr "установлен"

@@ -12,10 +12,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arch Linux Pacman package manager\n"
 "Report-Msgid-Bugs-To: http://bugs.archlinux.org/index.php?project=3\n"
-"POT-Creation-Date: 2022-09-26 21:09+1000\n"
+"POT-Creation-Date: 2023-11-09 10:27+1000\n"
 "PO-Revision-Date: 2011-08-08 22:35+0000\n"
 "Last-Translator: pizzaiolo, 2015\n"
-"Language-Team: Esperanto (http://www.transifex.com/toofishes/archlinux-"
+"Language-Team: Esperanto (http://app.transifex.com/toofishes/archlinux-"
 "pacman/language/eo/)\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
@@ -758,7 +758,7 @@ msgstr "Neniu ŝlosilinga dosiero ekzistas en %s."
 
 #: scripts/pacman-key.sh.in:305
 msgid "The keyring file %s does not exist."
-msgstr ""
+msgstr "La ŝlosilinga dosiero '%' ne ekzistas"
 
 #: scripts/pacman-key.sh.in:320
 msgid "Appending keys from %s.gpg..."
@@ -1282,7 +1282,7 @@ msgstr ""
 msgid "Package contains reference to %s"
 msgstr "La pakaĵo enhavas referencon al %s"
 
-#: scripts/libmakepkg/lint_package/dotfiles.sh.in:34
+#: scripts/libmakepkg/lint_package/dotfiles.sh.in:38
 msgid "Dotfile found in package root '%s'"
 msgstr ""
 
@@ -1502,7 +1502,7 @@ msgstr "Purigante nevolatajn dosierojn..."
 msgid "Removing static library files..."
 msgstr "Forviŝante statikajn bibliotekajn dosierojn..."
 
-#: scripts/libmakepkg/tidy/strip.sh.in:119
+#: scripts/libmakepkg/tidy/strip.sh.in:136
 msgid "Stripping unneeded symbols from binaries and libraries..."
 msgstr "Forigante nebezonatajn simbolojn de duumoj kaj bibliotekoj..."
 

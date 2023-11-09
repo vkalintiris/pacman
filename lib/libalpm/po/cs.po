@@ -7,8 +7,9 @@
 # David Kolibáč <david@kolibac.cz>, 2011
 # David Macek <david.macek.0@gmail.com>, 2018
 # IAmNotImportant, 2017
-# Jaroslav Lichtblau <jlichtblau@seznam.cz>, 2014-2015
-# Jaroslav Lichtblau <jlichtblau@seznam.cz>, 2014,2022
+# Jaroslav Lichtblau <l10n@lichtblau.cz>, 2014-2015
+# Jaroslav Lichtblau <l10n@lichtblau.cz>, 2014,2022
+# Jiří Podhorný <jp@email.cz>, 2023
 # Lukáš Kucharczyk <lukas@kucharczyk.xyz>, 2020
 # mmm <markotahal@gmail.com>, 2013
 # mmm <markotahal@gmail.com>, 2011
@@ -19,10 +20,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arch Linux Pacman package manager\n"
 "Report-Msgid-Bugs-To: http://bugs.archlinux.org/index.php?project=3\n"
-"POT-Creation-Date: 2022-09-26 21:09+1000\n"
+"POT-Creation-Date: 2023-11-09 10:27+1000\n"
 "PO-Revision-Date: 2010-11-29 23:17+0000\n"
-"Last-Translator: Jaroslav Lichtblau <jlichtblau@seznam.cz>, 2014,2022\n"
-"Language-Team: Czech (http://www.transifex.com/toofishes/archlinux-pacman/"
+"Last-Translator: Jiří Podhorný <jp@email.cz>, 2023\n"
+"Language-Team: Czech (http://app.transifex.com/toofishes/archlinux-pacman/"
 "language/cs/)\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
@@ -61,7 +62,7 @@ msgstr "varování při rozbalování %s (%s)\n"
 msgid "could not extract %s (%s)\n"
 msgstr "nelze rozbalit %s (%s)\n"
 
-#: lib/libalpm/add.c:159 lib/libalpm/dload.c:709 lib/libalpm/remove.c:534
+#: lib/libalpm/add.c:159 lib/libalpm/dload.c:712 lib/libalpm/remove.c:534
 #, c-format
 msgid "could not rename %s to %s (%s)\n"
 msgstr "nelze přejmenovat %s na %s (%s)\n"
@@ -173,7 +174,7 @@ msgstr "poškozený záznam v databázi '%s'\n"
 
 #: lib/libalpm/be_local.c:722 lib/libalpm/be_local.c:818
 #: lib/libalpm/be_local.c:958 lib/libalpm/be_local.c:1055
-#: lib/libalpm/diskspace.c:131 lib/libalpm/dload.c:823 lib/libalpm/util.c:254
+#: lib/libalpm/diskspace.c:131 lib/libalpm/dload.c:826 lib/libalpm/util.c:254
 #: lib/libalpm/util.c:270
 #, c-format
 msgid "could not open file %s: %s\n"
@@ -230,12 +231,12 @@ msgstr "neplatná verze balíčku v %s\n"
 msgid "missing package metadata in %s\n"
 msgstr "chybí metadata balíčku v %s\n"
 
-#: lib/libalpm/be_package.c:741
+#: lib/libalpm/be_package.c:740
 #, c-format
 msgid "failed to read signature file: %s\n"
 msgstr "nelze načíst soubor s podpisy: %s\n"
 
-#: lib/libalpm/be_package.c:770 lib/libalpm/sync.c:953
+#: lib/libalpm/be_package.c:763 lib/libalpm/sync.c:953
 #, c-format
 msgid "required key missing from keyring\n"
 msgstr "požadovaný klíč není v klíčence\n"
@@ -354,64 +355,64 @@ msgstr "Diskový oddíl %s je připojen jen pro čtení\n"
 #, c-format
 msgid ""
 "too many errors from %s, skipping for the remainder of this transaction\n"
-msgstr ""
+msgstr "příliš mnoho chyb v %s, vynechání pokračování této transakce\n"
 
 #: lib/libalpm/dload.c:220
 #, c-format
 msgid "disk"
 msgstr "disk"
 
-#: lib/libalpm/dload.c:392
+#: lib/libalpm/dload.c:395
 #, c-format
 msgid "failed to create temporary file for download\n"
 msgstr "nepodařilo se vytvořit dočasný soubor pro stahování\n"
 
-#: lib/libalpm/dload.c:509 lib/libalpm/dload.c:547 lib/libalpm/dload.c:561
+#: lib/libalpm/dload.c:512 lib/libalpm/dload.c:550 lib/libalpm/dload.c:564
 #, c-format
 msgid "failed retrieving file '%s' from %s : %s\n"
 msgstr "selhalo získání souboru '%s' z %s: %s\n"
 
-#: lib/libalpm/dload.c:539
+#: lib/libalpm/dload.c:542
 #, c-format
 msgid "failed retrieving file '%s' from %s : expected download size exceeded\n"
 msgstr ""
 "selhalo získání souboru '%s' z %s : překročení očekávané velikosti "
 "stahování\n"
 
-#: lib/libalpm/dload.c:687
+#: lib/libalpm/dload.c:690
 #, c-format
 msgid "%s appears to be truncated: %jd/%jd bytes\n"
 msgstr "%s se zdá být zkrácen:  %jd/%jd bytů\n"
 
-#: lib/libalpm/dload.c:787
+#: lib/libalpm/dload.c:790
 #, c-format
 msgid "url '%s' is invalid\n"
 msgstr "URL '%s' je chybná\n"
 
-#: lib/libalpm/dload.c:893
+#: lib/libalpm/dload.c:896
 #, c-format
 msgid "failed to setup a download payload for %s\n"
-msgstr ""
+msgstr "nepodařilo se nastavit datovou část stahování pro %s\n"
 
-#: lib/libalpm/dload.c:905
+#: lib/libalpm/dload.c:908
 #, c-format
 msgid "curl returned error %d from transfer\n"
-msgstr ""
+msgstr "chyba %d v curl při přenosu\n"
 
-#: lib/libalpm/dload.c:929
+#: lib/libalpm/dload.c:932
 #, c-format
 msgid "curl transfer error: %d\n"
-msgstr ""
+msgstr "chyba přenosu curl : %d\n"
 
-#: lib/libalpm/dload.c:1055 lib/libalpm/sync.c:840
+#: lib/libalpm/dload.c:1058 lib/libalpm/sync.c:840
 #, c-format
 msgid "failed to retrieve some files\n"
 msgstr "selhalo získání některých souborů\n"
 
-#: lib/libalpm/dload.c:1078
+#: lib/libalpm/dload.c:1081
 #, c-format
 msgid "download completed successfully but no file in the cache\n"
-msgstr ""
+msgstr "stahování úspěšně dokončeno, ale soubor nenalezen v mezipaměti\n"
 
 #: lib/libalpm/error.c:40
 #, c-format
@@ -825,89 +826,89 @@ msgstr "nelze odstranit položku '%s' z mezipaměti\n"
 msgid "Public keyring not found; have you run '%s'?\n"
 msgstr "Nebyla nalezena veřejná klíčenka; spustili jste '%s'?\n"
 
-#: lib/libalpm/signing.c:199 lib/libalpm/signing.c:767
+#: lib/libalpm/signing.c:199 lib/libalpm/signing.c:777
 #, c-format
 msgid "GPGME error: %s\n"
 msgstr "Chyba GPGME: %s\n"
 
-#: lib/libalpm/signing.c:274
+#: lib/libalpm/signing.c:275
 #, c-format
 msgid "looking up key %s using WKD\n"
 msgstr "vyhledávání klíče %s pomocí WKD\n"
 
-#: lib/libalpm/signing.c:283
+#: lib/libalpm/signing.c:289
 #, c-format
 msgid "gpg error: %s\n"
 msgstr "chyba gpg: %s\n"
 
-#: lib/libalpm/signing.c:430 lib/libalpm/signing.c:503
+#: lib/libalpm/signing.c:440 lib/libalpm/signing.c:513
 #, c-format
 msgid "keyring is not writable\n"
 msgstr "do klíčenky nelze zapisovat\n"
 
-#: lib/libalpm/signing.c:531
+#: lib/libalpm/signing.c:541
 #, c-format
 msgid "key \"%s\" on keyserver\n"
 msgstr "klíč \"%s\" na serveru\n"
 
-#: lib/libalpm/signing.c:536
+#: lib/libalpm/signing.c:546
 #, c-format
 msgid "key \"%s\" could not be imported\n"
 msgstr "klíč \"%s\" se nepodařilo importovat\n"
 
-#: lib/libalpm/signing.c:540
+#: lib/libalpm/signing.c:550
 #, c-format
 msgid "key \"%s\" could not be looked up remotely\n"
 msgstr "klíč \"%s\" nebylo možné vzdáleně vyhledat\n"
 
-#: lib/libalpm/signing.c:926 lib/libalpm/sync.c:1022
+#: lib/libalpm/signing.c:936 lib/libalpm/sync.c:1022
 #, c-format
 msgid "%s: missing required signature\n"
 msgstr "%s: chybí vyžadovaný podpis\n"
 
-#: lib/libalpm/signing.c:941
+#: lib/libalpm/signing.c:951
 #, c-format
 msgid "%s: signature from \"%s\" is marginal trust\n"
 msgstr "%s: podpis od \"%s\" má částečnou důvěru\n"
 
-#: lib/libalpm/signing.c:949
+#: lib/libalpm/signing.c:959
 #, c-format
 msgid "%s: signature from \"%s\" is unknown trust\n"
 msgstr "%s: u podpisu od \"%s\" není známá úroveň důvěry\n"
 
-#: lib/libalpm/signing.c:956
+#: lib/libalpm/signing.c:966
 #, c-format
 msgid "%s: signature from \"%s\" should never be trusted\n"
 msgstr "%s: podpis od \"%s\" je nedůvěryhodný\n"
 
-#: lib/libalpm/signing.c:968
+#: lib/libalpm/signing.c:978
 #, c-format
 msgid "%s: key \"%s\" is unknown\n"
 msgstr "%s: klíč \"%s\" je neznámý\n"
 
-#: lib/libalpm/signing.c:977
+#: lib/libalpm/signing.c:987
 #, c-format
 msgid "%s: key \"%s\" is disabled\n"
 msgstr "%s: klíč \"%s\" je vypnut\n"
 
-#: lib/libalpm/signing.c:981
+#: lib/libalpm/signing.c:991
 #, c-format
 msgid "%s: signature from \"%s\" is expired\n"
 msgstr "%s: podpis od \"%s\" vypršel\n"
 
-#: lib/libalpm/signing.c:985
+#: lib/libalpm/signing.c:995
 #, c-format
 msgid "%s: signature from \"%s\" is invalid\n"
 msgstr "%s: podpis od \"%s\" je neplatný\n"
 
-#: lib/libalpm/signing.c:1043 lib/libalpm/signing.c:1104
-#: lib/libalpm/signing.c:1183
+#: lib/libalpm/signing.c:1053 lib/libalpm/signing.c:1114
+#: lib/libalpm/signing.c:1193
 #, c-format
 msgid "%s: signature format error\n"
 msgstr "%s: chyba formátu podpisu\n"
 
-#: lib/libalpm/signing.c:1136 lib/libalpm/signing.c:1169
-#: lib/libalpm/signing.c:1177
+#: lib/libalpm/signing.c:1146 lib/libalpm/signing.c:1179
+#: lib/libalpm/signing.c:1187
 #, c-format
 msgid "%s: unsupported signature format\n"
 msgstr "%s: nepodporovaný formát podpisu\n"
@@ -945,7 +946,7 @@ msgstr "nelze nahradit soubor %s souborem %s\n"
 #: lib/libalpm/sync.c:476
 #, c-format
 msgid "packages %s and %s have the same filename: %s\n"
-msgstr ""
+msgstr "balíčky %s a %s mají stejné jméno souboru: %s\n"
 
 #: lib/libalpm/sync.c:542 lib/libalpm/sync.c:612
 #, c-format

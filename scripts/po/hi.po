@@ -8,10 +8,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arch Linux Pacman package manager\n"
 "Report-Msgid-Bugs-To: http://bugs.archlinux.org/index.php?project=3\n"
-"POT-Creation-Date: 2022-09-26 21:09+1000\n"
+"POT-Creation-Date: 2023-11-09 10:27+1000\n"
 "PO-Revision-Date: 2011-08-08 22:35+0000\n"
 "Last-Translator: Panwar108 <caspian7pena@gmail.com>, 2020-2021\n"
-"Language-Team: Hindi (http://www.transifex.com/toofishes/archlinux-pacman/"
+"Language-Team: Hindi (http://app.transifex.com/toofishes/archlinux-pacman/"
 "language/hi/)\n"
 "Language: hi\n"
 "MIME-Version: 1.0\n"
@@ -406,7 +406,7 @@ msgstr ""
 
 #: scripts/makepkg.sh.in:1121 scripts/repo-add.sh.in:598
 msgid "%s signal caught. Exiting..."
-msgstr ""
+msgstr "संकेत प्राप्त। कार्य बंद हो रहा..."
 
 #: scripts/makepkg.sh.in:1191
 msgid ""
@@ -1249,7 +1249,7 @@ msgstr "पैकेज समस्याओं हेतु जाँच..."
 msgid "Package contains reference to %s"
 msgstr "पैकेज में %s संदर्भित है"
 
-#: scripts/libmakepkg/lint_package/dotfiles.sh.in:34
+#: scripts/libmakepkg/lint_package/dotfiles.sh.in:38
 msgid "Dotfile found in package root '%s'"
 msgstr "पैकेज रुट '%s' में डॉट फाइल मिली"
 
@@ -1469,7 +1469,7 @@ msgstr "अनावश्यक फाइलें हट रही हैं..
 msgid "Removing static library files..."
 msgstr "स्टैटिक लाइब्रेरी फाइलें हट रही हैं..."
 
-#: scripts/libmakepkg/tidy/strip.sh.in:119
+#: scripts/libmakepkg/tidy/strip.sh.in:136
 msgid "Stripping unneeded symbols from binaries and libraries..."
 msgstr "बाइनरी व लाइब्रेरी फाइलों से अनावश्यक चिन्ह हट रहे हैं..."
 

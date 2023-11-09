@@ -5,9 +5,10 @@
 # Translators:
 # 0x9fff00, 2019
 # 0x9fff00 ​, 2019
-# 0x9fff00, 2019
+# August Wikerfors, 2019
 # 5295d3138ea8e00b2d2de31bd11919f3_81fe320 <1c0cea16b463ff899b2572870c868ca5_659576>, 2018
 # Allan McRae <allan@archlinux.org>, 2021
+# August Wikerfors, 2023
 # Daniel Sandman <revoltism@gmail.com>, 2013,2015
 # Johan R. <jreinhed@protonmail.com>, 2019
 # Kim Svensson <ks6g10@soton.ac.uk>, 2011-2012
@@ -20,10 +21,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arch Linux Pacman package manager\n"
 "Report-Msgid-Bugs-To: http://bugs.archlinux.org/index.php?project=3\n"
-"POT-Creation-Date: 2022-09-26 21:09+1000\n"
+"POT-Creation-Date: 2023-11-09 10:27+1000\n"
 "PO-Revision-Date: 2010-11-29 23:17+0000\n"
-"Last-Translator:   <pojk3n@gmail.com>, 2011\n"
-"Language-Team: Swedish (http://www.transifex.com/toofishes/archlinux-pacman/"
+"Last-Translator: August Wikerfors, 2023\n"
+"Language-Team: Swedish (http://app.transifex.com/toofishes/archlinux-pacman/"
 "language/sv/)\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
@@ -627,7 +628,7 @@ msgstr "Storlek vid hämtning"
 #: src/pacman/package.c:107
 #, c-format
 msgid "Groups"
-msgstr "Tillhör grupperna"
+msgstr "Grupper"
 
 #: src/pacman/package.c:108
 #, c-format
@@ -652,7 +653,7 @@ msgstr "Storlek som installerad"
 #: src/pacman/package.c:112
 #, c-format
 msgid "Licenses"
-msgstr "Licens"
+msgstr "Licenser"
 
 #: src/pacman/package.c:113 src/pacman/package.c:239
 #, c-format
@@ -786,7 +787,7 @@ msgstr "Det finns ingen ändringslogg för %s.\n"
 msgid "Changelog for %s:\n"
 msgstr "Ändringslogg för %s:\n"
 
-#: src/pacman/package.c:489 src/pacman/package.c:491
+#: src/pacman/package.c:485 src/pacman/package.c:487
 #, c-format
 msgid "installed"
 msgstr "installerat"

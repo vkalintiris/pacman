@@ -6,6 +6,7 @@
 # Arthur Țițeică <arthur.titeica@gmail.com>, 2013
 # Arthur Titeica <arthur@psw.ro>, 2013
 # Arthur Țițeică <arthur.titeica@gmail.com>, 2013
+# C S, 2023
 # Ionut Biru <ibiru@archlinux.org>, 2011-2012
 # Mihai Coman <mihai@m1x.ro>, 2011-2013
 # mihaicris <Mihai.cristescu@gmail.com>, 2015
@@ -16,10 +17,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arch Linux Pacman package manager\n"
 "Report-Msgid-Bugs-To: http://bugs.archlinux.org/index.php?project=3\n"
-"POT-Creation-Date: 2022-09-26 21:09+1000\n"
+"POT-Creation-Date: 2023-11-09 10:27+1000\n"
 "PO-Revision-Date: 2011-08-08 22:35+0000\n"
-"Last-Translator: Arthur Țițeică <arthur.titeica@gmail.com>, 2013\n"
-"Language-Team: Romanian (http://www.transifex.com/toofishes/archlinux-pacman/"
+"Last-Translator: C S, 2023\n"
+"Language-Team: Romanian (http://app.transifex.com/toofishes/archlinux-pacman/"
 "language/ro/)\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
@@ -90,7 +91,7 @@ msgstr "Se abandonează..."
 
 #: scripts/makepkg.sh.in:248
 msgid "Pacman is currently in use, please wait..."
-msgstr ""
+msgstr "Pacman este utilizat la moment, vă rugăm să așteptați..."
 
 #: scripts/makepkg.sh.in:269
 msgid "'%s' returned a fatal error (%i): %s"
@@ -134,7 +135,7 @@ msgstr "Nu s-a putut găsi biblioteca menționată în %s: %s"
 
 #: scripts/makepkg.sh.in:587
 msgid "Invalid value for %s: %s"
-msgstr ""
+msgstr "Valoare nevalidă pentru %s: %s"
 
 #: scripts/makepkg.sh.in:685
 msgid "Missing %s directory."
@@ -372,6 +373,8 @@ msgstr "  --nosign          Nu crea o semnătură pentru pachet"
 #: scripts/makepkg.sh.in:996
 msgid "  --packagelist    Only list package filepaths that would be produced"
 msgstr ""
+"  --packagelist    Arată doar căile către fișierele de pachet care ar fi "
+"produse"
 
 #: scripts/makepkg.sh.in:997
 msgid "  --printsrcinfo   Print the generated SRCINFO and exit"
@@ -435,6 +438,8 @@ msgid ""
 "This is free software; see the source for copying conditions.\\nThere is NO "
 "WARRANTY, to the extent permitted by law.\\n"
 msgstr ""
+"Acest program este gratuit; vezi sursa pentru condițiile de copiere.\\nNU "
+"EXISTĂ NICIO GARANȚIE, în măsura permisă de lege.\\n"
 
 #: scripts/makepkg.sh.in:1121 scripts/repo-add.sh.in:598
 msgid "%s signal caught. Exiting..."
@@ -451,6 +456,8 @@ msgstr ""
 #: scripts/makepkg.sh.in:1197
 msgid "Do not use the %s option. This option is only for internal use by %s."
 msgstr ""
+"Nu utiliza opțiunea %s. Această opțiune este menită doar pentru uz intern de "
+"către %s."
 
 #: scripts/makepkg.sh.in:1212
 msgid "%s does not exist."
@@ -540,6 +547,7 @@ msgstr "opțiuni:"
 #: scripts/pacman-db-upgrade.sh.in:44
 msgid "  -d, --dbpath <path>  set an alternate database location"
 msgstr ""
+"  -d, --dbpath <path>  setează o locație alternativă pentru baza de date"
 
 #: scripts/pacman-db-upgrade.sh.in:45
 msgid "  -h, --help           show this help message and exit"
@@ -701,7 +709,7 @@ msgstr ""
 
 #: scripts/pacman-key.sh.in:80
 msgid "  --verbose                 Show extra information"
-msgstr ""
+msgstr "  --verbose                 Arată informații extra"
 
 #: scripts/pacman-key.sh.in:83
 msgid ""
@@ -742,7 +750,7 @@ msgstr "Numele cheii este ambiguu:"
 
 #: scripts/pacman-key.sh.in:148
 msgid "Generating pacman master key. This may take some time."
-msgstr ""
+msgstr "Se generează cheia principală pacman. Ar putea să dureze ceva timp."
 
 #: scripts/pacman-key.sh.in:185
 msgid "The key identified by %s could not be found locally."
@@ -751,11 +759,11 @@ msgstr "Cheia identificată de %s nu poate fi găsită local."
 #: scripts/pacman-key.sh.in:196 scripts/pacman-key.sh.in:208
 #: scripts/libmakepkg/integrity/verify_signature.sh.in:204
 msgid "_"
-msgstr ""
+msgstr "_"
 
 #: scripts/pacman-key.sh.in:208
 msgid "flags"
-msgstr ""
+msgstr "steaguri"
 
 #: scripts/pacman-key.sh.in:263
 msgid "You do not have sufficient permissions to read the %s keyring."
@@ -807,7 +815,7 @@ msgstr "Se dezactivează cheia %s..."
 
 #: scripts/pacman-key.sh.in:381
 msgid "Disabled %s keys."
-msgstr ""
+msgstr "Au fost dezactivate %s chei."
 
 #: scripts/pacman-key.sh.in:388
 msgid "A specified keyfile could not be added to the keyring."
@@ -855,11 +863,13 @@ msgstr "%s nu a putut fi semnată local."
 
 #: scripts/pacman-key.sh.in:509
 msgid "Locally signed %s keys."
-msgstr ""
+msgstr "Au fost semnate local %s chei."
 
 #: scripts/pacman-key.sh.in:532
 msgid "Remote key not fetched correctly from WKD or keyserver."
 msgstr ""
+"Cheia de la distantă nu a fost preluată corect de pe WKD sau de pe serverul "
+"de chei."
 
 #: scripts/pacman-key.sh.in:537
 msgid "Remote key not fetched correctly from keyserver."
@@ -867,7 +877,7 @@ msgstr "Cheia specificată nu s-a preluat corect de la un server de chei."
 
 #: scripts/pacman-key.sh.in:569
 msgid "Could not update key: %s"
-msgstr ""
+msgstr "Nu s-a putut actualiza cheia: %s"
 
 #: scripts/pacman-key.sh.in:590 scripts/repo-add.sh.in:265
 msgid "Cannot use armored signatures for packages: %s"
@@ -915,7 +925,7 @@ msgstr "Nicio țintă specificată"
 
 #: scripts/repo-add.sh.in:58
 msgid "Usage: repo-add [options] <path-to-db> <package> ...\\n"
-msgstr ""
+msgstr "Utilizare: repo-add [opțiuni] <path-to-db> <package> ...\\n"
 
 #: scripts/repo-add.sh.in:60
 msgid ""
@@ -949,10 +959,12 @@ msgid ""
 "  -p, --prevent-downgrade  do not add package to database if a newer version "
 "is already present\\n"
 msgstr ""
+"  -p, --prevent-downgrade  nu adăuga pachetul în baza de date dacă există "
+"deja o versiune mai nouă\\n"
 
 #: scripts/repo-add.sh.in:69
 msgid "Usage: repo-remove [options] <path-to-db> <packagename> ...\\n"
-msgstr ""
+msgstr "Utilizare: repo-remove [opțiuni] <path-to-db> <packagename> ...\\n"
 
 #: scripts/repo-add.sh.in:71
 msgid ""
@@ -1057,7 +1069,7 @@ msgstr "O intrare pentru '%s' există deja"
 
 #: scripts/repo-add.sh.in:250
 msgid "A newer version for '%s' is already present in database"
-msgstr ""
+msgstr "O versiune mai nouă pentru '%s' există deja în baza de date"
 
 #: scripts/repo-add.sh.in:270
 msgid "Invalid package signature file '%s'."
@@ -1097,7 +1109,7 @@ msgstr "Fișierul depozit '%s' nu este o bază de date pacman validă."
 
 #: scripts/repo-add.sh.in:419
 msgid "Extracting %s to a temporary location..."
-msgstr ""
+msgstr "Se extrage %s într-o locație temporară..."
 
 #: scripts/repo-add.sh.in:427
 msgid "Repository file '%s' was not found."
@@ -1174,11 +1186,11 @@ msgstr "A fost creat fișierul semnătură %s."
 
 #: scripts/libmakepkg/integrity/generate_signature.sh.in:43
 msgid "Failed to sign package file %s."
-msgstr ""
+msgstr "Eșec la semnarea fișierului de pachet %s."
 
 #: scripts/libmakepkg/integrity/generate_signature.sh.in:58
 msgid "Signing package(s)..."
-msgstr ""
+msgstr "Se semnează pachetul(ele)..."
 
 #: scripts/libmakepkg/integrity/verify_checksum.sh.in:65
 msgid "Integrity checks are missing for: %s"
@@ -1303,22 +1315,23 @@ msgstr "%s nu ar trebui să fie un array"
 #: scripts/libmakepkg/lint_config/variable.sh.in:66
 msgid "PACKAGER should have the format 'Example Name <email@address.invalid>'"
 msgstr ""
+"PACKAGER ar trebui sa aibă formatul 'Nume Exemplu <email@adresă.invalid>'"
 
 #: scripts/libmakepkg/lint_package.sh.in:41
 msgid "Checking for packaging issues..."
-msgstr ""
+msgstr "Se verifică dacă există probleme la crearea pachetului..."
 
 #: scripts/libmakepkg/lint_package/build_references.sh.in:36
 msgid "Package contains reference to %s"
 msgstr "Pachetul conține referințe către %s"
 
-#: scripts/libmakepkg/lint_package/dotfiles.sh.in:34
+#: scripts/libmakepkg/lint_package/dotfiles.sh.in:38
 msgid "Dotfile found in package root '%s'"
-msgstr ""
+msgstr "Dotfile găsit în rădăcina pachetului '%s'"
 
 #: scripts/libmakepkg/lint_package/file_names.sh.in:36
 msgid "Package contains paths with newlines"
-msgstr ""
+msgstr "Pachetul conține căi cu linii noi"
 
 #: scripts/libmakepkg/lint_package/missing_backup.sh.in:35
 msgid "%s entry file not in package : %s"
@@ -1326,7 +1339,7 @@ msgstr "Fișierul din intrarea %s nu este în pachet: %s"
 
 #: scripts/libmakepkg/lint_pkgbuild/arch.sh.in:40
 msgid "Can not use '%s' architecture with other architectures"
-msgstr ""
+msgstr "Arhitectura '%s' nu poate fi utilizată cu alte arhitecturi"
 
 #: scripts/libmakepkg/lint_pkgbuild/arch.sh.in:54
 #: scripts/libmakepkg/lint_pkgbuild/arch.sh.in:62
@@ -1347,7 +1360,7 @@ msgstr "Câmpul %s conține opțiunea necunoscută '%s'"
 
 #: scripts/libmakepkg/lint_pkgbuild/package_function.sh.in:38
 msgid "Conflicting %s and %s functions in %s"
-msgstr ""
+msgstr "Funcții cu conflict %s și %s în %s"
 
 #: scripts/libmakepkg/lint_pkgbuild/package_function.sh.in:41
 msgid "Missing %s function in %s"
@@ -1355,7 +1368,7 @@ msgstr "Lipsește funcția %s în %s"
 
 #: scripts/libmakepkg/lint_pkgbuild/package_function.sh.in:46
 msgid "Extra %s function for split package '%s'"
-msgstr ""
+msgstr "Funcție extra %s pentru pachetul împărțit '%s'"
 
 #: scripts/libmakepkg/lint_pkgbuild/package_function.sh.in:51
 msgid "Missing %s function for split package '%s'"
@@ -1383,16 +1396,18 @@ msgstr "%s nu este permis să înceapă cu un punct."
 #: scripts/libmakepkg/lint_pkgbuild/pkgname.sh.in:49
 #: scripts/libmakepkg/lint_pkgbuild/pkgver.sh.in:46
 msgid "%s may only contain ascii characters."
-msgstr ""
+msgstr "%s poate conține doar caractere ascii."
 
 #: scripts/libmakepkg/lint_pkgbuild/pkgrel.sh.in:40
 msgid "%s must be of the form 'integer[.integer]', not %s."
-msgstr ""
+msgstr "%s poate fi doar de forma 'integer[.integer]', și nu %s."
 
 #: scripts/libmakepkg/lint_pkgbuild/pkgver.sh.in:41
 msgid ""
 "%s is not allowed to contain colons, forward slashes, hyphens or whitespace."
 msgstr ""
+"Nu este permis ca %s să conțină două puncte, bară înainte, cratime sau "
+"spații albe."
 
 #: scripts/libmakepkg/lint_pkgbuild/provides.sh.in:46
 msgid "%s array cannot contain comparison (< or >) operators."
@@ -1502,7 +1517,7 @@ msgstr "Eșec la actualizarea depozitului %s %s"
 
 #: scripts/libmakepkg/source/git.sh.in:121
 msgid "Failure while checking out version %s, the git tag has been forged"
-msgstr ""
+msgstr "Eșec la verificarea versiunii %s, eticheta git a fost contrafăcută"
 
 #: scripts/libmakepkg/source/local.sh.in:39
 msgid "%s was not found in the build directory and is not a URL."
@@ -1532,7 +1547,7 @@ msgstr "Se curăță fișierele nedorite..."
 msgid "Removing static library files..."
 msgstr "Se elimină fișierele de biblioteci statice..."
 
-#: scripts/libmakepkg/tidy/strip.sh.in:119
+#: scripts/libmakepkg/tidy/strip.sh.in:136
 msgid "Stripping unneeded symbols from binaries and libraries..."
 msgstr ""
 "Se elimină simbolurile de depanare din fișierele binare și biblioteci..."
@@ -1584,11 +1599,11 @@ msgstr "Eșec la schimbarea directorului %s"
 
 #: scripts/libmakepkg/util/util.sh.in:93
 msgid "Failed to create the directory $%s (%s)."
-msgstr ""
+msgstr "Eșec la crearea directorului $%s (%s)."
 
 #: scripts/libmakepkg/util/util.sh.in:96
 msgid "You do not have write permission for the directory $%s (%s)."
-msgstr ""
+msgstr "Nu ai permisiune de scriere pentru directorul $%s (%s)."
 
 #: scripts/libmakepkg/util/util.sh.in:109
 msgid "Failed to source %s"

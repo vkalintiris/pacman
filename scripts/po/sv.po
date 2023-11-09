@@ -4,8 +4,9 @@
 #
 # Translators:
 # 0x9fff00 ​, 2019
-# 0x9fff00, 2019-2020
+# August Wikerfors, 2019-2020
 # 5295d3138ea8e00b2d2de31bd11919f3_81fe320 <1c0cea16b463ff899b2572870c868ca5_659576>, 2018
+# August Wikerfors, 2023
 # Daniel Sandman <revoltism@gmail.com>, 2013,2015
 # Johannes Löthberg <johannes@kyriasis.com>, 2015
 # Kim Svensson <ks6g10@soton.ac.uk>, 2012
@@ -16,11 +17,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arch Linux Pacman package manager\n"
 "Report-Msgid-Bugs-To: http://bugs.archlinux.org/index.php?project=3\n"
-"POT-Creation-Date: 2022-09-26 21:09+1000\n"
+"POT-Creation-Date: 2023-11-09 10:27+1000\n"
 "PO-Revision-Date: 2011-08-08 22:35+0000\n"
-"Last-Translator: 5295d3138ea8e00b2d2de31bd11919f3_81fe320 "
-"<1c0cea16b463ff899b2572870c868ca5_659576>, 2018\n"
-"Language-Team: Swedish (http://www.transifex.com/toofishes/archlinux-pacman/"
+"Last-Translator: August Wikerfors, 2023\n"
+"Language-Team: Swedish (http://app.transifex.com/toofishes/archlinux-pacman/"
 "language/sv/)\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
@@ -1135,7 +1135,7 @@ msgstr "Hoppar över verifiering av källfilernas PGP-signaturer."
 
 #: scripts/libmakepkg/integrity/generate_checksum.sh.in:82
 msgid "Generating checksums for source files..."
-msgstr "Generera kontrollsummor för källfiler."
+msgstr "Genererar kontrollsummor för källfiler..."
 
 #: scripts/libmakepkg/integrity/generate_checksum.sh.in:94
 msgid "Invalid integrity algorithm '%s' specified."
@@ -1278,13 +1278,13 @@ msgstr "PACKAGER ska ha format 'Exempel Namn <email@address.invalid>'"
 
 #: scripts/libmakepkg/lint_package.sh.in:41
 msgid "Checking for packaging issues..."
-msgstr "Söker efter paket problem..."
+msgstr "Söker efter paketeringsproblem..."
 
 #: scripts/libmakepkg/lint_package/build_references.sh.in:36
 msgid "Package contains reference to %s"
 msgstr "Paketet innehåller referens till %s"
 
-#: scripts/libmakepkg/lint_package/dotfiles.sh.in:34
+#: scripts/libmakepkg/lint_package/dotfiles.sh.in:38
 msgid "Dotfile found in package root '%s'"
 msgstr "Dotfil hittades i paket root '%s'"
 
@@ -1294,7 +1294,7 @@ msgstr "Paketet innehåller sökvägar med nya rader"
 
 #: scripts/libmakepkg/lint_package/missing_backup.sh.in:35
 msgid "%s entry file not in package : %s"
-msgstr "%s inträdesfil ej i packet: %s"
+msgstr "fil som är en post i %s finns ej i paketet: %s"
 
 #: scripts/libmakepkg/lint_pkgbuild/arch.sh.in:40
 msgid "Can not use '%s' architecture with other architectures"
@@ -1505,7 +1505,7 @@ msgstr "Rensar oönskade filer..."
 msgid "Removing static library files..."
 msgstr "Tar bort statiska biblioteksfiler..."
 
-#: scripts/libmakepkg/tidy/strip.sh.in:119
+#: scripts/libmakepkg/tidy/strip.sh.in:136
 msgid "Stripping unneeded symbols from binaries and libraries..."
 msgstr "Tar bort onödiga symboler från binärer och bibliotek..."
 

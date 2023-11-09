@@ -19,10 +19,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arch Linux Pacman package manager\n"
 "Report-Msgid-Bugs-To: http://bugs.archlinux.org/index.php?project=3\n"
-"POT-Creation-Date: 2022-09-26 21:09+1000\n"
+"POT-Creation-Date: 2023-11-09 10:27+1000\n"
 "PO-Revision-Date: 2011-08-08 22:35+0000\n"
 "Last-Translator: Dan McGee <dpmcgee@gmail.com>, 2011\n"
-"Language-Team: Lithuanian (http://www.transifex.com/toofishes/archlinux-"
+"Language-Team: Lithuanian (http://app.transifex.com/toofishes/archlinux-"
 "pacman/language/lt/)\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
@@ -1297,7 +1297,7 @@ msgstr "Tikrinamos pakavimo problemos..."
 msgid "Package contains reference to %s"
 msgstr "Paketas turi nuorodą į %s"
 
-#: scripts/libmakepkg/lint_package/dotfiles.sh.in:34
+#: scripts/libmakepkg/lint_package/dotfiles.sh.in:38
 msgid "Dotfile found in package root '%s'"
 msgstr "Dotfile rastas paketo šaknyje '%s'"
 
@@ -1517,7 +1517,7 @@ msgstr "Šalinami nepageidaujami failai..."
 msgid "Removing static library files..."
 msgstr "Šalinami nekintami bibliotekos failai..."
 
-#: scripts/libmakepkg/tidy/strip.sh.in:119
+#: scripts/libmakepkg/tidy/strip.sh.in:136
 msgid "Stripping unneeded symbols from binaries and libraries..."
 msgstr ""
 "Šalinami nereikalingi simboliai iš sukompiliuotos programos bei bibliotekų..."

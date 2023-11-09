@@ -3,9 +3,10 @@
 # This file is distributed under the same license as the pacman-scripts package.
 #
 # Translators:
+# bcane <19926474@student.westernsydney.edu.au>, 2023
 # BrLi <rainman59118@gmail.com>, 2014-2015,2017
 # pan93412 <pan93412@gmail.com>, 2019
-# Cheng-Chia Tseng <pswo10680@gmail.com>, 2017
+# Cheng-Chia Tseng <pswo10680@gmail.com>, 2017,2023
 # dlin <dlin.tw@gmail.com>, 2014
 # dlin <dlin.tw@gmail.com>, 2014
 # green.leek <grann88417@gmail.com>, 2021
@@ -17,10 +18,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arch Linux Pacman package manager\n"
 "Report-Msgid-Bugs-To: http://bugs.archlinux.org/index.php?project=3\n"
-"POT-Creation-Date: 2022-09-26 21:09+1000\n"
+"POT-Creation-Date: 2023-11-09 10:27+1000\n"
 "PO-Revision-Date: 2011-08-08 22:35+0000\n"
-"Last-Translator: 黃柏諺 <s8321414@gmail.com>, 2019,2021\n"
-"Language-Team: Chinese (Taiwan) (http://www.transifex.com/toofishes/"
+"Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>, 2017,2023\n"
+"Language-Team: Chinese (Taiwan) (http://app.transifex.com/toofishes/"
 "archlinux-pacman/language/zh_TW/)\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
@@ -42,7 +43,7 @@ msgstr "正在啟動 %s()..."
 
 #: scripts/makepkg.sh.in:196
 msgid "pkgver() generated an invalid version: %s"
-msgstr "pkgver() 已生成一個無效版本號：%s"
+msgstr "pkgver() 生成了一個無效版本號：%s"
 
 #: scripts/makepkg.sh.in:206
 msgid "Failed to update %s from %s to %s"
@@ -118,15 +119,15 @@ msgstr "%s() 遭遇失敗。"
 
 #: scripts/makepkg.sh.in:517
 msgid "Library listed in %s is not required by any files: %s"
-msgstr "列在 %s 中的函式庫不被任何檔案需要：%s"
+msgstr "%s 中所列的函式庫不被任何檔案需要：%s"
 
 #: scripts/makepkg.sh.in:547
 msgid "Library listed in %s is not versioned: %s"
-msgstr "列在 %s 中的函式庫未標版本：%s"
+msgstr "%s 中所列的函式庫未標版本：%s"
 
 #: scripts/makepkg.sh.in:559
 msgid "Library listed in %s is not a shared object: %s"
-msgstr "列在 %s 中的函式庫不是共享目標 (so)：%s"
+msgstr "%s 中所列的函式庫不是共享目標 (so)：%s"
 
 #: scripts/makepkg.sh.in:569
 msgid "Cannot find library listed in %s: %s"
@@ -138,7 +139,7 @@ msgstr "%s 有無效的值：%s"
 
 #: scripts/makepkg.sh.in:685
 msgid "Missing %s directory."
-msgstr "遺失 %s 目錄。"
+msgstr "%s 目錄遺失。"
 
 #: scripts/makepkg.sh.in:691
 msgid "Creating package \"%s\"..."
@@ -199,7 +200,7 @@ msgstr "正在安裝 %s 軟體包群組 (使用 %s)…"
 
 #: scripts/makepkg.sh.in:868
 msgid "Failed to install built package(s)."
-msgstr ""
+msgstr "無法將 %s 檔加入軟體包中。"
 
 #: scripts/makepkg.sh.in:881
 msgid "A package has already been built, installing existing package..."
@@ -701,7 +702,7 @@ msgstr "正在生成 pacman 主控金鑰。這可能需要一點時間。"
 
 #: scripts/pacman-key.sh.in:185
 msgid "The key identified by %s could not be found locally."
-msgstr "在本地端找不到 %s 辨識出的金鑰。"
+msgstr "在本地端找不到 %s 所辨識的金鑰。"
 
 #: scripts/pacman-key.sh.in:196 scripts/pacman-key.sh.in:208
 #: scripts/libmakepkg/integrity/verify_signature.sh.in:204
@@ -762,7 +763,7 @@ msgstr "正在停用金鑰 %s..."
 
 #: scripts/pacman-key.sh.in:381
 msgid "Disabled %s keys."
-msgstr "已停用 %s 金鑰。"
+msgstr " %s 金鑰已停用。"
 
 #: scripts/pacman-key.sh.in:388
 msgid "A specified keyfile could not be added to the keyring."
@@ -842,7 +843,7 @@ msgstr "無法更新信任資料庫。"
 
 #: scripts/pacman-key.sh.in:671
 msgid "Cannot find the %s binary required for all %s operations."
-msgstr ""
+msgstr "找不到生成來源檔案完整性校驗碼所需的 %s 二進位檔。"
 
 #: scripts/pacman-key.sh.in:676
 msgid "%s needs to be run as root for this operation."
@@ -913,8 +914,8 @@ msgid ""
 "name\\nspecified on the command line from the given repo database. "
 "Multiple\\npackages to remove can be specified on the command line.\\n"
 msgstr ""
-"repo-remove 會從給定的軟體包資料庫中移除指令列內指定的\\n軟體包名稱來更新軟體"
-"包資料庫。可以在指令列中\\n指定多個要移除的軟體包。\\n"
+"repo-remove 會從給定的軟體包資料庫移除指令列所指定的\\n軟體包名稱，以更新軟體"
+"包資料庫。您可以在指令列中\\n指定多個要移除的軟體包。\\n"
 
 #: scripts/repo-add.sh.in:78
 msgid "Please move along, there is nothing to see here.\\n"
@@ -1254,7 +1255,7 @@ msgstr "正在檢查軟體包問題……"
 msgid "Package contains reference to %s"
 msgstr "軟體包包含 %s 的參照"
 
-#: scripts/libmakepkg/lint_package/dotfiles.sh.in:34
+#: scripts/libmakepkg/lint_package/dotfiles.sh.in:38
 msgid "Dotfile found in package root '%s'"
 msgstr "在軟體包根目錄「%s」中找到點檔案"
 
@@ -1474,7 +1475,7 @@ msgstr "正剷除不要的檔案..."
 msgid "Removing static library files..."
 msgstr "正從靜態函式庫檔案中移除…"
 
-#: scripts/libmakepkg/tidy/strip.sh.in:119
+#: scripts/libmakepkg/tidy/strip.sh.in:136
 msgid "Stripping unneeded symbols from binaries and libraries..."
 msgstr "正從二進位檔與函式庫中去除不需要的符號連結..."
 

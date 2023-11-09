@@ -21,10 +21,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arch Linux Pacman package manager\n"
 "Report-Msgid-Bugs-To: http://bugs.archlinux.org/index.php?project=3\n"
-"POT-Creation-Date: 2022-09-26 21:09+1000\n"
+"POT-Creation-Date: 2023-11-09 10:27+1000\n"
 "PO-Revision-Date: 2011-08-08 22:35+0000\n"
 "Last-Translator: Pablo Lezaeta Reyes <prflr88@gmail.com>, 2013,2015\n"
-"Language-Team: Spanish (Latin America) (http://www.transifex.com/toofishes/"
+"Language-Team: Spanish (Latin America) (http://app.transifex.com/toofishes/"
 "archlinux-pacman/language/es_419/)\n"
 "Language: es_419\n"
 "MIME-Version: 1.0\n"
@@ -880,7 +880,7 @@ msgstr ""
 
 #: scripts/pacman-key.sh.in:590 scripts/repo-add.sh.in:265
 msgid "Cannot use armored signatures for packages: %s"
-msgstr ""
+msgstr "no se pudieron quitar todos los archivos del paquete"
 
 #: scripts/pacman-key.sh.in:594
 msgid "The signature identified by %s could not be verified."
@@ -1027,7 +1027,7 @@ msgstr "¡No se pudo encontrar el binario gpg! ¿GnuPG está instalado?"
 
 #: scripts/repo-add.sh.in:157
 msgid "Signing database '%s'..."
-msgstr ""
+msgstr "Firmando la base de datos…"
 
 #: scripts/repo-add.sh.in:166
 msgid "Created signature file '%s'"
@@ -1035,7 +1035,7 @@ msgstr "Creado el archivo de firma «%s»"
 
 #: scripts/repo-add.sh.in:168
 msgid "Failed to sign package database file '%s'"
-msgstr ""
+msgstr "No se pudo firmar la base de datos de paquetes."
 
 #: scripts/repo-add.sh.in:177
 msgid "Verifying database signature..."
@@ -1326,7 +1326,7 @@ msgstr ""
 msgid "Package contains reference to %s"
 msgstr "El paquete contiene referencias a %s"
 
-#: scripts/libmakepkg/lint_package/dotfiles.sh.in:34
+#: scripts/libmakepkg/lint_package/dotfiles.sh.in:38
 msgid "Dotfile found in package root '%s'"
 msgstr ""
 
@@ -1552,7 +1552,7 @@ msgstr "Purgando los archivos innecesarios…"
 msgid "Removing static library files..."
 msgstr "Quitando los archivos de bibliotecas estáticas…"
 
-#: scripts/libmakepkg/tidy/strip.sh.in:119
+#: scripts/libmakepkg/tidy/strip.sh.in:136
 msgid "Stripping unneeded symbols from binaries and libraries..."
 msgstr "Despojando los símbolos innecesarios de los binarios y bibliotecas…"
 

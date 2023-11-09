@@ -9,6 +9,7 @@
 # Arthur Țițeică <arthur.titeica@gmail.com>, 2013-2015
 # 202609b54ed34ff097613de9ccdb5e5a_959331d <9d860af7345e5089300e50121cee92df_6113>, 2011
 # 202609b54ed34ff097613de9ccdb5e5a_959331d <9d860af7345e5089300e50121cee92df_6113>, 2011
+# C S, 2023
 # Dan McGee <dpmcgee@gmail.com>, 2011
 # Ionut Biru <ibiru@archlinux.org>, 2011
 # Mihai Coman <mihai@m1x.ro>, 2011,2013
@@ -20,10 +21,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arch Linux Pacman package manager\n"
 "Report-Msgid-Bugs-To: http://bugs.archlinux.org/index.php?project=3\n"
-"POT-Creation-Date: 2022-09-26 21:09+1000\n"
+"POT-Creation-Date: 2023-11-09 10:27+1000\n"
 "PO-Revision-Date: 2010-11-29 23:17+0000\n"
-"Last-Translator: Arthur Țițeică <arthur.titeica@gmail.com>, 2013-2015\n"
-"Language-Team: Romanian (http://www.transifex.com/toofishes/archlinux-pacman/"
+"Last-Translator: C S, 2023\n"
+"Language-Team: Romanian (http://app.transifex.com/toofishes/archlinux-pacman/"
 "language/ro/)\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
@@ -50,7 +51,7 @@ msgstr "se retrogradează pachetul %s (%s => %s)\n"
 #: lib/libalpm/add.c:129
 #, c-format
 msgid "cannot allocate disk archive object"
-msgstr ""
+msgstr "nu poate fi alocat obiectul de arhivă disc"
 
 #: lib/libalpm/add.c:143 lib/libalpm/util.c:384
 #, c-format
@@ -62,7 +63,7 @@ msgstr "s-a primit o avertizare la extragerea %s (%s)\n"
 msgid "could not extract %s (%s)\n"
 msgstr "nu s-a putut extrage %s (%s)\n"
 
-#: lib/libalpm/add.c:159 lib/libalpm/dload.c:709 lib/libalpm/remove.c:534
+#: lib/libalpm/add.c:159 lib/libalpm/dload.c:712 lib/libalpm/remove.c:534
 #, c-format
 msgid "could not rename %s to %s (%s)\n"
 msgstr "nu s-a putut redenumi %s în %s (%s)\n"
@@ -175,7 +176,7 @@ msgstr "intrare coruptă în baza de date '%s'\n"
 
 #: lib/libalpm/be_local.c:722 lib/libalpm/be_local.c:818
 #: lib/libalpm/be_local.c:958 lib/libalpm/be_local.c:1055
-#: lib/libalpm/diskspace.c:131 lib/libalpm/dload.c:823 lib/libalpm/util.c:254
+#: lib/libalpm/diskspace.c:131 lib/libalpm/dload.c:826 lib/libalpm/util.c:254
 #: lib/libalpm/util.c:270
 #, c-format
 msgid "could not open file %s: %s\n"
@@ -234,12 +235,12 @@ msgstr "versiune de pachet nevalidă în %s\n"
 msgid "missing package metadata in %s\n"
 msgstr "lipsă metadate pentru pachet în %s\n"
 
-#: lib/libalpm/be_package.c:741
+#: lib/libalpm/be_package.c:740
 #, c-format
 msgid "failed to read signature file: %s\n"
 msgstr "eșec la citirea fișierului de semnătură: %s\n"
 
-#: lib/libalpm/be_package.c:770 lib/libalpm/sync.c:953
+#: lib/libalpm/be_package.c:763 lib/libalpm/sync.c:953
 #, c-format
 msgid "required key missing from keyring\n"
 msgstr "cheia necesară lipsește din lanțul de chei\n"
@@ -258,7 +259,7 @@ msgstr ""
 #: lib/libalpm/be_sync.c:456
 #, c-format
 msgid "could not read db '%s' (%s)\n"
-msgstr ""
+msgstr "nu s-a putut citi baza de date '%s' (%s)\n"
 
 #: lib/libalpm/be_sync.c:489 lib/libalpm/be_sync.c:494
 #, c-format
@@ -366,63 +367,64 @@ msgstr "Partiția %s este montată numai pentru citire\n"
 msgid ""
 "too many errors from %s, skipping for the remainder of this transaction\n"
 msgstr ""
+"prea multe erori de la %s, trec peste pentru restul acestei tranzacții\n"
 
 #: lib/libalpm/dload.c:220
 #, c-format
 msgid "disk"
 msgstr "disc"
 
-#: lib/libalpm/dload.c:392
+#: lib/libalpm/dload.c:395
 #, c-format
 msgid "failed to create temporary file for download\n"
 msgstr "eșec la crearea fișierului temporar pentru descărcare\n"
 
-#: lib/libalpm/dload.c:509 lib/libalpm/dload.c:547 lib/libalpm/dload.c:561
+#: lib/libalpm/dload.c:512 lib/libalpm/dload.c:550 lib/libalpm/dload.c:564
 #, c-format
 msgid "failed retrieving file '%s' from %s : %s\n"
 msgstr "eșec la obținerea fișierului '%s' din %s : %s\n"
 
-#: lib/libalpm/dload.c:539
+#: lib/libalpm/dload.c:542
 #, c-format
 msgid "failed retrieving file '%s' from %s : expected download size exceeded\n"
 msgstr ""
 "eșec la obținerea fișierului '%s' din %s : dimensiunea de descărcare "
 "așteptată a fost depășită\n"
 
-#: lib/libalpm/dload.c:687
+#: lib/libalpm/dload.c:690
 #, c-format
 msgid "%s appears to be truncated: %jd/%jd bytes\n"
 msgstr "%s pare a fi trunchiat: %jd/%jd octeți\n"
 
-#: lib/libalpm/dload.c:787
+#: lib/libalpm/dload.c:790
 #, c-format
 msgid "url '%s' is invalid\n"
 msgstr "Adresa url '%s' este nevalidă\n"
 
-#: lib/libalpm/dload.c:893
+#: lib/libalpm/dload.c:896
 #, c-format
 msgid "failed to setup a download payload for %s\n"
-msgstr ""
+msgstr "eșec la configurarea încărcăturii pentru descărcarea %s\n"
 
-#: lib/libalpm/dload.c:905
+#: lib/libalpm/dload.c:908
 #, c-format
 msgid "curl returned error %d from transfer\n"
-msgstr ""
+msgstr "curl a returnat eroarea %d de la transfer\n"
 
-#: lib/libalpm/dload.c:929
+#: lib/libalpm/dload.c:932
 #, c-format
 msgid "curl transfer error: %d\n"
-msgstr ""
+msgstr "eroare de transfer curl: %d\n"
 
-#: lib/libalpm/dload.c:1055 lib/libalpm/sync.c:840
+#: lib/libalpm/dload.c:1058 lib/libalpm/sync.c:840
 #, c-format
 msgid "failed to retrieve some files\n"
 msgstr "eșec la obținerea unor fișiere\n"
 
-#: lib/libalpm/dload.c:1078
+#: lib/libalpm/dload.c:1081
 #, c-format
 msgid "download completed successfully but no file in the cache\n"
-msgstr ""
+msgstr "descărcare finalizată cu succes dar fișierul nu există în cache\n"
 
 #: lib/libalpm/error.c:40
 #, c-format
@@ -552,7 +554,7 @@ msgstr "țintă duplicat"
 #: lib/libalpm/error.c:94
 #, c-format
 msgid "duplicate filename"
-msgstr ""
+msgstr "nume de fișier duplicat"
 
 #: lib/libalpm/error.c:98
 #, c-format
@@ -687,7 +689,7 @@ msgstr "eroare la invocarea descărcătorului extern"
 #: lib/libalpm/error.c:159
 #, c-format
 msgid "compiled without signature support"
-msgstr ""
+msgstr "compilat fară suport pentru semnături"
 
 #: lib/libalpm/error.c:162
 #, c-format
@@ -707,69 +709,69 @@ msgstr "nu s-a putut elimina fișierul de blocare %s\n"
 #: lib/libalpm/hook.c:95
 #, c-format
 msgid "Missing trigger targets in hook: %s\n"
-msgstr ""
+msgstr "Ținte de declanșare lipsă în hook: %s\n"
 
 #: lib/libalpm/hook.c:101
 #, c-format
 msgid "Missing trigger type in hook: %s\n"
-msgstr ""
+msgstr "Tip de declanșator lipsă în hook: %s\n"
 
 #: lib/libalpm/hook.c:107
 #, c-format
 msgid "Missing trigger operation in hook: %s\n"
-msgstr ""
+msgstr "Operație de declanșare lipsă în hook: %s\n"
 
 #: lib/libalpm/hook.c:134
 #, c-format
 msgid "Missing Exec option in hook: %s\n"
-msgstr ""
+msgstr "Opțiunea Exec lipsește în hook: %s\n"
 
 #: lib/libalpm/hook.c:140
 #, c-format
 msgid "Missing When option in hook: %s\n"
-msgstr ""
+msgstr "Opțiunea When lipsește în hook: %s\n"
 
 #: lib/libalpm/hook.c:143
 #, c-format
 msgid "AbortOnFail set for PostTransaction hook: %s\n"
-msgstr ""
+msgstr "AbortOnFail configurat pentru hook-ul PostTransaction: %s\n"
 
 #: lib/libalpm/hook.c:160
 #, c-format
 msgid "error while reading hook %s: %s\n"
-msgstr ""
+msgstr "eroare la citirea hook-ului %s: %s\n"
 
 #: lib/libalpm/hook.c:162 lib/libalpm/hook.c:206 lib/libalpm/hook.c:248
 #, c-format
 msgid "hook %s line %d: invalid option %s\n"
-msgstr ""
+msgstr "hook %s linia %d: opțiune nevalidă %s\n"
 
 #: lib/libalpm/hook.c:172
 #, c-format
 msgid "hook %s line %d: invalid section %s\n"
-msgstr ""
+msgstr "hook %s linia %d: secțiune nevalidă %s\n"
 
 #: lib/libalpm/hook.c:184 lib/libalpm/hook.c:199 lib/libalpm/hook.c:218
 #: lib/libalpm/hook.c:241
 #, c-format
 msgid "hook %s line %d: invalid value %s\n"
-msgstr ""
+msgstr "hook %s linia %d: valoare nevalidă %s\n"
 
 #: lib/libalpm/hook.c:188 lib/libalpm/hook.c:211 lib/libalpm/hook.c:222
 #: lib/libalpm/hook.c:236
 #, c-format
 msgid "hook %s line %d: overwriting previous definition of %s\n"
-msgstr ""
+msgstr "hook %s linia %d: se suprascrie definiția precedentă a %s\n"
 
 #: lib/libalpm/hook.c:243
 #, c-format
 msgid "hook %s line %d: unable to set option (%s)\n"
-msgstr ""
+msgstr "hook %s linia %d: nu poate fi setată opțiunea (%s)\n"
 
 #: lib/libalpm/hook.c:513
 #, c-format
 msgid "unable to run hook %s: %s\n"
-msgstr ""
+msgstr "nu a fost posibilă rularea hook-ului %s: %s\n"
 
 #: lib/libalpm/hook.c:547 lib/libalpm/hook.c:559 lib/libalpm/remove.c:378
 #, c-format
@@ -779,7 +781,7 @@ msgstr "nu s-a putut deschide directorul: %s: %s\n"
 #: lib/libalpm/hook.c:575
 #, c-format
 msgid "could not open file: %s%s: %s\n"
-msgstr ""
+msgstr "nu s-a putut deschide fișierul: %s%s: %s\n"
 
 #: lib/libalpm/hook.c:595 lib/libalpm/util.c:260
 #, c-format
@@ -789,7 +791,7 @@ msgstr "nu s-a putut determina starea fișierului %s: %s\n"
 #: lib/libalpm/hook.c:621
 #, c-format
 msgid "could not read directory: %s: %s\n"
-msgstr ""
+msgstr "nu s-a putut citi directorul: %s: %s\n"
 
 #: lib/libalpm/package.c:598
 #, c-format
@@ -815,6 +817,8 @@ msgstr "nu se poate elimina fișierul '%s': %s\n"
 #, c-format
 msgid "could not backup %s due to PATH_MAX overflow\n"
 msgstr ""
+"nu s-a putut crea o copie de rezervă pentru %s din cauza unei revărsări "
+"PATH_MAX\n"
 
 #: lib/libalpm/remove.c:554
 #, c-format
@@ -834,94 +838,94 @@ msgstr "nu s-a putut elimina intrarea '%s' din cache\n"
 #: lib/libalpm/signing.c:163
 #, c-format
 msgid "Public keyring not found; have you run '%s'?\n"
-msgstr ""
+msgstr "Brelocul public nu a fost găsit; ai executat '%s'?\n"
 
-#: lib/libalpm/signing.c:199 lib/libalpm/signing.c:767
+#: lib/libalpm/signing.c:199 lib/libalpm/signing.c:777
 #, c-format
 msgid "GPGME error: %s\n"
-msgstr ""
+msgstr "eroare GPGME: %s\n"
 
-#: lib/libalpm/signing.c:274
+#: lib/libalpm/signing.c:275
 #, c-format
 msgid "looking up key %s using WKD\n"
-msgstr ""
+msgstr "se caută cheia %s utilizând WKD\n"
 
-#: lib/libalpm/signing.c:283
+#: lib/libalpm/signing.c:289
 #, c-format
 msgid "gpg error: %s\n"
-msgstr ""
+msgstr "eroare gpg: %s\n"
 
-#: lib/libalpm/signing.c:430 lib/libalpm/signing.c:503
+#: lib/libalpm/signing.c:440 lib/libalpm/signing.c:513
 #, c-format
 msgid "keyring is not writable\n"
-msgstr ""
+msgstr "brelocul nu poate fi scris\n"
 
-#: lib/libalpm/signing.c:531
+#: lib/libalpm/signing.c:541
 #, c-format
 msgid "key \"%s\" on keyserver\n"
-msgstr ""
+msgstr "cheia ”%s” pe serverul de chei\n"
 
-#: lib/libalpm/signing.c:536
+#: lib/libalpm/signing.c:546
 #, c-format
 msgid "key \"%s\" could not be imported\n"
-msgstr ""
+msgstr "cheia ”%s” nu a putut fi importată\n"
 
-#: lib/libalpm/signing.c:540
+#: lib/libalpm/signing.c:550
 #, c-format
 msgid "key \"%s\" could not be looked up remotely\n"
-msgstr ""
+msgstr "cheia ”%s” nu a putut fi căutată la distanță\n"
 
-#: lib/libalpm/signing.c:926 lib/libalpm/sync.c:1022
+#: lib/libalpm/signing.c:936 lib/libalpm/sync.c:1022
 #, c-format
 msgid "%s: missing required signature\n"
 msgstr "%s: lipsește semnătura necesară\n"
 
-#: lib/libalpm/signing.c:941
+#: lib/libalpm/signing.c:951
 #, c-format
 msgid "%s: signature from \"%s\" is marginal trust\n"
-msgstr ""
+msgstr "%s: semnătura de la ”%s” e de încredere marginală\n"
 
-#: lib/libalpm/signing.c:949
+#: lib/libalpm/signing.c:959
 #, c-format
 msgid "%s: signature from \"%s\" is unknown trust\n"
-msgstr ""
+msgstr "%s: semnătura de la ”%s” e de încredere necunoscută\n"
 
-#: lib/libalpm/signing.c:956
+#: lib/libalpm/signing.c:966
 #, c-format
 msgid "%s: signature from \"%s\" should never be trusted\n"
-msgstr ""
+msgstr "%s: semnătura de la ”%s” nu ar trebui sa fie de incredere vreodată\n"
 
-#: lib/libalpm/signing.c:968
+#: lib/libalpm/signing.c:978
 #, c-format
 msgid "%s: key \"%s\" is unknown\n"
-msgstr ""
+msgstr "%s: cheia ”%s” e necunoscută\n"
 
-#: lib/libalpm/signing.c:977
+#: lib/libalpm/signing.c:987
 #, c-format
 msgid "%s: key \"%s\" is disabled\n"
-msgstr ""
+msgstr "%s: cheia ”%s” e dezactivată\n"
 
-#: lib/libalpm/signing.c:981
+#: lib/libalpm/signing.c:991
 #, c-format
 msgid "%s: signature from \"%s\" is expired\n"
-msgstr ""
+msgstr "%s: semnătura de la ”%s” e expirată\n"
 
-#: lib/libalpm/signing.c:985
+#: lib/libalpm/signing.c:995
 #, c-format
 msgid "%s: signature from \"%s\" is invalid\n"
-msgstr ""
+msgstr "%s: semnătura de la ”%s” e nevalidă\n"
 
-#: lib/libalpm/signing.c:1043 lib/libalpm/signing.c:1104
-#: lib/libalpm/signing.c:1183
+#: lib/libalpm/signing.c:1053 lib/libalpm/signing.c:1114
+#: lib/libalpm/signing.c:1193
 #, c-format
 msgid "%s: signature format error\n"
-msgstr ""
+msgstr "%s: eroare de format al semnăturii\n"
 
-#: lib/libalpm/signing.c:1136 lib/libalpm/signing.c:1169
-#: lib/libalpm/signing.c:1177
+#: lib/libalpm/signing.c:1146 lib/libalpm/signing.c:1179
+#: lib/libalpm/signing.c:1187
 #, c-format
 msgid "%s: unsupported signature format\n"
-msgstr ""
+msgstr "%s: format de semnătură nesuportat\n"
 
 #: lib/libalpm/sync.c:96
 #, c-format
@@ -956,7 +960,7 @@ msgstr "nu se poate înlocui %s cu %s\n"
 #: lib/libalpm/sync.c:476
 #, c-format
 msgid "packages %s and %s have the same filename: %s\n"
-msgstr ""
+msgstr "pachetele %s și %s au același nume de fișier: %s\n"
 
 #: lib/libalpm/sync.c:542 lib/libalpm/sync.c:612
 #, c-format
@@ -971,7 +975,7 @@ msgstr "se elimină '%s' din lista țintă deoarece este în conflict cu '%s'\n"
 #: lib/libalpm/sync.c:1036
 #, c-format
 msgid "failed to read file %s: %s\n"
-msgstr ""
+msgstr "eșec la citirea fișierului %s: %s\n"
 
 #: lib/libalpm/sync.c:1223
 #, c-format

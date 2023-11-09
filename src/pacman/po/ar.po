@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arch Linux Pacman package manager\n"
 "Report-Msgid-Bugs-To: http://bugs.archlinux.org/index.php?project=3\n"
-"POT-Creation-Date: 2022-09-26 21:09+1000\n"
+"POT-Creation-Date: 2023-11-09 10:27+1000\n"
 "PO-Revision-Date: 2010-11-29 23:17+0000\n"
 "Last-Translator: صفا الفليج <safaalfulaij@hotmail.com>, 2015\n"
 "Language-Team: Arabic (http://www.transifex.com/toofishes/archlinux-pacman/"
@@ -796,7 +796,7 @@ msgstr "لا سجلّ تغييرات متوفّر لِـ '%s'\n"
 msgid "Changelog for %s:\n"
 msgstr "سجلّ تغييرات %s:\n"
 
-#: src/pacman/package.c:489 src/pacman/package.c:491
+#: src/pacman/package.c:485 src/pacman/package.c:487
 #, c-format
 msgid "installed"
 msgstr "مثبّتة"

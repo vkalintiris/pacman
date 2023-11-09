@@ -8,10 +8,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arch Linux Pacman package manager\n"
 "Report-Msgid-Bugs-To: http://bugs.archlinux.org/index.php?project=3\n"
-"POT-Creation-Date: 2022-09-26 21:09+1000\n"
+"POT-Creation-Date: 2023-11-09 10:27+1000\n"
 "PO-Revision-Date: 2011-08-08 22:35+0000\n"
 "Last-Translator: Gwenn M <tornoz@laposte.net>, 2015-2016,2019\n"
-"Language-Team: Breton (http://www.transifex.com/toofishes/archlinux-pacman/"
+"Language-Team: Breton (http://app.transifex.com/toofishes/archlinux-pacman/"
 "language/br/)\n"
 "Language: br\n"
 "MIME-Version: 1.0\n"
@@ -1275,7 +1275,7 @@ msgstr ""
 msgid "Package contains reference to %s"
 msgstr "Daveoù davet %s a zo er pakad"
 
-#: scripts/libmakepkg/lint_package/dotfiles.sh.in:34
+#: scripts/libmakepkg/lint_package/dotfiles.sh.in:38
 msgid "Dotfile found in package root '%s'"
 msgstr ""
 
@@ -1495,7 +1495,7 @@ msgstr "O spurjañ ar restroù dic'hoantaet..."
 msgid "Removing static library files..."
 msgstr "O tilemel restroù levraoueg difiñv..."
 
-#: scripts/libmakepkg/tidy/strip.sh.in:119
+#: scripts/libmakepkg/tidy/strip.sh.in:136
 msgid "Stripping unneeded symbols from binaries and libraries..."
 msgstr ""
 "O tennañ an arouezioù diezhomm eus an daouredel hag eus al levraouegoù..."

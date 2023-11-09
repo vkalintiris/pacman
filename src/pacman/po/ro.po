@@ -9,6 +9,7 @@
 # Arthur Țițeică <arthur.titeica@gmail.com>, 2013,2015
 # 202609b54ed34ff097613de9ccdb5e5a_959331d <9d860af7345e5089300e50121cee92df_6113>, 2011
 # 202609b54ed34ff097613de9ccdb5e5a_959331d <9d860af7345e5089300e50121cee92df_6113>, 2011
+# C S, 2023
 # Ionut Biru <ibiru@archlinux.org>, 2011-2013
 # Mihai Coman <mihai@m1x.ro>, 2011,2013
 # mihaicris <Mihai.cristescu@gmail.com>, 2015
@@ -19,10 +20,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arch Linux Pacman package manager\n"
 "Report-Msgid-Bugs-To: http://bugs.archlinux.org/index.php?project=3\n"
-"POT-Creation-Date: 2022-09-26 21:09+1000\n"
+"POT-Creation-Date: 2023-11-09 10:27+1000\n"
 "PO-Revision-Date: 2010-11-29 23:17+0000\n"
-"Last-Translator: Arthur Țițeică <arthur.titeica@gmail.com>, 2013,2015\n"
-"Language-Team: Romanian (http://www.transifex.com/toofishes/archlinux-pacman/"
+"Last-Translator: C S, 2023\n"
+"Language-Team: Romanian (http://app.transifex.com/toofishes/archlinux-pacman/"
 "language/ro/)\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
@@ -200,12 +201,12 @@ msgstr ""
 #: src/pacman/callback.c:545
 #, c-format
 msgid "Import PGP key %s?"
-msgstr ""
+msgstr "Importă cheia PGP %s?"
 
 #: src/pacman/callback.c:548
 #, c-format
 msgid "Import PGP key %s, \"%s\"?"
-msgstr ""
+msgstr "Importă cheia PGP %s, ”%s”?"
 
 #: src/pacman/callback.c:609
 #, c-format
@@ -260,27 +261,27 @@ msgstr "se încarcă fișierele pachetului"
 #: src/pacman/callback.c:751
 #, c-format
 msgid "Total"
-msgstr ""
+msgstr "Total"
 
 #: src/pacman/callback.c:884
 #, c-format
 msgid " %s downloading...\n"
-msgstr ""
+msgstr "%s se descarcă...\n"
 
 #: src/pacman/callback.c:1051
 #, c-format
 msgid " %s is up to date"
-msgstr ""
+msgstr "%s este actualizat"
 
 #: src/pacman/callback.c:1077
 #, c-format
 msgid " %s failed to download"
-msgstr ""
+msgstr "%s nu a putut fi descărcat"
 
 #: src/pacman/callback.c:1126
 #, c-format
 msgid "unknown callback event type %d for %s\n"
-msgstr ""
+msgstr "tip de eveniment callback necunoscut %d pentru %s\n"
 
 #: src/pacman/check.c:63 src/pacman/check.c:291
 #, c-format
@@ -330,17 +331,17 @@ msgstr "%s: %s (Nepotrivire la nivel de mărime)\n"
 #: src/pacman/check.c:185
 #, c-format
 msgid "%s: %s (failed to calculate %s checksum)\n"
-msgstr ""
+msgstr "%s: %s (nu s-a putut calcula suma de verificare %s)\n"
 
 #: src/pacman/check.c:193
 #, c-format
 msgid "%s: %s (%s checksum information not available)\n"
-msgstr ""
+msgstr "%s: %s (%s informația despre suma de verificare nu este valabilă)\n"
 
 #: src/pacman/check.c:204 src/pacman/check.c:210
 #, c-format
 msgid "%s: %s (%s checksum mismatch)\n"
-msgstr ""
+msgstr "%s: %s (%s nepotrivire suma de verificare)\n"
 
 #: src/pacman/check.c:266 src/pacman/check.c:281 src/pacman/check.c:325
 #: src/pacman/check.c:379
@@ -372,7 +373,7 @@ msgstr "%s: nu există fișier mtree\n"
 #: src/pacman/check.c:371
 #, c-format
 msgid "path too long: %slocal/%s-%s/%s\n"
-msgstr ""
+msgstr "cale prea lungă: %slocal/%s-%s/%s\n"
 
 #: src/pacman/check.c:398
 #, c-format
@@ -446,11 +447,14 @@ msgstr ""
 #, c-format
 msgid "config file %s, line %d: value for '%s' has to be positive : '%s'\n"
 msgstr ""
+"fișier de configurație %s, linia %d: valoarea pentru '%s' trebuie să fie "
+"pozitivă: '%s'\n"
 
 #: src/pacman/conf.c:741
 #, c-format
 msgid "config file %s, line %d: value for '%s' is too large : '%s'\n"
 msgstr ""
+"fișier de configurație %s, linia %d: valoarea pentru '%s' e prea mare: '%s'\n"
 
 #: src/pacman/conf.c:761
 #, c-format
@@ -476,6 +480,9 @@ msgid ""
 "(root: %s, dbpath: %s)\n"
 "%s\n"
 msgstr ""
+"eșec la inițializarea bibliotecii alpm:\n"
+"(rădăcină: %s, dbpath: %s)\n"
+"%s\n"
 
 #: src/pacman/conf.c:842
 #, c-format
@@ -570,22 +577,22 @@ msgstr "%s: motivul pentru instalare a fost schimbat în: 'instalat explicit'\n"
 #: src/pacman/database.c:295
 #, c-format
 msgid "No database errors have been found!\n"
-msgstr ""
+msgstr "Nu au fost găsite erori în baza de date!\n"
 
 #: src/pacman/files.c:55
 #, c-format
 msgid "%s is owned by %s%s/%s%s %s%s%s\n"
-msgstr ""
+msgstr "%s e deținut de către %s%s/%s%s%s%s%s\n"
 
 #: src/pacman/files.c:129
 #, c-format
 msgid "invalid regular expression '%s'\n"
-msgstr ""
+msgstr "expresie regulată nevalidă '%s'\n"
 
 #: src/pacman/files.c:253
 #, c-format
 msgid "invalid package: '%s'\n"
-msgstr ""
+msgstr "pachet nevalid: '%s'\n"
 
 #: src/pacman/files.c:285 src/pacman/query.c:492 src/pacman/sync.c:436
 #, c-format
@@ -799,7 +806,7 @@ msgstr "nu exista istoric de modificări pentru '%s'.\n"
 msgid "Changelog for %s:\n"
 msgstr "Istoric de modificări pentru %s:\n"
 
-#: src/pacman/package.c:489 src/pacman/package.c:491
+#: src/pacman/package.c:485 src/pacman/package.c:487
 #, c-format
 msgid "installed"
 msgstr "instalat"
@@ -1068,6 +1075,7 @@ msgstr ""
 #, c-format
 msgid "  -q, --quiet          suppress output of success messages\n"
 msgstr ""
+"-q, --quiet          arată mai puține informații în mesajele de succes\n"
 
 #: src/pacman/pacman.c:182
 #, c-format
@@ -1101,6 +1109,9 @@ msgid ""
 "                       overwrite conflicting files (can be used more than "
 "once)\n"
 msgstr ""
+"      --overwrite <glob>\n"
+"                        suprascrie fișierele aflate în conflict (poate fi "
+"utilizată de mai multe ori)\n"
 
 #: src/pacman/pacman.c:194
 #, c-format
@@ -1215,6 +1226,7 @@ msgstr "      --arch <arhit>   setează o arhitectură alternativă\n"
 #, c-format
 msgid "      --sysroot        operate on a mounted guest system (root-only)\n"
 msgstr ""
+"      --sysroot        operează pe un sistem guest montat (doar ca root)\n"
 
 #: src/pacman/pacman.c:218
 #, c-format
@@ -1269,6 +1281,8 @@ msgid ""
 "      --disable-download-timeout\n"
 "                       use relaxed timeouts for download\n"
 msgstr ""
+"      --disable-download-timeout\n"
+"                       folosește timeout-uri relaxate pentru descărcare\n"
 
 #: src/pacman/pacman.c:247
 #, c-format
@@ -1282,7 +1296,7 @@ msgstr ""
 #: src/pacman/pacman.c:280
 #, c-format
 msgid "HTTP_USER_AGENT truncated\n"
-msgstr ""
+msgstr "HTTP_USER_AGENT a fost trunchiat\n"
 
 #: src/pacman/pacman.c:313
 #, c-format
@@ -1322,7 +1336,7 @@ msgstr "nu puteți efectua această operațiune decât dacă sunteți root.\n"
 #: src/pacman/pacman.c:1169
 #, c-format
 msgid "failed to read arguments from stdin: (%s)\n"
-msgstr ""
+msgstr "nu s-au putut citi argumentele din stdin: (%s)\n"
 
 #: src/pacman/pacman.c:1174
 #, c-format
@@ -1342,7 +1356,7 @@ msgstr "argument '-' specificat fără o intrare din stdin\n"
 #: src/pacman/pacman.c:1191
 #, c-format
 msgid "chroot to '%s' failed: (%s)\n"
-msgstr ""
+msgstr "chroot către '%s' a eșuat: (%s)\n"
 
 #: src/pacman/pacman.c:1267
 #, c-format
@@ -1352,7 +1366,7 @@ msgstr "nu este specificată nicio operațiune (folosiți -h pentru ajutor)\n"
 #: src/pacman/query.c:87
 #, c-format
 msgid "%s is owned by %s%s %s%s%s\n"
-msgstr ""
+msgstr "%s e deținut de către %s%s%s%s%s\n"
 
 #: src/pacman/query.c:149
 #, c-format
@@ -1362,7 +1376,7 @@ msgstr "nu este specificat niciun fișier pentru --owns\n"
 #: src/pacman/query.c:170
 #, c-format
 msgid "empty string passed to file owner query\n"
-msgstr ""
+msgstr "un șir gol a fost transmis interogării deținătorului de fișier\n"
 
 #: src/pacman/query.c:197 src/pacman/query.c:219
 #, c-format
@@ -1407,7 +1421,7 @@ msgstr "eșec la pregătirea tranzacției (%s)\n"
 #: src/pacman/remove.c:119 src/pacman/sync.c:746
 #, c-format
 msgid "removing %s breaks dependency '%s' required by %s\n"
-msgstr ""
+msgstr "prin eliminarea %s se întrerupe dependența '%s' cerută de către %s\n"
 
 #: src/pacman/remove.c:138
 #, c-format
@@ -1518,9 +1532,9 @@ msgstr "depozitul \"%s\" nu a fost găsit.\n"
 #, c-format
 msgid "There is %d member in group %s%s%s:\n"
 msgid_plural "There are %d members in group %s%s%s:\n"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Există %d membru în grupul %s%s%s:\n"
+msgstr[1] "Există %d membri în grupul %s%s%s:\n"
+msgstr[2] "Există %d de membri în grupul %s%s%s:\n"
 
 #: src/pacman/sync.c:629
 #, c-format
@@ -1545,12 +1559,13 @@ msgstr "Se pornește actualizarea completă a sistemului...\n"
 #: src/pacman/sync.c:738
 #, c-format
 msgid "unable to satisfy dependency '%s' required by %s\n"
-msgstr ""
+msgstr "nu s-a putut satisface dependența '%s' cerută de către %s\n"
 
 #: src/pacman/sync.c:742
 #, c-format
 msgid "installing %s (%s) breaks dependency '%s' required by %s\n"
 msgstr ""
+"prin instalarea %s (%s) se întrerupe dependența '%s' cerută de către %s\n"
 
 #: src/pacman/sync.c:766
 #, c-format
@@ -1585,7 +1600,7 @@ msgstr "%s există şi în '%s' şi în '%s'\n"
 #: src/pacman/sync.c:844
 #, c-format
 msgid "%s: %s exists in filesystem (owned by %s)\n"
-msgstr ""
+msgstr "%s: %s există în sistemul de fișiere (deținut de către %s)\n"
 
 #: src/pacman/sync.c:847
 #, c-format
@@ -1644,7 +1659,7 @@ msgstr "baza de date '%s' este nevalidă (%s)\n"
 #: src/pacman/util.c:159
 #, c-format
 msgid "failed to synchronize all databases (%s)\n"
-msgstr ""
+msgstr "eșec la sincronizarea tuturor bazelor de date (%s)\n"
 
 #: src/pacman/util.c:651
 #, c-format
@@ -1779,7 +1794,7 @@ msgstr "Dependențe opționale pentru %s\n"
 #: src/pacman/util.c:1301
 #, c-format
 msgid "Repository %s%s\n"
-msgstr ""
+msgstr "Depozitul %s%s\n"
 
 #: src/pacman/util.c:1342
 #, c-format
@@ -1849,131 +1864,131 @@ msgstr "avertisment: "
 #: src/pacman/pacman-conf.c:41
 #, c-format
 msgid "pacman-conf - query pacman's configuration file\n"
-msgstr ""
+msgstr "pacman-conf - interoghează fișierul de configurare pacman\n"
 
 #: src/pacman/pacman-conf.c:42
 #, c-format
 msgid "usage:  pacman-conf [options] [<directive>...]\n"
-msgstr ""
+msgstr "utilizare:  pacman-conf [opțiuni] [<directive>...]\n"
 
 #: src/pacman/pacman-conf.c:43
 #, c-format
 msgid "        pacman-conf (--repo-list|--help|--version)\n"
-msgstr ""
+msgstr "        pacman-conf (--repo-list|--help|--version)\n"
 
 #: src/pacman/pacman-conf.c:44
 #, c-format
 msgid "options:\n"
-msgstr ""
+msgstr "opțiuni:\n"
 
 #: src/pacman/pacman-conf.c:45
 #, c-format
 msgid "  -c, --config=<path>  set an alternate configuration file\n"
-msgstr ""
+msgstr "  -c, --config=<path> setează un fișier de configurare alternativ\n"
 
 #: src/pacman/pacman-conf.c:46
 #, c-format
 msgid "  -R, --rootdir=<path> set an alternate installation root\n"
-msgstr ""
+msgstr "-R, --rootdir=<path> setează o cale de instalare alternativă\n"
 
 #: src/pacman/pacman-conf.c:47
 #, c-format
 msgid "  -r, --repo=<remote>  query options for a specific repo\n"
-msgstr ""
+msgstr "  -r, --repo=<remote>  interoghează opțiunile specifice unui depozit\n"
 
 #: src/pacman/pacman-conf.c:48
 #, c-format
 msgid "  -v, --verbose        always show directive names\n"
-msgstr ""
+msgstr "  -v, --verbose        arată mereu numele directivelor\n"
 
 #: src/pacman/pacman-conf.c:49
 #, c-format
 msgid "  -l, --repo-list      list configured repositories\n"
-msgstr ""
+msgstr "  -l, --repo-list      arată depozitele configurate\n"
 
 #: src/pacman/pacman-conf.c:50
 #, c-format
 msgid "  -h, --help           display this help information\n"
-msgstr ""
+msgstr "  -h, --help        arată această informație de ajutor\n"
 
 #: src/pacman/pacman-conf.c:51
 #, c-format
 msgid "  -V, --version        display version information\n"
-msgstr ""
+msgstr "  -V, --version        arată informații despre versiune\n"
 
 #: src/pacman/pacman-conf.c:81
 #, c-format
 msgid "error setting rootdir '%s': out of memory\n"
-msgstr ""
+msgstr "eroare la setarea căii de rădăcină '%s': fără memorie\n"
 
 #: src/pacman/pacman-conf.c:111
 #, c-format
 msgid "error parsing '%s'\n"
-msgstr ""
+msgstr "eroare în timpul analizei '%s'\n"
 
 #: src/pacman/pacman-conf.c:301
 #, c-format
 msgid "error: repo '%s' not configured\n"
-msgstr ""
+msgstr "eroare: depozitul '%s' nu este configurat\n"
 
 #: src/pacman/pacman-conf.c:318 src/pacman/pacman-conf.c:399
 #, c-format
 msgid "warning: '%s' directives cannot be queried\n"
-msgstr ""
+msgstr "avertizare: directivele '%s' nu pot fi interogate\n"
 
 #: src/pacman/pacman-conf.c:321 src/pacman/pacman-conf.c:402
 #, c-format
 msgid "warning: unknown directive '%s'\n"
-msgstr ""
+msgstr "avertizare: directivă necunoscută '%s'\n"
 
 #: src/pacman/pacman-conf.c:439
 #, c-format
 msgid "error: directives may not be specified with %s\n"
-msgstr ""
+msgstr "eroare: directivele nu pot fi specificate cu %s\n"
 
 #: src/util/testpkg.c:56
 #, c-format
 msgid ""
 "Test a pacman package for validity.\n"
 "\n"
-msgstr ""
+msgstr "Testează validitatea unui pachet pacman.\n"
 
 #: src/util/testpkg.c:57
 #, c-format
 msgid "Usage: testpkg <package file>\n"
-msgstr ""
+msgstr "Utilizare: testpkg<package file>\n"
 
 #: src/util/testpkg.c:63
 #, c-format
 msgid "cannot initialize alpm: %s\n"
-msgstr ""
+msgstr "alpm nu poate fi inițializat: %s\n"
 
 #: src/util/testpkg.c:78
 #, c-format
 msgid "Cannot find the given file.\n"
-msgstr ""
+msgstr "Nu se poate găsi fișierul dat.\n"
 
 #: src/util/testpkg.c:81
 #, c-format
 msgid "Cannot open the given file.\n"
-msgstr ""
+msgstr "Nu se poate deschide fișierul dat.\n"
 
 #: src/util/testpkg.c:85
 #, c-format
 msgid "Package is invalid.\n"
-msgstr ""
+msgstr "Pachetul este nevalid.\n"
 
 #: src/util/testpkg.c:88
 #, c-format
 msgid "libalpm error: %s\n"
-msgstr ""
+msgstr "eroare libalpm: %s\n"
 
 #: src/util/testpkg.c:94
 #, c-format
 msgid "Package is valid.\n"
-msgstr ""
+msgstr "Pachetul este valid.\n"
 
 #: src/util/testpkg.c:99
 #, c-format
 msgid "error releasing alpm\n"
-msgstr ""
+msgstr "eroare la eliberarea alpm\n"

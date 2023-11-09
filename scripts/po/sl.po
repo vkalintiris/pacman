@@ -6,7 +6,7 @@
 # 35e31c1f7beb9a73365b56f93b1457f5_fbd83d3, 2014
 # Dejan Rožič <drozic1989@gmail.com>, 2015
 # ansich <mojmejlzaforume@gmail.com>, 2014
-# Arnold Marko <arnold.marko@gmail.com>, 2020
+# Arnold Marko <arnold.marko@gmail.com>, 2020,2023
 # Dejan Rožič <drozic1989@gmail.com>, 2015,2019
 # Dejan Rožič <drozic1989@gmail.com>, 2015
 # ansich <mojmejlzaforume@gmail.com>, 2014
@@ -20,10 +20,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arch Linux Pacman package manager\n"
 "Report-Msgid-Bugs-To: http://bugs.archlinux.org/index.php?project=3\n"
-"POT-Creation-Date: 2022-09-26 21:09+1000\n"
+"POT-Creation-Date: 2023-11-09 10:27+1000\n"
 "PO-Revision-Date: 2011-08-08 22:35+0000\n"
-"Last-Translator: 35e31c1f7beb9a73365b56f93b1457f5_fbd83d3, 2014\n"
-"Language-Team: Slovenian (http://www.transifex.com/toofishes/archlinux-"
+"Last-Translator: Arnold Marko <arnold.marko@gmail.com>, 2020,2023\n"
+"Language-Team: Slovenian (http://app.transifex.com/toofishes/archlinux-"
 "pacman/language/sl/)\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
@@ -46,11 +46,11 @@ msgstr "Zagon %s()..."
 
 #: scripts/makepkg.sh.in:196
 msgid "pkgver() generated an invalid version: %s"
-msgstr "pkgver() ustvaril napačno različico: %s"
+msgstr "pkgver() je ustvaril napačno različico: %s"
 
 #: scripts/makepkg.sh.in:206
 msgid "Failed to update %s from %s to %s"
-msgstr "Spodletelo posodobiti %s iz %s v %s"
+msgstr "Posodbaljenj %s iz %s v %s ni bilo uspešno"
 
 #: scripts/makepkg.sh.in:212
 msgid "Updated version: %s"
@@ -94,11 +94,11 @@ msgstr "Prekinjam..."
 
 #: scripts/makepkg.sh.in:248
 msgid "Pacman is currently in use, please wait..."
-msgstr "Pacman v uporabi, prosim počakaj..."
+msgstr "Pacman se že uporablja. Počakajte..."
 
 #: scripts/makepkg.sh.in:269
 msgid "'%s' returned a fatal error (%i): %s"
-msgstr "'%s' prišlo je do usodne napake (%i): %s"
+msgstr "'%s' je vrnil sporočilo o resni napaki (%i): %s"
 
 #: scripts/makepkg.sh.in:288
 msgid "Installing missing dependencies..."
@@ -106,7 +106,7 @@ msgstr "Nameščanje manjkajočih odvisnosti..."
 
 #: scripts/makepkg.sh.in:291
 msgid "'%s' failed to install missing dependencies."
-msgstr "'%s' spodletela namestitev manjkajočih odvisnosti"
+msgstr "'%s' ni uspel namestiti manjkajočih odvisnosti"
 
 #: scripts/makepkg.sh.in:326
 msgid "Missing dependencies:"
@@ -114,7 +114,7 @@ msgstr "Manjkajoče odvisnosti:"
 
 #: scripts/makepkg.sh.in:342 scripts/makepkg.sh.in:356
 msgid "Failed to remove installed dependencies."
-msgstr "Spodletela odstranitev nameščenih odvisnosti."
+msgstr "Nameščenih odvisnosti ni bilo mogoče odstraniti."
 
 #: scripts/makepkg.sh.in:364
 msgid "A failure occurred in %s()."
@@ -122,23 +122,23 @@ msgstr "Prišlo je do napake v %s()."
 
 #: scripts/makepkg.sh.in:517
 msgid "Library listed in %s is not required by any files: %s"
-msgstr "Knjižnica navedena v %s ne zahteva nobena datoteka: %s"
+msgstr "Knjižnice, navedene v %s, ne potrebuje nobena datoteka: %s"
 
 #: scripts/makepkg.sh.in:547
 msgid "Library listed in %s is not versioned: %s"
-msgstr "Knjižnica navedene v %s ni različica: %s"
+msgstr "Knjižnica, navedena v %s, nima različice: %s"
 
 #: scripts/makepkg.sh.in:559
 msgid "Library listed in %s is not a shared object: %s"
-msgstr "Knjižnica navedena v %s ni v skupni rabi objekta: %s"
+msgstr "Knjižnica, navedena v %s, ni v objekt v skupni rabi: %s"
 
 #: scripts/makepkg.sh.in:569
 msgid "Cannot find library listed in %s: %s"
-msgstr "Knjižnice, navedene v %s ni bilo mogoče najti: %s"
+msgstr "Knjižnice, navedene v %s, ni bilo mogoče najti: %s"
 
 #: scripts/makepkg.sh.in:587
 msgid "Invalid value for %s: %s"
-msgstr ""
+msgstr "Neustrezna vrednost  za %s : %s"
 
 #: scripts/makepkg.sh.in:685
 msgid "Missing %s directory."
@@ -159,7 +159,7 @@ msgstr "Dodajanje datoteke %s..."
 
 #: scripts/makepkg.sh.in:706
 msgid "Failed to add %s file to package."
-msgstr "Ne more dodati datoteke %s paketu."
+msgstr "Dodajanje datoteke %s paketu ni bilo uspešno."
 
 #: scripts/makepkg.sh.in:724
 msgid "Generating .MTREE file..."
@@ -171,11 +171,11 @@ msgstr "Stiskanje paketa..."
 
 #: scripts/makepkg.sh.in:739
 msgid "Failed to create package file."
-msgstr "Ustvarjanje paketne datoteke spodletelo."
+msgstr "Datoteke s paketom ni bilo mogoče ustvariti."
 
 #: scripts/makepkg.sh.in:774
 msgid "Creating source package..."
-msgstr "Ustvarjanje paketa izvorne kode..."
+msgstr "Ustvarjanje paketa z izvorno kodo..."
 
 #: scripts/makepkg.sh.in:778 scripts/makepkg.sh.in:791
 msgid "Adding %s..."
@@ -187,45 +187,45 @@ msgstr "Dodajanje datoteke %s (%s)..."
 
 #: scripts/makepkg.sh.in:823
 msgid "Compressing source package..."
-msgstr "Stiskanje paketa izvorne kode..."
+msgstr "Stiskanje paketa z izvorno kodo..."
 
 #: scripts/makepkg.sh.in:833
 msgid "Failed to create source package file."
-msgstr "Ustvarjanje izvorne paketne datoteke spodletelo."
+msgstr "Ustvarjanje datoteke s paketom izvorne kode ni bilo uspešno."
 
 #: scripts/makepkg.sh.in:848
 msgid "Installing package %s with %s..."
-msgstr "Nameščanje paketa %s z %s..."
+msgstr "Nameščanje paketa %s s/z %s..."
 
 #: scripts/makepkg.sh.in:850
 msgid "Installing %s package group with %s..."
-msgstr "Nameščanje paketne skupine %s z %s..."
+msgstr "Nameščanje skupine paketov %s s/ z %s..."
 
 #: scripts/makepkg.sh.in:868
 msgid "Failed to install built package(s)."
-msgstr "Nameščanje izgrajenega paketa/paketov je spodletelo."
+msgstr "Nameščanje paketa/paketov za gradnjo ni bilo uspešno."
 
 #: scripts/makepkg.sh.in:881
 msgid "A package has already been built, installing existing package..."
-msgstr "Paket je že bil izgrajen, nameščanje obstoječega paketa ..."
+msgstr "Paket je že bil zgrajen, nameščam obstoječi paket ..."
 
 #: scripts/makepkg.sh.in:885
 msgid "A package has already been built. (use %s to overwrite)"
-msgstr "Paket je že bil izgrajen. (uporabite %s za prepis)"
+msgstr "Paket je že bil zgrajen. (uporabite %s za prepis)"
 
 #: scripts/makepkg.sh.in:904
 msgid ""
 "The package group has already been built, installing existing packages..."
 msgstr ""
-"Ta paketna skupina je že bila izgrajena, nameščajo se obstoječi paketi ..."
+"Ta skupina paketov je že bila izgrajena, nameščajo se obstoječi paketi ..."
 
 #: scripts/makepkg.sh.in:908
 msgid "The package group has already been built. (use %s to overwrite)"
-msgstr "Ta paketna skupina je že bila nameščena. (uporabite %s za prepis)"
+msgstr "Ta skupina paketov je že bila nameščena. (uporabite %s za prepis)"
 
 #: scripts/makepkg.sh.in:913
 msgid "Part of the package group has already been built. (use %s to overwrite)"
-msgstr "Del paketne skupine je že bil izgrajen. (uporabite %s za prepis)"
+msgstr "Del skupine paketov je že bil zgrajen. (uporabite %s za prepis)"
 
 #: scripts/makepkg.sh.in:964
 msgid "Make packages compatible for use with pacman"
@@ -249,16 +249,16 @@ msgstr "-c, --clean Po izgradnji počisti delovne datoteke"
 
 #: scripts/makepkg.sh.in:971
 msgid "  -C, --cleanbuild Remove %s dir before building the package"
-msgstr "-C, --cleanbuild Odstraniti %s mapo pred gradnjo paketa"
+msgstr "-C, --cleanbuild Odstrani mapo %s pred gradnjo paketa"
 
 #: scripts/makepkg.sh.in:972
 msgid "  -d, --nodeps     Skip all dependency checks"
-msgstr "-d, --nodeps Prezri vsa preverjanja odvisnosti"
+msgstr "-d, --nodeps Prezri preverjanja vseh odvisnosti"
 
 #: scripts/makepkg.sh.in:973
 msgid "  -e, --noextract  Do not extract source files (use existing %s dir)"
 msgstr ""
-"-e, --noextract Ne razširi datotek izvorne kode (uporabi obstoječo mapo %s)"
+"-e, --noextract Ne razširi datotek z izvorno kodo (uporabi obstoječo mapo %s)"
 
 #: scripts/makepkg.sh.in:974
 msgid "  -f, --force      Overwrite existing package"
@@ -267,11 +267,11 @@ msgstr "-f, --force Prepiši obstoječi paket"
 #: scripts/makepkg.sh.in:975
 msgid "  -g, --geninteg   Generate integrity checks for source files"
 msgstr ""
-"-g, --geninteg Ustvari preverjanja celovitosti za datoteke izvorne kode"
+"-g, --geninteg Ustvari preverjanja celovitosti za datoteke z izvorno kodo"
 
 #: scripts/makepkg.sh.in:976
 msgid "  -h, --help       Show this help message and exit"
-msgstr "-h, --help Pokaži to sporočilo pomoči in končaj program"
+msgstr "-h, --help Prikaži to sporočilo pomoči in končaj program"
 
 #: scripts/makepkg.sh.in:977
 msgid "  -i, --install    Install package after successful build"
@@ -453,7 +453,7 @@ msgstr "%s ne obstaja."
 
 #: scripts/makepkg.sh.in:1217
 msgid "%s contains %s characters and cannot be sourced."
-msgstr ""
+msgstr "%s vsebuje %znake in zanj ni možno ugotoviti vira."
 
 #: scripts/makepkg.sh.in:1222
 msgid "%s must be in the current working directory."
@@ -1270,7 +1270,7 @@ msgstr ""
 msgid "Package contains reference to %s"
 msgstr "Paket vsebuje sklic na %s"
 
-#: scripts/libmakepkg/lint_package/dotfiles.sh.in:34
+#: scripts/libmakepkg/lint_package/dotfiles.sh.in:38
 msgid "Dotfile found in package root '%s'"
 msgstr ""
 
@@ -1297,7 +1297,7 @@ msgstr "Vnos %s ne sme vsebovati začetne poševnice : %s"
 
 #: scripts/libmakepkg/lint_pkgbuild/epoch.sh.in:36
 msgid "%s must be an integer, not %s."
-msgstr ""
+msgstr "%s mora biti celo števino, ne %."
 
 #: scripts/libmakepkg/lint_pkgbuild/options.sh.in:52
 msgid "%s array contains unknown option '%s'"
@@ -1490,7 +1490,7 @@ msgstr "Odstranjevanje nezaželenih datotek..."
 msgid "Removing static library files..."
 msgstr "Odstranjevanje statične knjižniče datoteke..."
 
-#: scripts/libmakepkg/tidy/strip.sh.in:119
+#: scripts/libmakepkg/tidy/strip.sh.in:136
 msgid "Stripping unneeded symbols from binaries and libraries..."
 msgstr "Odstranjevanje nepotrebnih simbolov binarnih in knjižničnih datotek..."
 
@@ -1541,7 +1541,7 @@ msgstr "Ni mogoče spremeniti mape %s"
 
 #: scripts/libmakepkg/util/util.sh.in:93
 msgid "Failed to create the directory $%s (%s)."
-msgstr ""
+msgstr "Napaka pri ustvarjanju mape $ 1%s (1%s)"
 
 #: scripts/libmakepkg/util/util.sh.in:96
 msgid "You do not have write permission for the directory $%s (%s)."

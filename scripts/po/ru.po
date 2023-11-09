@@ -11,19 +11,19 @@
 # Ilya Ostapenko (Jacobtey) <jacobtey@gmail.com>, 2017
 # Ivan Yurasov <vdk@gmx.us>, 2011
 # kyak <peselnik@gmail.com>, 2013
-# Sergiy Tereshchenko <serg.partizan@gmail.com>, 2015,2017
+# b0f1ee25bee9149da2bd99957ae8bf73_e2d9f93 <4641583347f725035beeebcc51de0bb5_2840>, 2015,2017
 # kyak <peselnik@gmail.com>, 2013
-# Sergiy Tereshchenko <serg.partizan@gmail.com>, 2015,2017
+# b0f1ee25bee9149da2bd99957ae8bf73_e2d9f93 <4641583347f725035beeebcc51de0bb5_2840>, 2015,2017
 # be1bb8e720f95f5c175a5f1f3aa8f780, 2015
 # Анатолий Валерианович <ffox909@mail.ru>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Arch Linux Pacman package manager\n"
 "Report-Msgid-Bugs-To: http://bugs.archlinux.org/index.php?project=3\n"
-"POT-Creation-Date: 2022-09-26 21:09+1000\n"
+"POT-Creation-Date: 2023-11-09 10:27+1000\n"
 "PO-Revision-Date: 2011-08-08 22:35+0000\n"
 "Last-Translator: Анатолий Валерианович <ffox909@mail.ru>, 2016\n"
-"Language-Team: Russian (http://www.transifex.com/toofishes/archlinux-pacman/"
+"Language-Team: Russian (http://app.transifex.com/toofishes/archlinux-pacman/"
 "language/ru/)\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -1090,7 +1090,7 @@ msgstr "Не удалось создать файл репозитория '%s'.
 
 #: scripts/repo-add.sh.in:446
 msgid "File '%s' not found."
-msgstr ""
+msgstr "Не найден файл настроек %s: '%s'."
 
 #: scripts/repo-add.sh.in:452
 msgid "'%s' is not a package file, skipping"
@@ -1292,7 +1292,7 @@ msgstr "Проверка сборки на ошибки..."
 msgid "Package contains reference to %s"
 msgstr "Пакет содержит ссылку на директорию '%s'"
 
-#: scripts/libmakepkg/lint_package/dotfiles.sh.in:34
+#: scripts/libmakepkg/lint_package/dotfiles.sh.in:38
 msgid "Dotfile found in package root '%s'"
 msgstr "В корне пакета '%s' найден дотфайл"
 
@@ -1514,7 +1514,7 @@ msgstr "Удаление ненужных файлов..."
 msgid "Removing static library files..."
 msgstr "Удаление статических библиотек..."
 
-#: scripts/libmakepkg/tidy/strip.sh.in:119
+#: scripts/libmakepkg/tidy/strip.sh.in:136
 msgid "Stripping unneeded symbols from binaries and libraries..."
 msgstr "Удаление отладочной информации из бинарников и библиотек..."
 

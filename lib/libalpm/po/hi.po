@@ -8,10 +8,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arch Linux Pacman package manager\n"
 "Report-Msgid-Bugs-To: http://bugs.archlinux.org/index.php?project=3\n"
-"POT-Creation-Date: 2022-09-26 21:09+1000\n"
+"POT-Creation-Date: 2023-11-09 10:27+1000\n"
 "PO-Revision-Date: 2010-11-29 23:17+0000\n"
 "Last-Translator: Panwar108 <caspian7pena@gmail.com>, 2018,2020-2021\n"
-"Language-Team: Hindi (http://www.transifex.com/toofishes/archlinux-pacman/"
+"Language-Team: Hindi (http://app.transifex.com/toofishes/archlinux-pacman/"
 "language/hi/)\n"
 "Language: hi\n"
 "MIME-Version: 1.0\n"
@@ -49,7 +49,7 @@ msgstr "%s (%s) अनपैक करते समय चेतावनी द
 msgid "could not extract %s (%s)\n"
 msgstr " %s (%s) अनपैक करना विफल\n"
 
-#: lib/libalpm/add.c:159 lib/libalpm/dload.c:709 lib/libalpm/remove.c:534
+#: lib/libalpm/add.c:159 lib/libalpm/dload.c:712 lib/libalpm/remove.c:534
 #, c-format
 msgid "could not rename %s to %s (%s)\n"
 msgstr "%s का नाम बदलकर %s करना विफल (%s)\n"
@@ -160,7 +160,7 @@ msgstr "विकृत डेटाबेस प्रविष्टि '%s'\n
 
 #: lib/libalpm/be_local.c:722 lib/libalpm/be_local.c:818
 #: lib/libalpm/be_local.c:958 lib/libalpm/be_local.c:1055
-#: lib/libalpm/diskspace.c:131 lib/libalpm/dload.c:823 lib/libalpm/util.c:254
+#: lib/libalpm/diskspace.c:131 lib/libalpm/dload.c:826 lib/libalpm/util.c:254
 #: lib/libalpm/util.c:270
 #, c-format
 msgid "could not open file %s: %s\n"
@@ -217,12 +217,12 @@ msgstr "%s में पैकेज संस्करण अमान्य\n"
 msgid "missing package metadata in %s\n"
 msgstr "%s में पैकेज मेटाडेटा अमान्य\n"
 
-#: lib/libalpm/be_package.c:741
+#: lib/libalpm/be_package.c:740
 #, c-format
 msgid "failed to read signature file: %s\n"
 msgstr "हस्ताक्षर फाइल रीड करना विफल : %s\n"
 
-#: lib/libalpm/be_package.c:770 lib/libalpm/sync.c:953
+#: lib/libalpm/be_package.c:763 lib/libalpm/sync.c:953
 #, c-format
 msgid "required key missing from keyring\n"
 msgstr "कुंजी-संग्रह से आवश्यक कुंजी अनुपस्थित\n"
@@ -348,52 +348,52 @@ msgstr "%s हेतु अत्यधिक त्रुटियाँ हु
 msgid "disk"
 msgstr "डिस्क"
 
-#: lib/libalpm/dload.c:392
+#: lib/libalpm/dload.c:395
 #, c-format
 msgid "failed to create temporary file for download\n"
 msgstr "डाउनलोड हेतु अस्थायी फाइल बनाना विफल\n"
 
-#: lib/libalpm/dload.c:509 lib/libalpm/dload.c:547 lib/libalpm/dload.c:561
+#: lib/libalpm/dload.c:512 lib/libalpm/dload.c:550 lib/libalpm/dload.c:564
 #, c-format
 msgid "failed retrieving file '%s' from %s : %s\n"
 msgstr "%s से फाइल '%s' प्राप्त करना विफल : %s\n"
 
-#: lib/libalpm/dload.c:539
+#: lib/libalpm/dload.c:542
 #, c-format
 msgid "failed retrieving file '%s' from %s : expected download size exceeded\n"
 msgstr "%s से फाइल '%s' प्राप्त करना विफल : डाउनलोड आकर अपेक्षा से अधिक\n"
 
-#: lib/libalpm/dload.c:687
+#: lib/libalpm/dload.c:690
 #, c-format
 msgid "%s appears to be truncated: %jd/%jd bytes\n"
 msgstr "%s खंडित प्रतीत होता है : %jd/%jd बाइट\n"
 
-#: lib/libalpm/dload.c:787
+#: lib/libalpm/dload.c:790
 #, c-format
 msgid "url '%s' is invalid\n"
 msgstr "यूआरएल '%s' अमान्य है\n"
 
-#: lib/libalpm/dload.c:893
+#: lib/libalpm/dload.c:896
 #, c-format
 msgid "failed to setup a download payload for %s\n"
 msgstr "%s हेतु डाउनलोड अवस्था सेट करना विफल\n"
 
-#: lib/libalpm/dload.c:905
+#: lib/libalpm/dload.c:908
 #, c-format
 msgid "curl returned error %d from transfer\n"
 msgstr "अंतरण हेतु curl से प्राप्त त्रुटि %d\n"
 
-#: lib/libalpm/dload.c:929
+#: lib/libalpm/dload.c:932
 #, c-format
 msgid "curl transfer error: %d\n"
 msgstr "curl अंतरण त्रुटि : %d\n"
 
-#: lib/libalpm/dload.c:1055 lib/libalpm/sync.c:840
+#: lib/libalpm/dload.c:1058 lib/libalpm/sync.c:840
 #, c-format
 msgid "failed to retrieve some files\n"
 msgstr "कुछ फ़ाइलें प्राप्त करने में विफल\n"
 
-#: lib/libalpm/dload.c:1078
+#: lib/libalpm/dload.c:1081
 #, c-format
 msgid "download completed successfully but no file in the cache\n"
 msgstr "डाउनलोड करना सफल परन्तु कैश में फाइल मौजूद नहीं है\n"
@@ -810,89 +810,89 @@ msgstr "कैश से प्रविष्टि '%s' हटाना वि
 msgid "Public keyring not found; have you run '%s'?\n"
 msgstr "सार्वजानिक कुंजी-संग्रह नहीं मिला; क्या आपने '%s' निष्पादित किया?\n"
 
-#: lib/libalpm/signing.c:199 lib/libalpm/signing.c:767
+#: lib/libalpm/signing.c:199 lib/libalpm/signing.c:777
 #, c-format
 msgid "GPGME error: %s\n"
 msgstr "GPGME त्रुटि : %s\n"
 
-#: lib/libalpm/signing.c:274
+#: lib/libalpm/signing.c:275
 #, c-format
 msgid "looking up key %s using WKD\n"
 msgstr "वेब कुंजी डायरेक्टरी द्वारा कुंजी %s खोज\n"
 
-#: lib/libalpm/signing.c:283
+#: lib/libalpm/signing.c:289
 #, c-format
 msgid "gpg error: %s\n"
 msgstr "GPG त्रुटि : %s\n"
 
-#: lib/libalpm/signing.c:430 lib/libalpm/signing.c:503
+#: lib/libalpm/signing.c:440 lib/libalpm/signing.c:513
 #, c-format
 msgid "keyring is not writable\n"
 msgstr "कुंजी-संग्रह राइट योग्य नहीं है\n"
 
-#: lib/libalpm/signing.c:531
+#: lib/libalpm/signing.c:541
 #, c-format
 msgid "key \"%s\" on keyserver\n"
 msgstr "कुंजी सर्वर पर कुंजी \"%s\"\n"
 
-#: lib/libalpm/signing.c:536
+#: lib/libalpm/signing.c:546
 #, c-format
 msgid "key \"%s\" could not be imported\n"
 msgstr "कुंजी \"%s\" आयात विफल\n"
 
-#: lib/libalpm/signing.c:540
+#: lib/libalpm/signing.c:550
 #, c-format
 msgid "key \"%s\" could not be looked up remotely\n"
 msgstr "कुंजी \"%s\" हेतु दूरस्थ खोज विफल\n"
 
-#: lib/libalpm/signing.c:926 lib/libalpm/sync.c:1022
+#: lib/libalpm/signing.c:936 lib/libalpm/sync.c:1022
 #, c-format
 msgid "%s: missing required signature\n"
 msgstr "%s : आवश्यक हस्ताक्षर अनुपस्थित\n"
 
-#: lib/libalpm/signing.c:941
+#: lib/libalpm/signing.c:951
 #, c-format
 msgid "%s: signature from \"%s\" is marginal trust\n"
 msgstr "%s : \"%s\" के हस्ताक्षर की विश्वसनीयता आंशिक है\n"
 
-#: lib/libalpm/signing.c:949
+#: lib/libalpm/signing.c:959
 #, c-format
 msgid "%s: signature from \"%s\" is unknown trust\n"
 msgstr "%s : \"%s\" के हस्ताक्षर की विश्वसनीयता अज्ञात है\n"
 
-#: lib/libalpm/signing.c:956
+#: lib/libalpm/signing.c:966
 #, c-format
 msgid "%s: signature from \"%s\" should never be trusted\n"
 msgstr "%s : \"%s\" का हस्ताक्षर विश्वसनीय नहीं है\n"
 
-#: lib/libalpm/signing.c:968
+#: lib/libalpm/signing.c:978
 #, c-format
 msgid "%s: key \"%s\" is unknown\n"
 msgstr "%s: कुंजी \"%s\" अज्ञात है\n"
 
-#: lib/libalpm/signing.c:977
+#: lib/libalpm/signing.c:987
 #, c-format
 msgid "%s: key \"%s\" is disabled\n"
 msgstr "%s: कुंजी \"%s\" निष्क्रिय है\n"
 
-#: lib/libalpm/signing.c:981
+#: lib/libalpm/signing.c:991
 #, c-format
 msgid "%s: signature from \"%s\" is expired\n"
 msgstr "%s : \"%s\" के हस्ताक्षर की मान्यता समाप्त हो चुकी है\n"
 
-#: lib/libalpm/signing.c:985
+#: lib/libalpm/signing.c:995
 #, c-format
 msgid "%s: signature from \"%s\" is invalid\n"
 msgstr "%s : \"%s\" का हस्ताक्षर अमान्य है\n"
 
-#: lib/libalpm/signing.c:1043 lib/libalpm/signing.c:1104
-#: lib/libalpm/signing.c:1183
+#: lib/libalpm/signing.c:1053 lib/libalpm/signing.c:1114
+#: lib/libalpm/signing.c:1193
 #, c-format
 msgid "%s: signature format error\n"
 msgstr "%s: हस्ताक्षर प्रारूप त्रुटि\n"
 
-#: lib/libalpm/signing.c:1136 lib/libalpm/signing.c:1169
-#: lib/libalpm/signing.c:1177
+#: lib/libalpm/signing.c:1146 lib/libalpm/signing.c:1179
+#: lib/libalpm/signing.c:1187
 #, c-format
 msgid "%s: unsupported signature format\n"
 msgstr "%s: असमर्थित हस्ताक्षर प्रारूप\n"

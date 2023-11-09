@@ -17,7 +17,7 @@
 # megamann, 2014
 # megamann, 2014,2016
 # megamann, 2016
-# Piotr Strębski <strebski@gmail.com>, 2013,2017-2018,2022
+# Piotr Strębski <strebski@gmail.com>, 2013,2017-2018,2022-2023
 # Piotr Strębski <strebski@gmail.com>, 2013
 # Sebastian Jakubiak, 2019
 # Sebastian Jakubiak, 2019
@@ -25,10 +25,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arch Linux Pacman package manager\n"
 "Report-Msgid-Bugs-To: http://bugs.archlinux.org/index.php?project=3\n"
-"POT-Creation-Date: 2022-09-26 21:09+1000\n"
+"POT-Creation-Date: 2023-11-09 10:27+1000\n"
 "PO-Revision-Date: 2010-11-29 23:17+0000\n"
-"Last-Translator: Piotr Strębski <strebski@gmail.com>, 2013,2017-2018,2022\n"
-"Language-Team: Polish (http://www.transifex.com/toofishes/archlinux-pacman/"
+"Last-Translator: Piotr Strębski <strebski@gmail.com>, "
+"2013,2017-2018,2022-2023\n"
+"Language-Team: Polish (http://app.transifex.com/toofishes/archlinux-pacman/"
 "language/pl/)\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
@@ -279,22 +280,22 @@ msgstr "Łącznie"
 #: src/pacman/callback.c:884
 #, c-format
 msgid " %s downloading...\n"
-msgstr ""
+msgstr "Pobieranie %s…\n"
 
 #: src/pacman/callback.c:1051
 #, c-format
 msgid " %s is up to date"
-msgstr ""
+msgstr " %s jest aktualne"
 
 #: src/pacman/callback.c:1077
 #, c-format
 msgid " %s failed to download"
-msgstr ""
+msgstr "Nie udało się pobrać %s"
 
 #: src/pacman/callback.c:1126
 #, c-format
 msgid "unknown callback event type %d for %s\n"
-msgstr ""
+msgstr "nieznany typ zdarzenia wywołania zwrotnego %d dla %s\n"
 
 #: src/pacman/check.c:63 src/pacman/check.c:291
 #, c-format
@@ -349,12 +350,12 @@ msgstr ""
 #: src/pacman/check.c:193
 #, c-format
 msgid "%s: %s (%s checksum information not available)\n"
-msgstr ""
+msgstr "%s: %s (%s informacje o sumie kontrolnej są niedostępne)\n"
 
 #: src/pacman/check.c:204 src/pacman/check.c:210
 #, c-format
 msgid "%s: %s (%s checksum mismatch)\n"
-msgstr ""
+msgstr "%s: %s (%s niezgodność sumy kontrolnej)\n"
 
 #: src/pacman/check.c:266 src/pacman/check.c:281 src/pacman/check.c:325
 #: src/pacman/check.c:379
@@ -591,7 +592,7 @@ msgstr "%s należy do %s%s/%s%s %s%s%s\n"
 #: src/pacman/files.c:129
 #, c-format
 msgid "invalid regular expression '%s'\n"
-msgstr ""
+msgstr "nieprawidłowe wyrażenie regularne '%s'\n"
 
 #: src/pacman/files.c:253
 #, c-format
@@ -810,7 +811,7 @@ msgstr "brak listy zmian dla '%s'.\n"
 msgid "Changelog for %s:\n"
 msgstr "Lista zmian dla %s:\n"
 
-#: src/pacman/package.c:489 src/pacman/package.c:491
+#: src/pacman/package.c:485 src/pacman/package.c:487
 #, c-format
 msgid "installed"
 msgstr "zainstalowano"
@@ -1972,4 +1973,4 @@ msgstr "Pakiet jest poprawny.\n"
 #: src/util/testpkg.c:99
 #, c-format
 msgid "error releasing alpm\n"
-msgstr ""
+msgstr "błąd zwalniania alpm\n"

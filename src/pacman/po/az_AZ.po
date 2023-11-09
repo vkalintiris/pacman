@@ -12,10 +12,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arch Linux Pacman package manager\n"
 "Report-Msgid-Bugs-To: http://bugs.archlinux.org/index.php?project=3\n"
-"POT-Creation-Date: 2022-09-26 21:09+1000\n"
+"POT-Creation-Date: 2023-11-09 10:27+1000\n"
 "PO-Revision-Date: 2010-11-29 23:17+0000\n"
 "Last-Translator: Xəyyam Qocayev <xxmn77@gmail.com>, 2021-2022\n"
-"Language-Team: Azerbaijani (Azerbaijan) (http://www.transifex.com/toofishes/"
+"Language-Team: Azerbaijani (Azerbaijan) (http://app.transifex.com/toofishes/"
 "archlinux-pacman/language/az_AZ/)\n"
 "Language: az_AZ\n"
 "MIME-Version: 1.0\n"
@@ -265,7 +265,7 @@ msgstr "%s yüklənə bilmədi"
 #: src/pacman/callback.c:1126
 #, c-format
 msgid "unknown callback event type %d for %s\n"
-msgstr ""
+msgstr "%s üçün %d bilinməyən geri çağırış hadisəsi növü\n"
 
 #: src/pacman/check.c:63 src/pacman/check.c:291
 #, c-format
@@ -772,7 +772,7 @@ msgstr "'%s' üçün dəyişiklik jurnalı əlçatan deyil.\n"
 msgid "Changelog for %s:\n"
 msgstr "%s üçün dəyişikliklər:\n"
 
-#: src/pacman/package.c:489 src/pacman/package.c:491
+#: src/pacman/package.c:485 src/pacman/package.c:487
 #, c-format
 msgid "installed"
 msgstr "yüklənmişdir"

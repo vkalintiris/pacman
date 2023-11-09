@@ -18,10 +18,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arch Linux Pacman package manager\n"
 "Report-Msgid-Bugs-To: http://bugs.archlinux.org/index.php?project=3\n"
-"POT-Creation-Date: 2022-09-26 21:09+1000\n"
+"POT-Creation-Date: 2023-11-09 10:27+1000\n"
 "PO-Revision-Date: 2010-11-29 23:17+0000\n"
 "Last-Translator: 35e31c1f7beb9a73365b56f93b1457f5_fbd83d3, 2014\n"
-"Language-Team: Slovenian (http://www.transifex.com/toofishes/archlinux-"
+"Language-Team: Slovenian (http://app.transifex.com/toofishes/archlinux-"
 "pacman/language/sl/)\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
@@ -206,12 +206,12 @@ msgstr ""
 #: src/pacman/callback.c:545
 #, c-format
 msgid "Import PGP key %s?"
-msgstr ""
+msgstr "Uvoz PGP ključa 1%s ?"
 
 #: src/pacman/callback.c:548
 #, c-format
 msgid "Import PGP key %s, \"%s\"?"
-msgstr ""
+msgstr "Import PGP key 1%s, \"1%s\"?"
 
 #: src/pacman/callback.c:609
 #, c-format
@@ -816,7 +816,7 @@ msgstr "seznam sprememb ni na voljo za  '%s' .\n"
 msgid "Changelog for %s:\n"
 msgstr "Dnevnik sprememb za %s:\n"
 
-#: src/pacman/package.c:489 src/pacman/package.c:491
+#: src/pacman/package.c:485 src/pacman/package.c:487
 #, c-format
 msgid "installed"
 msgstr "nameščeno"

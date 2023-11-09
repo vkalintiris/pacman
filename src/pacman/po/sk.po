@@ -14,14 +14,15 @@
 # Jose Riha <jose1711@gmail.com>, 2011
 # Jose Riha <jose1711@gmail.com>, 2011
 # Jose Riha <jose1711@gmail.com>, 2011,2018,2022
+# Martin Plávala <martinplavala@gmail.com>, 2023
 msgid ""
 msgstr ""
 "Project-Id-Version: Arch Linux Pacman package manager\n"
 "Report-Msgid-Bugs-To: http://bugs.archlinux.org/index.php?project=3\n"
-"POT-Creation-Date: 2022-09-26 21:09+1000\n"
+"POT-Creation-Date: 2023-11-09 10:27+1000\n"
 "PO-Revision-Date: 2010-11-29 23:17+0000\n"
-"Last-Translator: Jose Riha <jose1711@gmail.com>, 2011,2018,2022\n"
-"Language-Team: Slovak (http://www.transifex.com/toofishes/archlinux-pacman/"
+"Last-Translator: Martin Plávala <martinplavala@gmail.com>, 2023\n"
+"Language-Team: Slovak (http://app.transifex.com/toofishes/archlinux-pacman/"
 "language/sk/)\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
@@ -108,7 +109,7 @@ msgstr "sťahujem potrebné kľúče...\n"
 #: src/pacman/callback.c:330
 #, c-format
 msgid "loading package files...\n"
-msgstr "načítavanie balíčkov...\n"
+msgstr "načítam súbory balíčkov...\n"
 
 #: src/pacman/callback.c:340
 #, c-format
@@ -128,12 +129,12 @@ msgstr "%s voliteľne vyžaduje %s\n"
 #: src/pacman/callback.c:378 src/pacman/callback.c:384
 #, c-format
 msgid "%s installed as %s.pacnew\n"
-msgstr "%s bol inštalovaný ako as %s.pacnew\n"
+msgstr "%s bol inštalovaný ako %s.pacnew\n"
 
 #: src/pacman/callback.c:394 src/pacman/callback.c:400
 #, c-format
 msgid "%s saved as %s.pacsave\n"
-msgstr "%s bol uložený ako as %s.pacsave\n"
+msgstr "%s bol uložený ako %s.pacsave\n"
 
 #: src/pacman/callback.c:460
 #, c-format
@@ -204,12 +205,12 @@ msgstr ""
 #: src/pacman/callback.c:545
 #, c-format
 msgid "Import PGP key %s?"
-msgstr ""
+msgstr "Importovať PGP kľúč %s?"
 
 #: src/pacman/callback.c:548
 #, c-format
 msgid "Import PGP key %s, \"%s\"?"
-msgstr ""
+msgstr "Importovať PGP kľúč %s, „%s“?"
 
 #: src/pacman/callback.c:609
 #, c-format
@@ -264,22 +265,22 @@ msgstr "načítavam súbory balíčkov"
 #: src/pacman/callback.c:751
 #, c-format
 msgid "Total"
-msgstr ""
+msgstr "Celkom"
 
 #: src/pacman/callback.c:884
 #, c-format
 msgid " %s downloading...\n"
-msgstr ""
+msgstr " preberá sa %s…\n"
 
 #: src/pacman/callback.c:1051
 #, c-format
 msgid " %s is up to date"
-msgstr ""
+msgstr " %s je aktuálne"
 
 #: src/pacman/callback.c:1077
 #, c-format
 msgid " %s failed to download"
-msgstr ""
+msgstr " %s sa nepodarilo prebrať"
 
 #: src/pacman/callback.c:1126
 #, c-format
@@ -334,17 +335,17 @@ msgstr "%s: %s (veľkosť sa nezhoduje)\n"
 #: src/pacman/check.c:185
 #, c-format
 msgid "%s: %s (failed to calculate %s checksum)\n"
-msgstr ""
+msgstr "%s: %s (nepodarilo sa spočítať kontrolný súčet %s)\n"
 
 #: src/pacman/check.c:193
 #, c-format
 msgid "%s: %s (%s checksum information not available)\n"
-msgstr ""
+msgstr "%s: %s (informácia o kontrolnom súčte %s je nedostupná)\n"
 
 #: src/pacman/check.c:204 src/pacman/check.c:210
 #, c-format
 msgid "%s: %s (%s checksum mismatch)\n"
-msgstr ""
+msgstr "%s: %s (nesedí kontrolný súčet %s)\n"
 
 #: src/pacman/check.c:266 src/pacman/check.c:281 src/pacman/check.c:325
 #: src/pacman/check.c:379
@@ -373,7 +374,7 @@ msgstr[3] "%jd chýbajúcich súborov\n"
 #: src/pacman/check.c:334
 #, c-format
 msgid "%s: no mtree file\n"
-msgstr "%s: žiadny mtree súbor\n"
+msgstr "%s: chýbajúci súbor mtree\n"
 
 #: src/pacman/check.c:371
 #, c-format
@@ -452,12 +453,12 @@ msgstr ""
 #: src/pacman/conf.c:734
 #, c-format
 msgid "config file %s, line %d: value for '%s' has to be positive : '%s'\n"
-msgstr ""
+msgstr "konfiguračný súbor %s, riadok %d: hodnota '%s' musí byť kladná: '%s'\n"
 
 #: src/pacman/conf.c:741
 #, c-format
 msgid "config file %s, line %d: value for '%s' is too large : '%s'\n"
-msgstr ""
+msgstr "konfiguračný súbor %s, riadok %d: hodnota '%s' je príliš veľká: '%s'\n"
 
 #: src/pacman/conf.c:761
 #, c-format
@@ -481,6 +482,9 @@ msgid ""
 "(root: %s, dbpath: %s)\n"
 "%s\n"
 msgstr ""
+"zlyhala inicializácia knižnice alpm:\n"
+"(root: %s, dbpath: %s)\n"
+"%s\n"
 
 #: src/pacman/conf.c:842
 #, c-format
@@ -580,7 +584,7 @@ msgstr "%s vlastní %s%s/%s%s %s%s%s\n"
 #: src/pacman/files.c:129
 #, c-format
 msgid "invalid regular expression '%s'\n"
-msgstr ""
+msgstr "neplatný regulárny výraz '%s'\n"
 
 #: src/pacman/files.c:253
 #, c-format
@@ -620,7 +624,7 @@ msgstr "Komprimovaná veľkosť"
 #: src/pacman/package.c:103
 #, c-format
 msgid "Conflicts With"
-msgstr "Konfliktný s"
+msgstr "Má konflikt s"
 
 #: src/pacman/package.c:104
 #, c-format
@@ -799,7 +803,7 @@ msgstr "zoznam zmien pre '%s' nie je dostupný.\n"
 msgid "Changelog for %s:\n"
 msgstr "Changelog pre %s:\n"
 
-#: src/pacman/package.c:489 src/pacman/package.c:491
+#: src/pacman/package.c:485 src/pacman/package.c:487
 #, c-format
 msgid "installed"
 msgstr "nainštalovaný"
@@ -832,7 +836,7 @@ msgstr "operácia"
 #: src/pacman/pacman.c:109
 #, c-format
 msgid "operations:\n"
-msgstr "operacie:\n"
+msgstr "operácie:\n"
 
 #: src/pacman/pacman.c:119
 #, c-format
@@ -1093,6 +1097,9 @@ msgid ""
 "                       overwrite conflicting files (can be used more than "
 "once)\n"
 msgstr ""
+"      --overwrite <glob>\n"
+"                       prepísať konfliktné súbory (môže byť použité "
+"viackrát)\n"
 
 #: src/pacman/pacman.c:194
 #, c-format
@@ -1636,7 +1643,7 @@ msgstr "databáza '%s' nie je platná (%s)\n"
 #: src/pacman/util.c:159
 #, c-format
 msgid "failed to synchronize all databases (%s)\n"
-msgstr ""
+msgstr "nepodarilo sa synchronizovať všetky databázy (%s)\n"
 
 #: src/pacman/util.c:651
 #, c-format
@@ -1846,7 +1853,7 @@ msgstr ""
 #: src/pacman/pacman-conf.c:42
 #, c-format
 msgid "usage:  pacman-conf [options] [<directive>...]\n"
-msgstr ""
+msgstr "použitie:  pacman-conf [voľby] [<direktíva>…]\n"
 
 #: src/pacman/pacman-conf.c:43
 #, c-format
@@ -1856,17 +1863,17 @@ msgstr ""
 #: src/pacman/pacman-conf.c:44
 #, c-format
 msgid "options:\n"
-msgstr ""
+msgstr "voľby:\n"
 
 #: src/pacman/pacman-conf.c:45
 #, c-format
 msgid "  -c, --config=<path>  set an alternate configuration file\n"
-msgstr ""
+msgstr "  -c, --config=<path>  nastaviť alternatívny konfiguračný súbor\n"
 
 #: src/pacman/pacman-conf.c:46
 #, c-format
 msgid "  -R, --rootdir=<path> set an alternate installation root\n"
-msgstr ""
+msgstr "  -R, --rootdir=<path> nastaviť iný koreňový adresár pre inštaláciu\n"
 
 #: src/pacman/pacman-conf.c:47
 #, c-format
@@ -1876,37 +1883,37 @@ msgstr ""
 #: src/pacman/pacman-conf.c:48
 #, c-format
 msgid "  -v, --verbose        always show directive names\n"
-msgstr ""
+msgstr "  -v, --verbose        vždy zobraziť názov direktívy\n"
 
 #: src/pacman/pacman-conf.c:49
 #, c-format
 msgid "  -l, --repo-list      list configured repositories\n"
-msgstr ""
+msgstr "  -l, --repo-list      zobraziť konfigurované repozitáre\n"
 
 #: src/pacman/pacman-conf.c:50
 #, c-format
 msgid "  -h, --help           display this help information\n"
-msgstr ""
+msgstr "  -h, --help           zobraziť túto nápovedu\n"
 
 #: src/pacman/pacman-conf.c:51
 #, c-format
 msgid "  -V, --version        display version information\n"
-msgstr ""
+msgstr "  -V, --version        zobraziť verziu programu\n"
 
 #: src/pacman/pacman-conf.c:81
 #, c-format
 msgid "error setting rootdir '%s': out of memory\n"
-msgstr ""
+msgstr "chyba nastavovanie koreňového adresára '%s': nedostatok pamäte\n"
 
 #: src/pacman/pacman-conf.c:111
 #, c-format
 msgid "error parsing '%s'\n"
-msgstr ""
+msgstr "chyba pri spracovaní '%s'\n"
 
 #: src/pacman/pacman-conf.c:301
 #, c-format
 msgid "error: repo '%s' not configured\n"
-msgstr ""
+msgstr "chyba: repozitár '%s' nie je nastavený\n"
 
 #: src/pacman/pacman-conf.c:318 src/pacman/pacman-conf.c:399
 #, c-format
@@ -1916,12 +1923,12 @@ msgstr ""
 #: src/pacman/pacman-conf.c:321 src/pacman/pacman-conf.c:402
 #, c-format
 msgid "warning: unknown directive '%s'\n"
-msgstr ""
+msgstr "upozornenie: neznáma direktíva '%s'\n"
 
 #: src/pacman/pacman-conf.c:439
 #, c-format
 msgid "error: directives may not be specified with %s\n"
-msgstr ""
+msgstr "chyba: direktívy nemôžu byť špecifikované s %s\n"
 
 #: src/util/testpkg.c:56
 #, c-format
@@ -1929,43 +1936,45 @@ msgid ""
 "Test a pacman package for validity.\n"
 "\n"
 msgstr ""
+"Otestovať platnosť pacman balíčka.\n"
+"\n"
 
 #: src/util/testpkg.c:57
 #, c-format
 msgid "Usage: testpkg <package file>\n"
-msgstr ""
+msgstr "Použitie: testpkg <súbor balíčka>\n"
 
 #: src/util/testpkg.c:63
 #, c-format
 msgid "cannot initialize alpm: %s\n"
-msgstr ""
+msgstr "chyba pri inicializácii alpm: %s\n"
 
 #: src/util/testpkg.c:78
 #, c-format
 msgid "Cannot find the given file.\n"
-msgstr ""
+msgstr "Požadovaný súbor sa nepodarilo nájsť.\n"
 
 #: src/util/testpkg.c:81
 #, c-format
 msgid "Cannot open the given file.\n"
-msgstr ""
+msgstr "Nepodarilo sa otvoriť požadovaný súbor.\n"
 
 #: src/util/testpkg.c:85
 #, c-format
 msgid "Package is invalid.\n"
-msgstr ""
+msgstr "Balíček je neplatný.\n"
 
 #: src/util/testpkg.c:88
 #, c-format
 msgid "libalpm error: %s\n"
-msgstr ""
+msgstr "chyba libalpm: %s\n"
 
 #: src/util/testpkg.c:94
 #, c-format
 msgid "Package is valid.\n"
-msgstr ""
+msgstr "Balíček je platný.\n"
 
 #: src/util/testpkg.c:99
 #, c-format
 msgid "error releasing alpm\n"
-msgstr ""
+msgstr "chyba uvolňovania alpm\n"

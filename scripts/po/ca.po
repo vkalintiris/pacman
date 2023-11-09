@@ -14,10 +14,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arch Linux Pacman package manager\n"
 "Report-Msgid-Bugs-To: http://bugs.archlinux.org/index.php?project=3\n"
-"POT-Creation-Date: 2022-09-26 21:09+1000\n"
+"POT-Creation-Date: 2023-11-09 10:27+1000\n"
 "PO-Revision-Date: 2011-08-08 22:35+0000\n"
 "Last-Translator: xanb <xancorreu@gmail.com>, 2014\n"
-"Language-Team: Catalan (http://www.transifex.com/toofishes/archlinux-pacman/"
+"Language-Team: Catalan (http://app.transifex.com/toofishes/archlinux-pacman/"
 "language/ca/)\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
@@ -1342,7 +1342,7 @@ msgstr "Es comprova si hi ha problemes d'empaquetament..."
 msgid "Package contains reference to %s"
 msgstr "El paquet conté referències a %s."
 
-#: scripts/libmakepkg/lint_package/dotfiles.sh.in:34
+#: scripts/libmakepkg/lint_package/dotfiles.sh.in:38
 msgid "Dotfile found in package root '%s'"
 msgstr "S'ha trobat un fitxer amb punt al paquet d'arrel \"%s\"."
 
@@ -1566,7 +1566,7 @@ msgstr "Es purguen els fitxers no desitjats..."
 msgid "Removing static library files..."
 msgstr "Se suprimeixen els fitxers de les biblioteques estàtiques..."
 
-#: scripts/libmakepkg/tidy/strip.sh.in:119
+#: scripts/libmakepkg/tidy/strip.sh.in:136
 msgid "Stripping unneeded symbols from binaries and libraries..."
 msgstr "Es retiren els símbols innecessaris dels binaris i les biblioteques..."
 

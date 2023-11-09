@@ -9,8 +9,9 @@
 # David Macek <david.macek.0@gmail.com>, 2018
 # Hain Murmeltier, 2022
 # IAmNotImportant, 2017
-# Jaroslav Lichtblau <jlichtblau@seznam.cz>, 2014-2016
-# Jaroslav Lichtblau <jlichtblau@seznam.cz>, 2014,2022
+# Jaroslav Lichtblau <l10n@lichtblau.cz>, 2014-2016
+# Jaroslav Lichtblau <l10n@lichtblau.cz>, 2014,2022
+# Jiří Podhorný <jp@email.cz>, 2023
 # LiberteCzech <martin.kriz.czech@gmail.com>, 2018
 # LiberteCzech <martin.kriz.czech@gmail.com>, 2018
 # LiberteCzech <martin.kriz.czech@gmail.com>, 2018
@@ -25,10 +26,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arch Linux Pacman package manager\n"
 "Report-Msgid-Bugs-To: http://bugs.archlinux.org/index.php?project=3\n"
-"POT-Creation-Date: 2022-09-26 21:09+1000\n"
+"POT-Creation-Date: 2023-11-09 10:27+1000\n"
 "PO-Revision-Date: 2010-11-29 23:17+0000\n"
-"Last-Translator: Hain Murmeltier, 2022\n"
-"Language-Team: Czech (http://www.transifex.com/toofishes/archlinux-pacman/"
+"Last-Translator: Jiří Podhorný <jp@email.cz>, 2023\n"
+"Language-Team: Czech (http://app.transifex.com/toofishes/archlinux-pacman/"
 "language/cs/)\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
@@ -276,12 +277,12 @@ msgstr "Celkem"
 #: src/pacman/callback.c:884
 #, c-format
 msgid " %s downloading...\n"
-msgstr "%s stahuji...\n"
+msgstr " %s stahuji...\n"
 
 #: src/pacman/callback.c:1051
 #, c-format
 msgid " %s is up to date"
-msgstr "%s je aktuální"
+msgstr " %s je aktuální"
 
 #: src/pacman/callback.c:1077
 #, c-format
@@ -291,7 +292,7 @@ msgstr " %s stažení selhalo"
 #: src/pacman/callback.c:1126
 #, c-format
 msgid "unknown callback event type %d for %s\n"
-msgstr ""
+msgstr "neznámý typ události zpětného volání %d pro %s\n"
 
 #: src/pacman/check.c:63 src/pacman/check.c:291
 #, c-format
@@ -341,7 +342,7 @@ msgstr "%s: %s (nesouhlasí velikosti)\n"
 #: src/pacman/check.c:185
 #, c-format
 msgid "%s: %s (failed to calculate %s checksum)\n"
-msgstr ""
+msgstr "%s: %s (selhání výpočtu kontrolního součtu %s )\n"
 
 #: src/pacman/check.c:193
 #, c-format
@@ -460,11 +461,13 @@ msgstr ""
 #, c-format
 msgid "config file %s, line %d: value for '%s' has to be positive : '%s'\n"
 msgstr ""
+"konfigurační soubor %s, řádek %d: hodnota pro '%s' musí být kladná : '%s'\n"
 
 #: src/pacman/conf.c:741
 #, c-format
 msgid "config file %s, line %d: value for '%s' is too large : '%s'\n"
 msgstr ""
+"konfigurační soubor %s, řádek %d: hodnota pro '%s' je příliš velká : '%s'\n"
 
 #: src/pacman/conf.c:761
 #, c-format
@@ -488,6 +491,9 @@ msgid ""
 "(root: %s, dbpath: %s)\n"
 "%s\n"
 msgstr ""
+"chyba při inicializaci knihovny alpm:\n"
+"(root: %s, dbpath: %s)\n"
+"%s\n"
 
 #: src/pacman/conf.c:842
 #, c-format
@@ -807,7 +813,7 @@ msgstr ""
 "seznam změn pro %s:\n"
 " \n"
 
-#: src/pacman/package.c:489 src/pacman/package.c:491
+#: src/pacman/package.c:485 src/pacman/package.c:487
 #, c-format
 msgid "installed"
 msgstr "nainstalovaný"
@@ -1095,6 +1101,8 @@ msgid ""
 "                       overwrite conflicting files (can be used more than "
 "once)\n"
 msgstr ""
+"      --overwrite <glob>\n"
+"                       přepsat konfliktní soubory (lze použít vícekrát)\n"
 
 #: src/pacman/pacman.c:194
 #, c-format

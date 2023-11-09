@@ -10,10 +10,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arch Linux Pacman package manager\n"
 "Report-Msgid-Bugs-To: http://bugs.archlinux.org/index.php?project=3\n"
-"POT-Creation-Date: 2022-09-26 21:09+1000\n"
+"POT-Creation-Date: 2023-11-09 10:27+1000\n"
 "PO-Revision-Date: 2011-08-08 22:35+0000\n"
 "Last-Translator: Dan McGee <dpmcgee@gmail.com>, 2011\n"
-"Language-Team: English (United Kingdom) (http://www.transifex.com/toofishes/"
+"Language-Team: English (United Kingdom) (http://app.transifex.com/toofishes/"
 "archlinux-pacman/language/en_GB/)\n"
 "Language: en_GB\n"
 "MIME-Version: 1.0\n"
@@ -1269,7 +1269,7 @@ msgstr "Checking for packaging issues..."
 msgid "Package contains reference to %s"
 msgstr "Package contains reference to %s"
 
-#: scripts/libmakepkg/lint_package/dotfiles.sh.in:34
+#: scripts/libmakepkg/lint_package/dotfiles.sh.in:38
 msgid "Dotfile found in package root '%s'"
 msgstr "Dotfile found in package root '%s'"
 
@@ -1490,7 +1490,7 @@ msgstr "Purging unwanted files..."
 msgid "Removing static library files..."
 msgstr "Removing static library files..."
 
-#: scripts/libmakepkg/tidy/strip.sh.in:119
+#: scripts/libmakepkg/tidy/strip.sh.in:136
 msgid "Stripping unneeded symbols from binaries and libraries..."
 msgstr "Stripping unneeded symbols from binaries and libraries..."
 

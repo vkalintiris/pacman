@@ -16,10 +16,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arch Linux Pacman package manager\n"
 "Report-Msgid-Bugs-To: http://bugs.archlinux.org/index.php?project=3\n"
-"POT-Creation-Date: 2022-09-26 21:09+1000\n"
+"POT-Creation-Date: 2023-11-09 10:27+1000\n"
 "PO-Revision-Date: 2010-11-29 23:17+0000\n"
 "Last-Translator: Zoran Olujić <olujicz@gmail.com>, 2011\n"
-"Language-Team: Serbian (http://www.transifex.com/toofishes/archlinux-pacman/"
+"Language-Team: Serbian (http://app.transifex.com/toofishes/archlinux-pacman/"
 "language/sr/)\n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
@@ -782,7 +782,7 @@ msgstr "није доступан дневник измена за „%s”.\n"
 msgid "Changelog for %s:\n"
 msgstr "Дневник измена за %s:\n"
 
-#: src/pacman/package.c:489 src/pacman/package.c:491
+#: src/pacman/package.c:485 src/pacman/package.c:487
 #, c-format
 msgid "installed"
 msgstr "инсталиран"

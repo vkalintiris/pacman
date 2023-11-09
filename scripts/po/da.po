@@ -21,11 +21,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arch Linux Pacman package manager\n"
 "Report-Msgid-Bugs-To: http://bugs.archlinux.org/index.php?project=3\n"
-"POT-Creation-Date: 2022-09-26 21:09+1000\n"
+"POT-Creation-Date: 2023-11-09 10:27+1000\n"
 "PO-Revision-Date: 2011-08-08 22:35+0000\n"
 "Last-Translator: Frederik “Freso” S. Olesen <transifex.net@freso.dk>, "
 "2012-2013\n"
-"Language-Team: Danish (http://www.transifex.com/toofishes/archlinux-pacman/"
+"Language-Team: Danish (http://app.transifex.com/toofishes/archlinux-pacman/"
 "language/da/)\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
@@ -1278,7 +1278,7 @@ msgstr "Søger efter problemstillinger med pakning..."
 msgid "Package contains reference to %s"
 msgstr "Pakke indeholder reference til %s"
 
-#: scripts/libmakepkg/lint_package/dotfiles.sh.in:34
+#: scripts/libmakepkg/lint_package/dotfiles.sh.in:38
 msgid "Dotfile found in package root '%s'"
 msgstr "Punktumfil fundet i pakkens rod '%s'"
 
@@ -1500,7 +1500,7 @@ msgstr "Udrenser uønskede filer..."
 msgid "Removing static library files..."
 msgstr "Fjerner statiske biblioteksfiler..."
 
-#: scripts/libmakepkg/tidy/strip.sh.in:119
+#: scripts/libmakepkg/tidy/strip.sh.in:136
 msgid "Stripping unneeded symbols from binaries and libraries..."
 msgstr "Fjerner unødvendige symboler fra binære filer og biblioteker..."
 

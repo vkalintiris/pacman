@@ -26,7 +26,7 @@
 # Michal Plichta <mplichta@gmail.com>, 2013
 # Michal Plichta <mplichta@gmail.com>, 2013
 # megamann, 2015-2016
-# Piotr Strębski <strebski@gmail.com>, 2017-2018,2022
+# Piotr Strębski <strebski@gmail.com>, 2017-2018,2022-2023
 # Piotr Strębski <strebski@gmail.com>, 2013-2014,2017
 # Sebastian Jakubiak, 2019
 # Sebastian Jakubiak, 2019
@@ -35,10 +35,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arch Linux Pacman package manager\n"
 "Report-Msgid-Bugs-To: http://bugs.archlinux.org/index.php?project=3\n"
-"POT-Creation-Date: 2022-09-26 21:09+1000\n"
+"POT-Creation-Date: 2023-11-09 10:27+1000\n"
 "PO-Revision-Date: 2011-08-08 22:35+0000\n"
-"Last-Translator: Piotr Strębski <strebski@gmail.com>, 2017-2018,2022\n"
-"Language-Team: Polish (http://www.transifex.com/toofishes/archlinux-pacman/"
+"Last-Translator: Piotr Strębski <strebski@gmail.com>, 2017-2018,2022-2023\n"
+"Language-Team: Polish (http://app.transifex.com/toofishes/archlinux-pacman/"
 "language/pl/)\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
@@ -241,7 +241,7 @@ msgstr "Grupa pakietów została już zbudowana. (użyj %s, aby wymusić)"
 
 #: scripts/makepkg.sh.in:913
 msgid "Part of the package group has already been built. (use %s to overwrite)"
-msgstr ""
+msgstr "Część z pakietów w grupie została już zbudowana."
 
 #: scripts/makepkg.sh.in:964
 msgid "Make packages compatible for use with pacman"
@@ -319,7 +319,7 @@ msgstr "  -R, --repackage  Przepakuj zawartość pakietu bez ponownego budowania
 
 #: scripts/makepkg.sh.in:984
 msgid "  -s, --syncdeps   Install missing dependencies with %s"
-msgstr ""
+msgstr "  -s, --syncdeps   Zainstaluj brakujące zalezności"
 
 #: scripts/makepkg.sh.in:985
 msgid ""
@@ -697,7 +697,7 @@ msgstr " --refresh-keys Zaktualizuj wybrane lub wszystkie klucze z serwera"
 
 #: scripts/pacman-key.sh.in:80
 msgid "  --verbose                 Show extra information"
-msgstr ""
+msgstr "  --verbose                 Wyświetl dodatkowe informacje"
 
 #: scripts/pacman-key.sh.in:83
 msgid ""
@@ -746,11 +746,11 @@ msgstr "Klucz określony przez %s nie może zostać odnaleziony lokalnie."
 #: scripts/pacman-key.sh.in:196 scripts/pacman-key.sh.in:208
 #: scripts/libmakepkg/integrity/verify_signature.sh.in:204
 msgid "_"
-msgstr ""
+msgstr "_"
 
 #: scripts/pacman-key.sh.in:208
 msgid "flags"
-msgstr ""
+msgstr "flagi"
 
 #: scripts/pacman-key.sh.in:263
 msgid "You do not have sufficient permissions to read the %s keyring."
@@ -802,7 +802,7 @@ msgstr "Wyłączanie klucza %s..."
 
 #: scripts/pacman-key.sh.in:381
 msgid "Disabled %s keys."
-msgstr ""
+msgstr "Wyłączono %s kluczy."
 
 #: scripts/pacman-key.sh.in:388
 msgid "A specified keyfile could not be added to the keyring."
@@ -850,7 +850,7 @@ msgstr "%s nie może być podpisane lokalnie."
 
 #: scripts/pacman-key.sh.in:509
 msgid "Locally signed %s keys."
-msgstr ""
+msgstr "Lokalnie podpisanych %s kluczy."
 
 #: scripts/pacman-key.sh.in:532
 msgid "Remote key not fetched correctly from WKD or keyserver."
@@ -1306,7 +1306,7 @@ msgstr "Sprawdzanie problemów z pakietami..."
 msgid "Package contains reference to %s"
 msgstr "Pakiet zawiera odwołanie do %s"
 
-#: scripts/libmakepkg/lint_package/dotfiles.sh.in:34
+#: scripts/libmakepkg/lint_package/dotfiles.sh.in:38
 msgid "Dotfile found in package root '%s'"
 msgstr "Odnaleziono plik z kropką (ukryty) w korzeniu pakietu '%s'"
 
@@ -1526,7 +1526,7 @@ msgstr "Usuwanie niechcianych plików..."
 msgid "Removing static library files..."
 msgstr "Usuwanie statycznych plików bibliotek"
 
-#: scripts/libmakepkg/tidy/strip.sh.in:119
+#: scripts/libmakepkg/tidy/strip.sh.in:136
 msgid "Stripping unneeded symbols from binaries and libraries..."
 msgstr "Wyrzucanie niepotrzebnych symboli z plików binarnych i bibliotek"
 

@@ -25,10 +25,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arch Linux Pacman package manager\n"
 "Report-Msgid-Bugs-To: http://bugs.archlinux.org/index.php?project=3\n"
-"POT-Creation-Date: 2022-09-26 21:09+1000\n"
+"POT-Creation-Date: 2023-11-09 10:27+1000\n"
 "PO-Revision-Date: 2011-08-08 22:35+0000\n"
 "Last-Translator: lakejason0 <sunliyuan200402@outlook.com>, 2022\n"
-"Language-Team: Chinese (China) (http://www.transifex.com/toofishes/archlinux-"
+"Language-Team: Chinese (China) (http://app.transifex.com/toofishes/archlinux-"
 "pacman/language/zh_CN/)\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
@@ -1256,7 +1256,7 @@ msgstr "正在检查打包问题..."
 msgid "Package contains reference to %s"
 msgstr "软件包含有对 %s 的引用"
 
-#: scripts/libmakepkg/lint_package/dotfiles.sh.in:34
+#: scripts/libmakepkg/lint_package/dotfiles.sh.in:38
 msgid "Dotfile found in package root '%s'"
 msgstr "软件包根目录找到 . 开头的文件 '%s'"
 
@@ -1476,7 +1476,7 @@ msgstr "正在清除不打算要的文件..."
 msgid "Removing static library files..."
 msgstr "正在移除静态库文件..."
 
-#: scripts/libmakepkg/tidy/strip.sh.in:119
+#: scripts/libmakepkg/tidy/strip.sh.in:136
 msgid "Stripping unneeded symbols from binaries and libraries..."
 msgstr "正在从二进制文件和库中清除不需要的系统符号..."
 

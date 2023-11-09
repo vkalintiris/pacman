@@ -6,8 +6,9 @@
 # Dan McGee <dpmcgee@gmail.com>, 2011
 # David Macek <david.macek.0@gmail.com>, 2018
 # IAmNotImportant, 2017
-# Jaroslav Lichtblau <jlichtblau@seznam.cz>, 2014-2016
-# Jaroslav Lichtblau <jlichtblau@seznam.cz>, 2014,2022
+# Jaroslav Lichtblau <l10n@lichtblau.cz>, 2014-2016
+# Jaroslav Lichtblau <l10n@lichtblau.cz>, 2014,2022
+# Jiří Podhorný <jp@email.cz>, 2023
 # Lukáš Kucharczyk <lukas@kucharczyk.xyz>, 2020
 # Marek Otahal <markotahalREMOVETHIS@gmail.com>, 2011
 # mmm <markotahal@gmail.com>, 2013
@@ -19,10 +20,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arch Linux Pacman package manager\n"
 "Report-Msgid-Bugs-To: http://bugs.archlinux.org/index.php?project=3\n"
-"POT-Creation-Date: 2022-09-26 21:09+1000\n"
+"POT-Creation-Date: 2023-11-09 10:27+1000\n"
 "PO-Revision-Date: 2011-08-08 22:35+0000\n"
-"Last-Translator: Jaroslav Lichtblau <jlichtblau@seznam.cz>, 2014,2022\n"
-"Language-Team: Czech (http://www.transifex.com/toofishes/archlinux-pacman/"
+"Last-Translator: Jiří Podhorný <jp@email.cz>, 2023\n"
+"Language-Team: Czech (http://app.transifex.com/toofishes/archlinux-pacman/"
 "language/cs/)\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
@@ -675,7 +676,7 @@ msgstr ""
 
 #: scripts/pacman-key.sh.in:80
 msgid "  --verbose                 Show extra information"
-msgstr ""
+msgstr "  --verbose                 Zobrazit doplňující informace"
 
 #: scripts/pacman-key.sh.in:83
 msgid ""
@@ -718,7 +719,7 @@ msgstr "Jméno klíče je dvojznačné: "
 
 #: scripts/pacman-key.sh.in:148
 msgid "Generating pacman master key. This may take some time."
-msgstr ""
+msgstr "Generování hlavního klíče pacman. Bude to chvíli trvat."
 
 #: scripts/pacman-key.sh.in:185
 msgid "The key identified by %s could not be found locally."
@@ -727,11 +728,11 @@ msgstr "Klíč určený %s nebyl lokálně nalezen."
 #: scripts/pacman-key.sh.in:196 scripts/pacman-key.sh.in:208
 #: scripts/libmakepkg/integrity/verify_signature.sh.in:204
 msgid "_"
-msgstr ""
+msgstr "_"
 
 #: scripts/pacman-key.sh.in:208
 msgid "flags"
-msgstr ""
+msgstr "příznaky"
 
 #: scripts/pacman-key.sh.in:263
 msgid "You do not have sufficient permissions to read the %s keyring."
@@ -783,7 +784,7 @@ msgstr "Rušení klíče %s..."
 
 #: scripts/pacman-key.sh.in:381
 msgid "Disabled %s keys."
-msgstr ""
+msgstr "Zakázáno %s klíčů."
 
 #: scripts/pacman-key.sh.in:388
 msgid "A specified keyfile could not be added to the keyring."
@@ -831,7 +832,7 @@ msgstr "%s se nepodařilo lokálně podepsat. "
 
 #: scripts/pacman-key.sh.in:509
 msgid "Locally signed %s keys."
-msgstr ""
+msgstr "Lokálně podepsáno %s klíčů."
 
 #: scripts/pacman-key.sh.in:532
 msgid "Remote key not fetched correctly from WKD or keyserver."
@@ -1279,7 +1280,7 @@ msgstr "Kontrola chyb při balení..."
 msgid "Package contains reference to %s"
 msgstr "Balíček obsahuje odkaz na %s"
 
-#: scripts/libmakepkg/lint_package/dotfiles.sh.in:34
+#: scripts/libmakepkg/lint_package/dotfiles.sh.in:38
 msgid "Dotfile found in package root '%s'"
 msgstr "V kořeni balíčku '%s' nalezen soubor s tečkou na začátku"
 
@@ -1500,7 +1501,7 @@ msgstr "Promazávají se zbytečné soubory..."
 msgid "Removing static library files..."
 msgstr "Odstraňování souborů statických knihoven..."
 
-#: scripts/libmakepkg/tidy/strip.sh.in:119
+#: scripts/libmakepkg/tidy/strip.sh.in:136
 msgid "Stripping unneeded symbols from binaries and libraries..."
 msgstr ""
 "Odstraňují se nepotřebné ladící informace z binárních souborů a knihoven..."

@@ -6,7 +6,7 @@
 # BrLi <rainman59118@gmail.com>, 2015,2017
 # pan93412 <pan93412@gmail.com>, 2019
 # Cheng-Chia Tseng <pswo10680@gmail.com>, 2012,2017
-# Chih-Hsuan Yen <yan12125@gmail.com>, 2018
+# yan12125, 2018
 # Dan McGee <dpmcgee@gmail.com>, 2011
 # dlin <dlin.tw@gmail.com>, 2014
 # dlin <dlin.tw@gmail.com>, 2014
@@ -17,15 +17,15 @@
 # Huei-Horng Yo <hiroshiyui@gmail.com>, 2012
 # 黃柏諺 <s8321414@gmail.com>, 2014-2016,2018
 # pan93412 <pan93412@gmail.com>, 2019
-# 黃柏諺 <s8321414@gmail.com>, 2019,2021
+# 黃柏諺 <s8321414@gmail.com>, 2019,2021,2023
 msgid ""
 msgstr ""
 "Project-Id-Version: Arch Linux Pacman package manager\n"
 "Report-Msgid-Bugs-To: http://bugs.archlinux.org/index.php?project=3\n"
-"POT-Creation-Date: 2022-09-26 21:09+1000\n"
+"POT-Creation-Date: 2023-11-09 10:27+1000\n"
 "PO-Revision-Date: 2010-11-29 23:17+0000\n"
-"Last-Translator: 黃柏諺 <s8321414@gmail.com>, 2019,2021\n"
-"Language-Team: Chinese (Taiwan) (http://www.transifex.com/toofishes/"
+"Last-Translator: 黃柏諺 <s8321414@gmail.com>, 2019,2021,2023\n"
+"Language-Team: Chinese (Taiwan) (http://app.transifex.com/toofishes/"
 "archlinux-pacman/language/zh_TW/)\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
@@ -771,7 +771,7 @@ msgstr "「%s」沒有可用的更動記錄。\n"
 msgid "Changelog for %s:\n"
 msgstr "%s 的更動紀錄：\n"
 
-#: src/pacman/package.c:489 src/pacman/package.c:491
+#: src/pacman/package.c:485 src/pacman/package.c:487
 #, c-format
 msgid "installed"
 msgstr "已安裝"
@@ -1717,7 +1717,7 @@ msgstr "無效數字：%s\n"
 #: src/pacman/util.c:1456
 #, c-format
 msgid "Enter a selection (default=all)"
-msgstr "輸入某個選擇（預設=全部選定）"
+msgstr "輸入某個選擇（預設=全選）"
 
 #: src/pacman/util.c:1523
 #, c-format

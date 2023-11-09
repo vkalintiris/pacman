@@ -4,7 +4,7 @@
 #
 # Translators:
 # Alexander F. Rødseth <rodseth@gmail.com>, 2014-2021
-# Alexander F. Rødseth <rodseth@gmail.com>, 2021-2022
+# Alexander F. Rødseth <rodseth@gmail.com>, 2021-2023
 # Alexander F. Rødseth <rodseth@gmail.com>, 2011-2014
 # Harald H. <haarektrans@gmail.com>, 2015
 # Harald H. <haarektrans@gmail.com>, 2015
@@ -14,10 +14,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arch Linux Pacman package manager\n"
 "Report-Msgid-Bugs-To: http://bugs.archlinux.org/index.php?project=3\n"
-"POT-Creation-Date: 2022-09-26 21:09+1000\n"
+"POT-Creation-Date: 2023-11-09 10:27+1000\n"
 "PO-Revision-Date: 2010-11-29 23:17+0000\n"
-"Last-Translator: Alexander F. Rødseth <rodseth@gmail.com>, 2021-2022\n"
-"Language-Team: Norwegian Bokmål (http://www.transifex.com/toofishes/"
+"Last-Translator: Alexander F. Rødseth <rodseth@gmail.com>, 2021-2023\n"
+"Language-Team: Norwegian Bokmål (http://app.transifex.com/toofishes/"
 "archlinux-pacman/language/nb/)\n"
 "Language: nb\n"
 "MIME-Version: 1.0\n"
@@ -612,7 +612,7 @@ msgstr "Beskrivelse"
 #: src/pacman/package.c:106 src/pacman/util.c:833
 #, c-format
 msgid "Download Size"
-msgstr "Nedl.st."
+msgstr "Å laste ned"
 
 #: src/pacman/package.c:107
 #, c-format
@@ -776,7 +776,7 @@ msgstr "det finnes ingen liste over endringene for '%s'.\n"
 msgid "Changelog for %s:\n"
 msgstr "Endringshistorikk for %s:\n"
 
-#: src/pacman/package.c:489 src/pacman/package.c:491
+#: src/pacman/package.c:485 src/pacman/package.c:487
 #, c-format
 msgid "installed"
 msgstr "installert"
@@ -1124,7 +1124,7 @@ msgstr ""
 #, c-format
 msgid ""
 "      --noprogressbar  do not show a progress bar when downloading files\n"
-msgstr "      --noprogressbar  ikke vis fremdrift under nedlasting\n"
+msgstr "      --noprogressbar  ingen fremdriftsindikator\n"
 
 #: src/pacman/pacman.c:206
 #, c-format

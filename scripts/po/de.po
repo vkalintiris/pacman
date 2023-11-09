@@ -13,7 +13,7 @@
 # Frank, 2014,2016
 # Frank Theile, 2014,2016,2018
 # Frank Theile, 2014,2016,2018
-# J5lx <j5lx@fmail.co.uk>, 2014-2015
+# Jakob <j5lx@fmail.co.uk>, 2014-2015
 # Jimmie Staedele <maddogie@gmail.com>, 2018
 # 65138391f015e4001c6ef9d675c96796_707a378 <99e420e9f3ea1b91cb2cbbb4cbc7cd27_2862>, 2013
 # 65138391f015e4001c6ef9d675c96796_707a378 <99e420e9f3ea1b91cb2cbbb4cbc7cd27_2862>, 2013
@@ -44,10 +44,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arch Linux Pacman package manager\n"
 "Report-Msgid-Bugs-To: http://bugs.archlinux.org/index.php?project=3\n"
-"POT-Creation-Date: 2022-09-26 21:09+1000\n"
+"POT-Creation-Date: 2023-11-09 10:27+1000\n"
 "PO-Revision-Date: 2011-08-08 22:35+0000\n"
 "Last-Translator: Roman Volak <romanvolak@web.de>, 2020-2021\n"
-"Language-Team: German (http://www.transifex.com/toofishes/archlinux-pacman/"
+"Language-Team: German (http://app.transifex.com/toofishes/archlinux-pacman/"
 "language/de/)\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -518,6 +518,7 @@ msgstr "Erstelle Paket: %s"
 #: scripts/makepkg.sh.in:1351
 msgid "A source package has already been built. (use %s to overwrite)"
 msgstr ""
+"Es wurde bereits ein Quell-Paket gebaut. (Benutzen Sie -f zum Überschreiben)"
 
 #: scripts/makepkg.sh.in:1371
 msgid "Signing package..."
@@ -1373,7 +1374,7 @@ msgstr "Prüfe auf Paketierungsprobleme..."
 msgid "Package contains reference to %s"
 msgstr "Paket enthält einen Verweis auf %s"
 
-#: scripts/libmakepkg/lint_package/dotfiles.sh.in:34
+#: scripts/libmakepkg/lint_package/dotfiles.sh.in:38
 msgid "Dotfile found in package root '%s'"
 msgstr ".-Datei in Paket-Wurzelverzeichnis '%s' gefunden"
 
@@ -1595,7 +1596,7 @@ msgstr "Bereinige ungewollte Dateien..."
 msgid "Removing static library files..."
 msgstr "Entferne statische Bibliotheken..."
 
-#: scripts/libmakepkg/tidy/strip.sh.in:119
+#: scripts/libmakepkg/tidy/strip.sh.in:136
 msgid "Stripping unneeded symbols from binaries and libraries..."
 msgstr "Entferne unnötige Symbole aus Binär-Dateien und Bibliotheken..."
 
