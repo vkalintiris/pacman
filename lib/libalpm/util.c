@@ -497,18 +497,21 @@ static int _alpm_chroot_write_to_child(alpm_handle_t *handle, int fd,
 	return 0;
 }
 
-static void _alpm_chroot_process_output(alpm_handle_t *handle, const char *line)
+static void _alpm_chroot_process_output(alpm_handle_t *handle, const char *name,
+		alpm_scriptlet_kind_t kind, const char *line)
 {
 	alpm_event_scriptlet_info_t event = {
 		.type = ALPM_EVENT_SCRIPTLET_INFO,
+		.kind = kind,
+		.name = name,
 		.line = line
 	};
 	alpm_logaction(handle, "ALPM-SCRIPTLET", "%s", line);
 	EVENT(handle, &event);
 }
 
-static int _alpm_chroot_read_from_child(alpm_handle_t *handle, int fd,
-		char *buf, ssize_t *buf_size, ssize_t buf_limit)
+static int _alpm_chroot_read_from_child(alpm_handle_t *handle, int fd, const char *name,
+		alpm_scriptlet_kind_t kind, char *buf, ssize_t *buf_size, ssize_t buf_limit)
 {
 	ssize_t space = buf_limit - *buf_size - 2; /* reserve 2 for "\n\0" */
 	ssize_t nread = read(fd, buf + *buf_size, space);
@@ -520,7 +523,7 @@ static int _alpm_chroot_read_from_child(alpm_handle_t *handle, int fd,
 				size_t linelen = newline - buf + 1;
 				char old = buf[linelen];
 				buf[linelen] = '\0';
-				_alpm_chroot_process_output(handle, buf);
+				_alpm_chroot_process_output(handle, name, kind, buf);
 				buf[linelen] = old;
 
 				*buf_size -= linelen;
@@ -530,14 +533,14 @@ static int _alpm_chroot_read_from_child(alpm_handle_t *handle, int fd,
 		} else if(nread == space) {
 			/* we didn't read a full line, but we're out of space */
 			strcpy(buf + *buf_size, "\n");
-			_alpm_chroot_process_output(handle, buf);
+			_alpm_chroot_process_output(handle, name, kind, buf);
 			*buf_size = 0;
 		}
 	} else if(nread == 0) {
 		/* end-of-file */
 		if(*buf_size) {
 			strcpy(buf + *buf_size, "\n");
-			_alpm_chroot_process_output(handle, buf);
+			_alpm_chroot_process_output(handle, name, kind, buf);
 		}
 		return -1;
 	} else if(should_retry(errno)) {
@@ -546,7 +549,7 @@ static int _alpm_chroot_read_from_child(alpm_handle_t *handle, int fd,
 		/* read error */
 		if(*buf_size) {
 			strcpy(buf + *buf_size, "\n");
-			_alpm_chroot_process_output(handle, buf);
+			_alpm_chroot_process_output(handle, name, kind, buf);
 		}
 		_alpm_log(handle, ALPM_LOG_ERROR,
 				_("unable to read from pipe (%s)\n"), strerror(errno));
@@ -582,14 +585,16 @@ static void _alpm_reset_signals(void)
 
 /** Execute a command with arguments in a chroot.
  * @param handle the context handle
+ * @param name a human readable name to describe the command
+ * @param kind what kind of scriptlet is running
  * @param cmd command to execute
  * @param argv arguments to pass to cmd
  * @param stdin_cb callback to provide input to the chroot on stdin
  * @param stdin_ctx context to be passed to @a stdin_cb
  * @return 0 on success, 1 on error
  */
-int _alpm_run_chroot(alpm_handle_t *handle, const char *cmd, char *const argv[],
-		_alpm_cb_io stdin_cb, void *stdin_ctx)
+int _alpm_run_chroot(alpm_handle_t *handle, const char *name, alpm_scriptlet_kind_t kind,
+		const char *cmd, char *const argv[], _alpm_cb_io stdin_cb, void *stdin_ctx)
 {
 	pid_t pid;
 	int child2parent_pipefd[2], parent2child_pipefd[2];
@@ -650,6 +655,7 @@ int _alpm_run_chroot(alpm_handle_t *handle, const char *cmd, char *const argv[],
 		close(parent2child_pipefd[HEAD]);
 		close(child2parent_pipefd[TAIL]);
 		close(child2parent_pipefd[HEAD]);
+
 		if(cwdfd >= 0) {
 			close(cwdfd);
 		}
@@ -677,23 +683,37 @@ int _alpm_run_chroot(alpm_handle_t *handle, const char *cmd, char *const argv[],
 		_alpm_reset_signals();
 		execv(cmd, argv);
 		/* execv only returns if there was an error */
-		fprintf(stderr, _("call to execv failed (%s)\n"), strerror(errno));
+		fprintf(stderr, _("%s: failed to execv '%s' (%s)\n"), name, cmd, strerror(errno));
 		exit(1);
 	} else {
 		/* this code runs for the parent only (wait on the child) */
 		int status;
 		char obuf[PIPE_BUF]; /* writes <= PIPE_BUF are guaranteed atomic */
 		char ibuf[LINE_MAX];
+		char sciptlet_name[32];
 		ssize_t olen = 0, ilen = 0;
 		nfds_t nfds = 2;
 		struct pollfd fds[2], *child2parent = &(fds[0]), *parent2child = &(fds[1]);
 		int poll_ret;
+
+		switch(kind) {
+			case ALPM_SCRIPTLET_KIND_HOOK:
+				snprintf(sciptlet_name, 32, "hook '%s'", name);
+				break;
+			case ALPM_SCRIPTLET_KIND_INSTALL_FILE:
+				snprintf(sciptlet_name, 32, "'%s.install'", name);
+				break;
+			case ALPM_SCRIPTLET_KIND_COMMAND:
+				strncpy(sciptlet_name, "ldconfig", 32);
+				break;
+		}
 
 		child2parent->fd = child2parent_pipefd[TAIL];
 		child2parent->events = POLLIN;
 		fcntl(child2parent->fd, F_SETFL, O_NONBLOCK);
 		close(child2parent_pipefd[HEAD]);
 		close(parent2child_pipefd[TAIL]);
+
 
 		if(stdin_cb) {
 			parent2child->fd = parent2child_pipefd[HEAD];
@@ -717,7 +737,7 @@ int _alpm_run_chroot(alpm_handle_t *handle, const char *cmd, char *const argv[],
 				}
 			}
 			if(child2parent->revents & POLLIN) {
-				if(_alpm_chroot_read_from_child(handle, child2parent->fd,
+				if(_alpm_chroot_read_from_child(handle, child2parent->fd, name, kind,
 							ibuf, &ilen, sizeof(ibuf)) != 0) {
 					/* we encountered end-of-file or an error */
 					STOP_POLLING(child2parent);
@@ -740,7 +760,7 @@ int _alpm_run_chroot(alpm_handle_t *handle, const char *cmd, char *const argv[],
 		if(ilen) {
 			/* buffer would have already been flushed if it had a newline */
 			strcpy(ibuf + ilen, "\n");
-			_alpm_chroot_process_output(handle, ibuf);
+			_alpm_chroot_process_output(handle, name, kind, ibuf);
 		}
 
 #undef STOP_POLLING
@@ -756,7 +776,7 @@ int _alpm_run_chroot(alpm_handle_t *handle, const char *cmd, char *const argv[],
 
 		while(waitpid(pid, &status, 0) == -1) {
 			if(errno != EINTR) {
-				_alpm_log(handle, ALPM_LOG_ERROR, _("call to waitpid failed (%s)\n"), strerror(errno));
+				_alpm_log(handle, ALPM_LOG_ERROR, _("failed to run %s: call to waitpid failed (%s)\n"), sciptlet_name, strerror(errno));
 				retval = 1;
 				goto cleanup;
 			}
@@ -766,7 +786,8 @@ int _alpm_run_chroot(alpm_handle_t *handle, const char *cmd, char *const argv[],
 		if(WIFEXITED(status)) {
 			_alpm_log(handle, ALPM_LOG_DEBUG, "call to waitpid succeeded\n");
 			if(WEXITSTATUS(status) != 0) {
-				_alpm_log(handle, ALPM_LOG_ERROR, _("command failed to execute correctly\n"));
+				_alpm_log(handle, ALPM_LOG_ERROR, _("%s did not complete sucessfully (%s exited %d)\n"),
+						sciptlet_name, cmd, WEXITSTATUS(status));
 				retval = 1;
 			}
 		} else if(WIFSIGNALED(status) != 0) {
@@ -775,8 +796,8 @@ int _alpm_run_chroot(alpm_handle_t *handle, const char *cmd, char *const argv[],
 			if(signal_description == NULL) {
 				signal_description = _("Unknown signal");
 			}
-			_alpm_log(handle, ALPM_LOG_ERROR, _("command terminated by signal %d: %s\n"),
-						WTERMSIG(status), signal_description);
+			_alpm_log(handle, ALPM_LOG_ERROR, _("%s terminated by signal %d: %s\n"),
+						sciptlet_name, WTERMSIG(status), signal_description);
 			retval = 1;
 		}
 	}
@@ -807,10 +828,9 @@ int _alpm_ldconfig(alpm_handle_t *handle)
 	if(access(line, F_OK) == 0) {
 		snprintf(line, PATH_MAX, "%s%s", handle->root, LDCONFIG);
 		if(access(line, X_OK) == 0) {
-			char arg0[32];
+			char *arg0 = strdup(LDCONFIG);
 			char *argv[] = { arg0, NULL };
-			strcpy(arg0, "ldconfig");
-			return _alpm_run_chroot(handle, LDCONFIG, argv, NULL, NULL);
+			return _alpm_run_chroot(handle, "ldconfig", ALPM_SCRIPTLET_KIND_COMMAND, LDCONFIG, argv, NULL, NULL);
 		}
 	}
 

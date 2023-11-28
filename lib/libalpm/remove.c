@@ -692,7 +692,7 @@ int _alpm_remove_single_package(alpm_handle_t *handle,
 				!(handle->trans->flags & ALPM_TRANS_FLAG_NOSCRIPTLET)) {
 			char *scriptlet = _alpm_local_db_pkgpath(handle->db_local,
 					oldpkg, "install");
-			_alpm_runscriptlet(handle, scriptlet, "pre_remove", pkgver, NULL, 0);
+			_alpm_runscriptlet(handle, oldpkg->name, scriptlet, "pre_remove", pkgver, NULL, 0);
 			free(scriptlet);
 		}
 	}
@@ -712,7 +712,7 @@ int _alpm_remove_single_package(alpm_handle_t *handle,
 			!(handle->trans->flags & ALPM_TRANS_FLAG_NOSCRIPTLET)) {
 		char *scriptlet = _alpm_local_db_pkgpath(handle->db_local,
 				oldpkg, "install");
-		_alpm_runscriptlet(handle, scriptlet, "post_remove", pkgver, NULL, 0);
+		_alpm_runscriptlet(handle, oldpkg->name, scriptlet, "post_remove", pkgver, NULL, 0);
 		free(scriptlet);
 	}
 

@@ -217,7 +217,10 @@ static int number_length(size_t n)
 /* callback to handle messages/notifications from libalpm transactions */
 void cb_event(void *ctx, alpm_event_t *event)
 {
+	static int install_line_count = 0;
+	const colstr_t *colstr = &config->colstr;
 	(void)ctx;
+
 	if(config->print) {
 		console_cursor_move_end();
 		return;
@@ -313,8 +316,16 @@ void cb_event(void *ctx, alpm_event_t *event)
 				printf(_("loading package files...\n"));
 			}
 			break;
+		case ALPM_EVENT_INSTALL_RUN_START:
+			install_line_count = 0;
+			break;
 		case ALPM_EVENT_SCRIPTLET_INFO:
-			fputs(event->scriptlet_info.line, stdout);
+			/* onlt say we're running the install file if it outputs */
+			if(install_line_count == 0 && event->scriptlet_info.kind == ALPM_SCRIPTLET_KIND_INSTALL_FILE) {
+				printf("Running %s.install...\n", event->scriptlet_info.name);
+			}
+			install_line_count++;
+			printf("    %s%s%s", colstr->scriptlet, event->scriptlet_info.line, colstr->nocolor);
 			break;
 		case ALPM_EVENT_DB_RETRIEVE_START:
 			on_progress = 1;
@@ -413,6 +424,7 @@ void cb_event(void *ctx, alpm_event_t *event)
 		case ALPM_EVENT_DISKSPACE_DONE:
 		case ALPM_EVENT_HOOK_DONE:
 		case ALPM_EVENT_HOOK_RUN_DONE:
+		case ALPM_EVENT_INSTALL_RUN_DONE:
 			/* nothing */
 			break;
 	}

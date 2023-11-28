@@ -63,6 +63,7 @@ config_t *config = NULL;
 #define BOLDMAGENTA   "\033[1;35m"
 #define BOLDCYAN      "\033[1;36m"
 #define BOLDWHITE     "\033[1;37m"
+#define BLUE117       "\033[38;5;117m"
 #define GREY46        "\033[38;5;243m"
 
 void enable_colors(int colors)
@@ -70,27 +71,29 @@ void enable_colors(int colors)
 	colstr_t *colstr = &config->colstr;
 
 	if(colors == PM_COLOR_ON) {
-		colstr->colon   = BOLDBLUE "::" BOLD " ";
-		colstr->title   = BOLD;
-		colstr->repo    = BOLDMAGENTA;
-		colstr->version = BOLDGREEN;
-		colstr->groups  = BOLDBLUE;
-		colstr->meta    = BOLDCYAN;
-		colstr->warn    = BOLDYELLOW;
-		colstr->err     = BOLDRED;
-		colstr->faint   = GREY46;
-		colstr->nocolor = NOCOLOR;
+		colstr->colon     = BOLDBLUE "::" BOLD " ";
+		colstr->title     = BOLD;
+		colstr->repo      = BOLDMAGENTA;
+		colstr->version   = BOLDGREEN;
+		colstr->groups    = BOLDBLUE;
+		colstr->meta      = BOLDCYAN;
+		colstr->warn      = BOLDYELLOW;
+		colstr->err       = BOLDRED;
+		colstr->scriptlet = BLUE117;
+		colstr->faint     = GREY46;
+		colstr->nocolor   = NOCOLOR;
 	} else {
-		colstr->colon   = ":: ";
-		colstr->title   = "";
-		colstr->repo    = "";
-		colstr->version = "";
-		colstr->groups  = "";
-		colstr->meta    = "";
-		colstr->warn    = "";
-		colstr->err     = "";
-		colstr->faint   = "";
-		colstr->nocolor = "";
+		colstr->colon     = ":: ";
+		colstr->title     = "";
+		colstr->repo      = "";
+		colstr->version   = "";
+		colstr->groups    = "";
+		colstr->meta      = "";
+		colstr->warn      = "";
+		colstr->err       = "";
+		colstr->scriptlet = "";
+		colstr->faint     = "";
+		colstr->nocolor   = "";
 	}
 }
 

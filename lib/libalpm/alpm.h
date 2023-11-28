@@ -750,6 +750,10 @@ typedef enum _alpm_event_type_t {
 	ALPM_EVENT_LOAD_START,
 	/** Target package is finished loading. */
 	ALPM_EVENT_LOAD_DONE,
+	/** An install file is about to be ran */
+	ALPM_EVENT_INSTALL_RUN_START,
+	/** An install file has finished running */
+	ALPM_EVENT_INSTALL_RUN_DONE,
 	/** Scriptlet has printed information; See alpm_event_scriptlet_info_t for
 	 * arguments. */
 	ALPM_EVENT_SCRIPTLET_INFO,
@@ -840,10 +844,32 @@ typedef struct _alpm_event_optdep_removal_t {
 	alpm_depend_t *optdep;
 } alpm_event_optdep_removal_t;
 
+/** Enum of the kinds of scriptlets */
+typedef enum _alpm_scriptlet_kind_t {
+	/** We are running an install file */
+	ALPM_SCRIPTLET_KIND_INSTALL_FILE,
+	/** We are running a hook */
+	ALPM_SCRIPTLET_KIND_HOOK,
+	/** We are running a command */
+	ALPM_SCRIPTLET_KIND_COMMAND,
+} alpm_scriptlet_kind_t;
+
+/** We are running an install file. */
+typedef struct _alpm_event_install_run_t {
+	/** Type of event */
+	alpm_event_type_t type;
+	/** The name of the package */
+	const char *pkgname;
+} alpm_event_install_run_t;
+
 /** A scriptlet was ran. */
 typedef struct _alpm_event_scriptlet_info_t {
 	/** Type of event */
 	alpm_event_type_t type;
+	/** The kind of scriptlet being ran */
+	alpm_scriptlet_kind_t kind;
+	/** The name of the scriptlet **/
+	const char *name;
 	/** Line of scriptlet output */
 	const char *line;
 } alpm_event_scriptlet_info_t;
@@ -946,6 +972,8 @@ typedef union _alpm_event_t {
 	alpm_event_package_operation_t package_operation;
 	/** An optdept was remove */
 	alpm_event_optdep_removal_t optdep_removal;
+	/** An install file is about to be run */
+	alpm_event_install_run_t install_run;
 	/** A scriptlet was ran */
 	alpm_event_scriptlet_info_t scriptlet_info;
 	/** A database is missing */

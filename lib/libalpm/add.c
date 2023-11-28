@@ -469,7 +469,7 @@ static int commit_single_pkg(alpm_handle_t *handle, alpm_pkg_t *newpkg,
 			!(trans->flags & ALPM_TRANS_FLAG_NOSCRIPTLET)) {
 		const char *scriptlet_name = is_upgrade ? "pre_upgrade" : "pre_install";
 
-		_alpm_runscriptlet(handle, pkgfile, scriptlet_name,
+		_alpm_runscriptlet(handle, newpkg->name, pkgfile, scriptlet_name,
 				newpkg->version, oldpkg ? oldpkg->version : NULL, 1);
 	}
 
@@ -641,7 +641,7 @@ static int commit_single_pkg(alpm_handle_t *handle, alpm_pkg_t *newpkg,
 		char *scriptlet = _alpm_local_db_pkgpath(db, newpkg, "install");
 		const char *scriptlet_name = is_upgrade ? "post_upgrade" : "post_install";
 
-		_alpm_runscriptlet(handle, scriptlet, scriptlet_name,
+		_alpm_runscriptlet(handle, newpkg->name, scriptlet, scriptlet_name,
 				newpkg->version, oldpkg ? oldpkg->version : NULL, 0);
 		free(scriptlet);
 	}
