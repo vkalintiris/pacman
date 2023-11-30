@@ -305,6 +305,8 @@ subdir('src/pacman')
 subdir('src/util')
 subdir('scripts')
 
+subdir('src/fuzzing')
+
 # Internationalization
 if get_option('i18n')
   i18n = import('i18n')
@@ -396,6 +398,17 @@ executable(
   include_directories : includes,
   link_with : [libalpm_a],
   install : true,
+)
+
+# Note: this target must be built with clang!
+executable(
+    'fuzz_wordsplit',
+    fuzzing_sources,
+    include_directories : includes,
+    link_with : [libcommon],
+    dependencies : [],
+    c_args : ['-fsanitize=fuzzer,address', '-ggdb'],
+    link_args : ['-fsanitize=fuzzer,address', '-ggdb'],
 )
 
 foreach wrapper : script_wrappers
