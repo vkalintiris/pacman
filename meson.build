@@ -423,7 +423,16 @@ executable(
     c_args : ['-fsanitize=fuzzer,address', '-ggdb', '-O0', '-fno-omit-frame-pointer', '-DFUZZING_PACMAN'],
     link_args : ['-fsanitize=fuzzer,address', '-ggdb', '-O0', '-fno-omit-frame-pointer'],
 )
-
+# Note: this target must be built with clang!
+executable(
+    'fuzz_alpm_extract_keyid',
+    [fuzz_alpm_extract_keyid_sources, pacman_sources],
+    include_directories : includes,
+    link_with : [libalpm_a, libcommon],
+    dependencies : [],
+    c_args : ['-fsanitize=fuzzer,address', '-ggdb', '-O0', '-fno-omit-frame-pointer', '-DFUZZING_PACMAN'],
+    link_args : ['-fsanitize=fuzzer,address', '-ggdb', '-O0', '-fno-omit-frame-pointer'],
+)
 
 foreach wrapper : script_wrappers
   cdata = configuration_data()
