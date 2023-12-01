@@ -19,9 +19,19 @@ int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size) {
     cstring[Size] = 0;
 
     char** ptr = wordsplit(cstring);
-    if (ptr)
-        free(ptr);
 
+    // Free the memory allocated by wordsplit
+    if (ptr) {
+        int i = 0;
+        char* p = ptr[i++];
+        while (p) {
+            free(p);
+            p = ptr[i++];
+        }
+        free(ptr);
+    }
+
+    // Free the allocated cstring
     free(cstring);
 
     return 0;

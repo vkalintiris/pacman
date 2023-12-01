@@ -14,6 +14,8 @@ libalpm_version = '13.0.1'
 
 cc = meson.get_compiler('c')
 
+add_project_arguments(['-fsanitize=address', '-fno-omit-frame-pointer', '-ggdb', '-O0'], language : 'c')
+
 # commandline options
 PREFIX = get_option('prefix')
 DATAROOTDIR = join_paths(PREFIX, get_option('datarootdir'))
@@ -407,8 +409,8 @@ executable(
     include_directories : includes,
     link_with : [libcommon],
     dependencies : [],
-    c_args : ['-fsanitize=fuzzer,address', '-ggdb'],
-    link_args : ['-fsanitize=fuzzer,address', '-ggdb'],
+    c_args : ['-fsanitize=fuzzer,address', '-ggdb', '-O0', '-fno-omit-frame-pointer'],
+    link_args : ['-fsanitize=fuzzer,address', '-ggdb', '-O0', '-fno-omit-frame-pointer'],
 )
 
 foreach wrapper : script_wrappers
