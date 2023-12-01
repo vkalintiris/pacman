@@ -405,13 +405,25 @@ executable(
 # Note: this target must be built with clang!
 executable(
     'fuzz_wordsplit',
-    fuzzing_sources,
+    fuzz_wordsplit_sources,
     include_directories : includes,
     link_with : [libcommon],
     dependencies : [],
     c_args : ['-fsanitize=fuzzer,address', '-ggdb', '-O0', '-fno-omit-frame-pointer'],
     link_args : ['-fsanitize=fuzzer,address', '-ggdb', '-O0', '-fno-omit-frame-pointer'],
 )
+
+# Note: this target must be built with clang!
+executable(
+    'fuzz_string_length',
+    [fuzz_string_length_sources, pacman_sources],
+    include_directories : includes,
+    link_with : [libalpm_a, libcommon],
+    dependencies : [],
+    c_args : ['-fsanitize=fuzzer,address', '-ggdb', '-O0', '-fno-omit-frame-pointer', '-DFUZZING_PACMAN'],
+    link_args : ['-fsanitize=fuzzer,address', '-ggdb', '-O0', '-fno-omit-frame-pointer'],
+)
+
 
 foreach wrapper : script_wrappers
   cdata = configuration_data()

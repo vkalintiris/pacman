@@ -1079,6 +1079,7 @@ static void cl_to_log(int argc, char *argv[])
 	}
 }
 
+#ifndef FUZZING_PACMAN
 /** Main function.
  * @param argc
  * @param argv
@@ -1273,3 +1274,4 @@ int main(int argc, char *argv[])
 	/* not reached */
 	return EXIT_SUCCESS;
 }
+#endif //FUZZING_PACMAN

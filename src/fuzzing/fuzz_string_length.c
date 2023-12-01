@@ -5,11 +5,14 @@
 #include <string.h>
 #include <wchar.h>
 
-#include "util.h"
+// TODO/FIXME: Fix the util.h include
+//#include "util.h"
+// And remove that function header from here
+size_t string_length(const char *s);
 
 int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size);
 
-static int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size) {
+int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size) {
     if (Size == 0)
         return 0;
 
