@@ -402,7 +402,7 @@ executable(
   install : true,
 )
 
-# Note: this target must be built with clang!
+# Note: fuzz targets below must be built with Clang compiler
 executable(
     'fuzz_wordsplit',
     fuzz_wordsplit_sources,
@@ -413,7 +413,6 @@ executable(
     link_args : ['-fsanitize=fuzzer,address', '-ggdb', '-O0', '-fno-omit-frame-pointer'],
 )
 
-# Note: this target must be built with clang!
 executable(
     'fuzz_string_length',
     [fuzz_string_length_sources, pacman_sources],
@@ -423,12 +422,20 @@ executable(
     c_args : ['-fsanitize=fuzzer,address', '-ggdb', '-O0', '-fno-omit-frame-pointer', '-DFUZZING_PACMAN'],
     link_args : ['-fsanitize=fuzzer,address', '-ggdb', '-O0', '-fno-omit-frame-pointer'],
 )
-# Note: this target must be built with clang!
 executable(
     'fuzz_alpm_extract_keyid',
     [fuzz_alpm_extract_keyid_sources, pacman_sources],
     include_directories : includes,
     link_with : [libalpm_a, libcommon],
+    dependencies : [],
+    c_args : ['-fsanitize=fuzzer,address', '-ggdb', '-O0', '-fno-omit-frame-pointer', '-DFUZZING_PACMAN'],
+    link_args : ['-fsanitize=fuzzer,address', '-ggdb', '-O0', '-fno-omit-frame-pointer'],
+)
+executable(
+    'fuzz_parseconfigfile',
+    [fuzz_parseconfigfile_sources, pacman_sources],
+    include_directories : includes,
+    link_with : [libalpm_a],
     dependencies : [],
     c_args : ['-fsanitize=fuzzer,address', '-ggdb', '-O0', '-fno-omit-frame-pointer', '-DFUZZING_PACMAN'],
     link_args : ['-fsanitize=fuzzer,address', '-ggdb', '-O0', '-fno-omit-frame-pointer'],

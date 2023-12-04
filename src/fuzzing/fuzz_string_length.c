@@ -1,9 +1,6 @@
-#define _XOPEN_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdint.h>
 #include <string.h>
-#include <wchar.h>
 
 // TODO/FIXME: Fix the util.h include
 //#include "util.h"
