@@ -6,7 +6,6 @@ sources = [
   'compiler.sh.in',
   'cpp.sh.in',
   'cxx.sh.in',
-  'debugflags.sh.in',
   'lto.sh.in',
   'makeflags.sh.in',
   'rust.sh.in',
