@@ -33,6 +33,19 @@ done
 
 readonly -a buildenv_functions buildenv_vars build_options
 
+check_append_debug_flags() {
+	local -n flag=$1
+	local -n debug_flag=$2
+
+	if check_option "debug" "y" && ! check_option "buildflags" "n"; then
+		if [[ $# -gt 1 ]]; then
+			local debug_extra=$3
+			append_once debug_flag "$debug_extra"
+		fi
+		append_once flag "$debug_flag"
+	fi
+}
+
 prepare_buildenv() {
 	# ensure this function runs first
 	buildenv_buildflags

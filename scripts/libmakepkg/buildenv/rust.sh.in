@@ -2,7 +2,7 @@
 #
 #   rust.sh - Specify flags for building a package with rust
 #
-#   Copyright (c) 2022 Pacman Development Team <pacman-dev@lists.archlinux.org>
+#   Copyright (c) 2022-2024 Pacman Development Team <pacman-dev@lists.archlinux.org>
 #
 #   This program is free software; you can redistribute it and/or modify
 #   it under the terms of the GNU General Public License as published by
@@ -30,8 +30,5 @@ buildenv_vars+=('RUSTFLAGS' 'DEBUG_RUSTFLAGS')
 buildenv_functions+=('buildenv_rust')
 
 buildenv_rust() {
-	if check_option "debug" "y" && ! check_option "buildflags" "n"; then
-		append_once DEBUG_RUSTFLAGS "--remap-path-prefix=$srcdir=${DBGSRCDIR:-/usr/src/debug}/${pkgbase}"
-		append_once RUSTFLAGS "$DEBUG_RUSTFLAGS"
-	fi
+	check_append_debug_flags RUSTFLAGS DEBUG_RUSTFLAGS "--remap-path-prefix=$srcdir=${DBGSRCDIR:-/usr/src/debug}/${pkgbase}"
 }
