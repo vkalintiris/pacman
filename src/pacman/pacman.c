@@ -381,7 +381,7 @@ static int parsearg_global(int opt)
 			break;
 		case OP_ASK:
 			config->noask = 1;
-			config->ask = (unsigned int)atoi(optarg);
+			config->ask = (unsigned int)strtol(optarg, NULL, 10);
 			break;
 		case OP_CACHEDIR:
 			config->cachedirs = alpm_list_add(config->cachedirs, strdup(optarg));
@@ -409,7 +409,7 @@ static int parsearg_global(int opt)
 			 * here, error and warning are set in config_new, though perhaps a
 			 * --quiet option will remove these later */
 			if(optarg) {
-				unsigned short debug = (unsigned short)atoi(optarg);
+				int debug = strtol(optarg, NULL, 10);
 				switch(debug) {
 					case 2:
 						config->logmask |= ALPM_LOG_FUNCTION;
