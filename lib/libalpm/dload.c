@@ -573,7 +573,6 @@ static int curl_check_finished_download(alpm_handle_t *handle, CURLM *curlm, CUR
 		case CURLE_ABORTED_BY_CALLBACK:
 			/* handle the interrupt accordingly */
 			if(dload_interrupted == ABORT_OVER_MAXFILESIZE) {
-				curlerr = CURLE_FILESIZE_EXCEEDED;
 				payload->unlink_on_fail = 1;
 				handle->pm_errno = ALPM_ERR_LIBCURL;
 				_alpm_log(handle, ALPM_LOG_ERROR,
