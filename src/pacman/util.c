@@ -462,7 +462,7 @@ static size_t string_length(const char *s)
 		int iter = 0;
 		for(; *s; s++) {
 			if(*s == '\033') {
-				while(*s != 'm') {
+				while(*s != 'm' && *s != '\0') {
 					s++;
 				}
 			} else {
