@@ -589,7 +589,7 @@ void cb_progress(void *ctx, alpm_progress_t event, const char *pkgname,
 	} else {
 		if(current != prevcurrent) {
 			/* update always */
-		} else if(!pkgname || percent == prevpercent ||
+		} else if(pkgname[0] == '\0' || percent == prevpercent ||
 				get_update_timediff(0) < UPDATE_SPEED_MS) {
 			/* only update the progress bar when we have a package name, the
 			 * percentage has changed, and it has been long enough. */
@@ -653,7 +653,7 @@ void cb_progress(void *ctx, alpm_progress_t event, const char *pkgname,
 	 * by the output, and then pad it accordingly so we fill the terminal.
 	 */
 	/* len = opr len + pkgname len (if available) + space + null */
-	len = strlen(opr) + ((pkgname) ? strlen(pkgname) : 0) + 2;
+	len = strlen(opr) + strlen(pkgname) + 2;
 	wcstr = calloc(len, sizeof(wchar_t));
 	/* print our strings to the alloc'ed memory */
 #if defined(HAVE_SWPRINTF)

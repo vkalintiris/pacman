@@ -1149,7 +1149,9 @@ typedef enum _alpm_progress_t {
  * make take a while to complete.
  * @param ctx user-provided context
  * @param progress the kind of event that is progressing
- * @param pkg for package operations, the name of the package being operated on
+ * @param pkg the name of the package being operated on. if the progress kind
+ *            is a packae operation (add, upgrade, downgrade, reinstall, remove).
+ *            otherwise this will be an empty string.
  * @param percent the percent completion of the action
  * @param howmany the total amount of items in the action
  * @param current the current amount of items completed
