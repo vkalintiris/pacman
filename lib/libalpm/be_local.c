@@ -837,6 +837,12 @@ static int local_db_read(alpm_pkg_t *info, int inforeq)
 					}
 				}
 				FREELIST(lines);
+			} else {
+				_alpm_log(db->handle, ALPM_LOG_ERROR, _("%s: unknown key '%s' in sync database\n"), info->name, line);
+				alpm_list_t *lines = NULL;
+				READ_AND_STORE_ALL(lines);
+				FREELIST(lines);
+
 			}
 		}
 		fclose(fp);
