@@ -1,9 +1,10 @@
 libmakepkg_module = 'buildenv'
 
 sources = [
-  'buildflags.sh.in',
+  'c.sh.in',
   'compiler.sh.in',
-  'debugflags.sh.in',
+  'cpp.sh.in',
+  'cxx.sh.in',
   'lto.sh.in',
   'makeflags.sh.in',
   'rust.sh.in',

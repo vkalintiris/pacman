@@ -2,7 +2,7 @@
 #
 #   rust.sh - Specify flags for building a package with rust
 #
-#   Copyright (c) 2022-2024 Pacman Development Team <pacman-dev@lists.archlinux.org>
+#   Copyright (c) 2024 Pacman Development Team <pacman-dev@lists.archlinux.org>
 #
 #   This program is free software; you can redistribute it and/or modify
 #   it under the terms of the GNU General Public License as published by
@@ -18,18 +18,13 @@
 #   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-[[ -n "$LIBMAKEPKG_BUILDENV_RUST_SH" ]] && return
-LIBMAKEPKG_BUILDENV_RUST_SH=1
+[[ -n "$LIBMAKEPKG_BUILDENV_CPP_SH" ]] && return
+LIBMAKEPKG_BUILDENV_CPP_SH=1
 
 MAKEPKG_LIBRARY=${MAKEPKG_LIBRARY:-'@libmakepkgdir@'}
 
 source "$MAKEPKG_LIBRARY/util/option.sh"
 source "$MAKEPKG_LIBRARY/util/util.sh"
 
-buildenv_vars+=('DEBUG_RUSTFLAGS')
-buildenv_vars_exported+=('RUSTFLAGS')
+buildenv_vars_exported+=('CPPFLAGS')
 buildenv_functions+=('buildenv_rust')
-
-buildenv_rust() {
-	check_append_debug_flags RUSTFLAGS DEBUG_RUSTFLAGS "--remap-path-prefix=$srcdir=${DBGSRCDIR:-/usr/src/debug}/${pkgbase}"
-}

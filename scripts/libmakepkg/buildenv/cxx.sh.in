@@ -1,8 +1,8 @@
 #!/usr/bin/bash
 #
-#   buildflags.sh - Clear user-specified buildflags if requested
+#   cxx.sh - Specify flags for building a package with C++
 #
-#   Copyright (c) 2011-2022 Pacman Development Team <pacman-dev@lists.archlinux.org>
+#   Copyright (c) 2024 Pacman Development Team <pacman-dev@lists.archlinux.org>
 #
 #   This program is free software; you can redistribute it and/or modify
 #   it under the terms of the GNU General Public License as published by
@@ -18,17 +18,18 @@
 #   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-[[ -n "$LIBMAKEPKG_BUILDENV_BUILDFLAGS_SH" ]] && return
-LIBMAKEPKG_BUILDENV_BUILDFLAGS_SH=1
+[[ -n "$LIBMAKEPKG_BUILDENV_CXX_SH" ]] && return
+LIBMAKEPKG_BUILDENV_CXX_SH=1
 
 MAKEPKG_LIBRARY=${MAKEPKG_LIBRARY:-'@libmakepkgdir@'}
 
 source "$MAKEPKG_LIBRARY/util/option.sh"
+source "$MAKEPKG_LIBRARY/util/util.sh"
 
-build_options+=('buildflags')
+buildenv_vars+=('DEBUG_CXXFLAGS')
+buildenv_vars_exported+=('CXXFLAGS')
+buildenv_functions+=('buildenv_cxx')
 
-buildenv_buildflags() {
-	if check_option "buildflags" "n"; then
-		unset ${buildenv_vars[@]}
-	fi
+buildenv_cxx() {
+	check_append_debug_flags CXXFLAGS DEBUG_CXXFLAGS "-ffile-prefix-map=$srcdir=${DBGSRCDIR:-/usr/src/debug}/${pkgbase}"
 }
