@@ -1317,11 +1317,13 @@ else
 		original_pkglist=($(run_pacman -Qq))    # required by remove_dep
 	fi
 
-	msg "$(gettext "Checking buildtime dependencies...")"
-	if (( CHECKFUNC )); then
-		resolve_deps "${makedepends[@]}" "${checkdepends[@]}" || deperr=1
-	else
-		resolve_deps "${makedepends[@]}" || deperr=1
+	if (( ! deperr )); then
+		msg "$(gettext "Checking buildtime dependencies...")"
+		if (( CHECKFUNC )); then
+			resolve_deps "${makedepends[@]}" "${checkdepends[@]}" || deperr=1
+		else
+			resolve_deps "${makedepends[@]}" || deperr=1
+		fi
 	fi
 
 	if (( RMDEPS )); then
