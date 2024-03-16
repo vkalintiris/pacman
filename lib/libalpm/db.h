@@ -80,6 +80,8 @@ struct _alpm_db_t {
 	int siglevel;
 	/* alpm_db_usage_t */
 	int usage;
+
+	int allow_partial;
 };
 
 
