@@ -806,6 +806,9 @@ int sync_prepare_execute(void)
 					alpm_conflict_free(conflict);
 				}
 				break;
+			case ALPM_ERR_TRANS_PARTIAL_UPGRADE:
+				colon_printf(_("System is out of date (use -Su to upgrade)\n"));
+				break;
 			default:
 				break;
 		}
