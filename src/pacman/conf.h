@@ -32,6 +32,7 @@ typedef struct __colstr_t {
 	const char *warn;
 	const char *err;
 	const char *faint;
+	const char *scriptlet;
 	const char *nocolor;
 } colstr_t;
 

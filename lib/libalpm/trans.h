@@ -49,7 +49,7 @@ typedef struct _alpm_trans_t {
 void _alpm_trans_free(alpm_trans_t *trans);
 /* flags is a bitfield of alpm_transflag_t flags */
 int _alpm_trans_init(alpm_trans_t *trans, int flags);
-int _alpm_runscriptlet(alpm_handle_t *handle, const char *filepath,
+int _alpm_runscriptlet(alpm_handle_t *handle, const char *name, const char *filepath,
 		const char *script, const char *ver, const char *oldver, int is_archive);
 
 #endif /* ALPM_TRANS_H */

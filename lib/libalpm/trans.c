@@ -334,7 +334,7 @@ static int grep(const char *fn, const char *needle)
 	return 0;
 }
 
-int _alpm_runscriptlet(alpm_handle_t *handle, const char *filepath,
+int _alpm_runscriptlet(alpm_handle_t *handle, const char *pkgname, const char *filepath,
 		const char *script, const char *ver, const char *oldver, int is_archive)
 {
 	char arg0[64], arg1[3], cmdline[PATH_MAX];
@@ -407,7 +407,16 @@ int _alpm_runscriptlet(alpm_handle_t *handle, const char *filepath,
 
 	_alpm_log(handle, ALPM_LOG_DEBUG, "executing \"%s\"\n", cmdline);
 
-	retval = _alpm_run_chroot(handle, SCRIPTLET_SHELL, argv, NULL, NULL);
+	alpm_event_install_run_t event = {
+		.type = ALPM_EVENT_INSTALL_RUN_START,
+		.pkgname = pkgname,
+	};
+	EVENT(handle, &event);
+
+	retval = _alpm_run_chroot(handle, pkgname, ALPM_SCRIPTLET_KIND_INSTALL_FILE, SCRIPTLET_SHELL, argv, NULL, NULL);
+
+	event.type = ALPM_EVENT_INSTALL_RUN_DONE;
+	EVENT(handle, &event);
 
 cleanup:
 	if(scriptfn && unlink(scriptfn)) {
