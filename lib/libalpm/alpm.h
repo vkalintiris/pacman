@@ -2955,9 +2955,10 @@ int alpm_capabilities(void);
 
 /** Drop privileges by switching to a different user.
  * @param sandboxuser the user to switch to
+ * @param restrict_writes_to_path if non-NULL, restrict writes to this filesystem path
  * @return 0 on success, -1 on failure
  */
-int alpm_sandbox_setup_child(const char *sandboxuser);
+int alpm_sandbox_setup_child(const char *sandboxuser, const char *restrict_writes_to_path);
 
 /* End of libalpm_misc */
 /** @} */

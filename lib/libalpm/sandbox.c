@@ -26,15 +26,19 @@
 #include "alpm.h"
 #include "log.h"
 #include "sandbox.h"
+#include "sandbox_fs.h"
 #include "util.h"
 
-int SYMEXPORT alpm_sandbox_setup_child(const char* sandboxuser)
+int SYMEXPORT alpm_sandbox_setup_child(const char* sandboxuser, const char* restrict_writes_to_path)
 {
 	struct passwd const *pw = NULL;
 
 	ASSERT(sandboxuser != NULL, return -1);
 	ASSERT(getuid() == 0, return -1);
 	ASSERT((pw = getpwnam(sandboxuser)), return -1);
+	if(restrict_writes_to_path != NULL) {
+		_alpm_sandbox_fs_restrict_writes_to(restrict_writes_to_path);
+	}
 	ASSERT(setgid(pw->pw_gid) == 0, return -1);
 	ASSERT(setgroups(0, NULL) == 0, return -1);
 	ASSERT(setuid(pw->pw_uid) == 0, return -1);
