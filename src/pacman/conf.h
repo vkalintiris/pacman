@@ -129,6 +129,7 @@ typedef struct __config_t {
 	char *xfercommand;
 	char **xfercommand_argv;
 	size_t xfercommand_argc;
+	alpm_depstrategy_t depstrategy;
 
 	/* our connection to libalpm */
 	alpm_handle_t *handle;
