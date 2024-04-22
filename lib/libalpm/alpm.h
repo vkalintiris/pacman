@@ -273,6 +273,8 @@ typedef enum _alpm_errno_t {
 	ALPM_ERR_TRANS_NOT_LOCKED,
 	/** A hook failed to run */
 	ALPM_ERR_TRANS_HOOK_FAILED,
+	/* The transaction is a partial upgrade */
+	ALPM_ERR_TRANS_PARTIAL_UPGRADE,
 	/* Packages */
 	/** Package not found */
 	ALPM_ERR_PKG_NOT_FOUND,
@@ -1476,6 +1478,19 @@ int alpm_db_set_usage(alpm_db_t *db, int usage);
  * @return 0 on success, or -1 on error
  */
 int alpm_db_get_usage(alpm_db_t *db, int *usage);
+
+/** Set if a database may perform partial upgrades.
+ * @param db pointer to the package database
+ * @param partial 1 to allow, 0 to disallow
+ * @return 0 on success, or -1 on error
+ */
+int alpm_db_set_allow_partial_upgrades(alpm_db_t *db, int allow);
+
+/** Set if a database allows partial upgrades.
+ * @param db pointer to the package database
+ * @return 1 if allowed, 0 if not, -1 on error
+ */
+int alpm_db_get_allow_partial_upgrades(alpm_db_t *db);
 
 /* End of usage accessors */
 /** @} */
@@ -2797,7 +2812,8 @@ typedef enum _alpm_transflag_t {
 	ALPM_TRANS_FLAG_NOSCRIPTLET = (1 << 10),
 	/** Ignore dependency conflicts. */
 	ALPM_TRANS_FLAG_NOCONFLICTS = (1 << 11),
-	/* (1 << 12) flag can go here */
+	/** Allow partial upgrades */
+	ALPM_TRANS_FLAG_ALLOWPARTIAL = (1 << 12),
 	/** Do not install a package if it is already installed and up to date. */
 	ALPM_TRANS_FLAG_NEEDED = (1 << 13),
 	/** Use ALPM_PKG_REASON_EXPLICIT when installing packages. */

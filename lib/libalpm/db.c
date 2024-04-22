@@ -368,6 +368,19 @@ int SYMEXPORT alpm_db_get_usage(alpm_db_t *db, int *usage)
 	return 0;
 }
 
+int SYMEXPORT alpm_db_set_allow_partial_upgrades(alpm_db_t *db, int allow)
+{
+	ASSERT(db != NULL, return -1);
+	db->allow_partial = allow ? 1 : 0;
+	return 0;
+}
+
+int SYMEXPORT alpm_db_get_allow_partial_upgrades(alpm_db_t *db)
+{
+	ASSERT(db != NULL, return -1);
+	return db->allow_partial;
+}
+
 alpm_db_t *_alpm_db_new(const char *treename, int is_local)
 {
 	alpm_db_t *db;

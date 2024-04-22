@@ -827,6 +827,7 @@ static int register_repo(config_repo_t *repo)
 	pm_printf(ALPM_LOG_DEBUG, "setting usage of %d for %s repository\n",
 			repo->usage, repo->name);
 	alpm_db_set_usage(db, repo->usage);
+	alpm_db_set_allow_partial_upgrades(db, repo->allow_partial);
 
 	for(i = repo->cache_servers; i; i = alpm_list_next(i)) {
 		const char *value = i->data;
@@ -1049,6 +1050,8 @@ static int _parse_repo(const char *key, char *value, const char *file,
 			}
 			FREELIST(values);
 		}
+	} else if(strcmp(key, "AllowPartialUpgrades") == 0) {
+		repo->allow_partial = 1;
 	} else {
 		pm_printf(ALPM_LOG_WARNING,
 				_("config file %s, line %d: directive '%s' in section '%s' not recognized.\n"),

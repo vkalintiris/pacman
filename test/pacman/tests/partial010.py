@@ -1,4 +1,4 @@
-self.description = "Sysupgrade with ignored package prevent other upgrade"
+self.description = "Sysupgrade with ignored package prevent other upgrade causes partial upgrade"
 
 lp1 = pmpkg("glibc", "1.0-1")
 lp2 = pmpkg("gcc-libs", "1.0-1")
@@ -18,9 +18,9 @@ sp3.depends = ["gcc-libs"]
 for p in sp1, sp2, sp3:
 	self.addpkg2db("sync", p)
 
-self.args = "-Su --ignore %s --ask=16 --partial" % sp1.name
+self.args = "-Su --ignore %s --ask=16" % sp1.name
 
-self.addrule("PACMAN_RETCODE=0")
+self.addrule("!PACMAN_RETCODE=0")
 self.addrule("PKG_VERSION=glibc|1.0-1")
 self.addrule("PKG_VERSION=gcc-libs|1.0-1")
-self.addrule("PKG_VERSION=pcre|1.0-2")
+self.addrule("PKG_VERSION=pcre|1.0-1")

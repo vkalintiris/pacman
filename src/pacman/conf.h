@@ -40,6 +40,7 @@ typedef struct __config_repo_t {
 	alpm_list_t *cache_servers;
 	alpm_list_t *servers;
 	int usage;
+	int allow_partial;
 	int siglevel;
 	int siglevel_mask;
 } config_repo_t;
@@ -212,7 +213,8 @@ enum {
 	OP_DOWNLOADONLY,
 	OP_REFRESH,
 	OP_ASSUMEINSTALLED,
-	OP_DISABLEDLTIMEOUT
+	OP_DISABLEDLTIMEOUT,
+	OP_PARTIAL
 };
 
 /* clean method */

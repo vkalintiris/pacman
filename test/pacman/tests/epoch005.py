@@ -17,7 +17,7 @@ for k, v in pkgvers:
 	lp = pmpkg("pkg_%d" % k, versions[2])
 	self.addpkg2db("local", lp)
 
-self.args = "-Su"
+self.args = "-Su --partial"
 
 self.addrule("PACMAN_RETCODE=0")
 for k, v in pkgvers:

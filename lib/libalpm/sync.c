@@ -249,6 +249,8 @@ int SYMEXPORT alpm_sync_sysupgrade(alpm_handle_t *handle, int enable_downgrade)
 		}
 	}
 
+	trans->sysupgrade = enable_downgrade ? 2 : 1;
+
 	return 0;
 }
 
@@ -362,6 +364,111 @@ finish:
 	FREE(fnamepart);
 
 	return ret;
+}
+
+static int has_replacment(alpm_db_t *sdb, alpm_pkg_t *lpkg)
+{
+	alpm_list_t *j, *k;
+	alpm_handle_t *handle = lpkg->handle;
+
+	for(j = _alpm_db_get_pkgcache(sdb); j; j = j->next) {
+		alpm_pkg_t *spkg = j->data;
+
+		if(alpm_pkg_should_ignore(handle, spkg)) {
+			continue;
+		}
+
+		for(k = alpm_pkg_get_replaces(spkg); k; k = k->next) {
+			alpm_depend_t *replace = k->data;
+			/* we only want to consider literal matches at this point. */
+			if(_alpm_depcmp_literal(lpkg, replace)) {
+				_alpm_log(handle, ALPM_LOG_DEBUG, "partial upgrade due to %s haivng replacment\n", lpkg->name);
+				return 1;
+			}
+		}
+	}
+
+	return 0;
+}
+
+static int is_partial_upgrade(alpm_handle_t *handle)
+{
+	alpm_list_t *i, *j;
+	alpm_trans_t *trans = handle->trans;
+	alpm_db_t *localdb = handle->db_local;
+	int from_sync = 0;
+
+	if(trans->sysupgrade == 2) {
+		return 0;
+	}
+
+	for(i = trans->add; i; i = i->next) {
+		alpm_pkg_t *pkg = i->data;
+
+		if (pkg->origin == ALPM_PKG_FROM_SYNCDB){
+			alpm_db_t *db = alpm_pkg_get_db(pkg);
+			if(!db->allow_partial) {
+				alpm_pkg_t *lpkg = alpm_db_get_pkg(localdb, pkg->name);
+				/* let transaction pass if reinstall */
+				if(!lpkg || _alpm_pkg_compare_versions(pkg, lpkg) != 0) {
+					from_sync = 1;
+					break;
+				}
+			}
+		}
+	}
+
+	for(i = _alpm_db_get_pkgcache(localdb); i; i = i->next) {
+		alpm_pkg_t *lpkg = i->data;
+
+		if(alpm_pkg_find(trans->add, lpkg->name) || alpm_pkg_find(trans->remove, lpkg->name)
+				|| alpm_pkg_should_ignore(handle, lpkg)) {
+			continue;
+		}
+
+		/* Search for replacers then literal (if no replacer) in each sync database. */
+		for(j = handle->dbs_sync; j; j = j->next) {
+			alpm_db_t *sdb = j->data;
+			alpm_pkg_t *spkg;
+
+			if(!(sdb->usage & ALPM_DB_USAGE_UPGRADE)) {
+				/* jump to next db */
+				continue;
+			}
+
+			if(!sdb->allow_partial && !trans->sysupgrade && has_replacment(sdb, lpkg)) {
+				return 1;
+			}
+
+			if(!from_sync) {
+				/* jump to next local package */
+				break;
+			}
+
+			spkg = _alpm_db_get_pkgfromcache(sdb, lpkg->name);
+
+			if(!spkg || alpm_pkg_should_ignore(handle, spkg)) {
+				/* jump to next db */
+				continue;
+			}
+
+			if(sdb->allow_partial) {
+				/* jump to next local package */
+				break;
+			}
+
+			/* Check sdb */
+			if(_alpm_pkg_compare_versions(spkg, lpkg) != 0) {
+				_alpm_log(handle, ALPM_LOG_DEBUG, "partial upgrade due to upgrade for %s\n", lpkg->name);
+				return 1;
+			}
+
+			/* jump to next local package */
+			break;
+		}
+	}
+
+	return 0;
 }
 
 int _alpm_sync_prepare(alpm_handle_t *handle, alpm_list_t **data)
@@ -680,6 +787,12 @@ int _alpm_sync_prepare(alpm_handle_t *handle, alpm_list_t **data)
 			ret = -1;
 			goto cleanup;
 		}
+	}
+
+	if(!(trans->flags & ALPM_TRANS_FLAG_ALLOWPARTIAL) && !(trans->flags & ALPM_TRANS_FLAG_NODEPVERSION)
+			&& is_partial_upgrade(handle)) {
+		handle->pm_errno = ALPM_ERR_TRANS_PARTIAL_UPGRADE;
+		ret = -1;
 	}
 
 cleanup:

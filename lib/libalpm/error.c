@@ -104,6 +104,8 @@ const char SYMEXPORT *alpm_strerror(alpm_errno_t err)
 			return _("transaction commit attempt when database is not locked");
 		case ALPM_ERR_TRANS_HOOK_FAILED:
 			return _("failed to run transaction hooks");
+		case ALPM_ERR_TRANS_PARTIAL_UPGRADE:
+			return _("partial upgrade");
 		/* Packages */
 		case ALPM_ERR_PKG_NOT_FOUND:
 			return _("could not find or read package");

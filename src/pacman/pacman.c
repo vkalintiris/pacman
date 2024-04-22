@@ -164,6 +164,7 @@ static void usage(int op, const char * const myname)
 			addlist(_("  -y, --refresh        download fresh package databases from the server\n"
 			          "                       (-yy to force a refresh even if up to date)\n"));
 			addlist(_("      --needed         do not reinstall up to date packages\n"));
+			addlist(_("      --partial        allow partial upgrades\n"));
 		} else if(op == PM_OP_DATABASE) {
 			printf("%s:  %s {-D --database} <%s> <%s>\n", str_usg, myname, str_opt, str_pkg);
 			printf("%s:\n", str_opt);
@@ -860,6 +861,9 @@ static int parsearg_sync(int opt)
 		case 'y':
 			(config->op_s_sync)++;
 			break;
+		case OP_PARTIAL:
+			config->flags |= ALPM_TRANS_FLAG_ALLOWPARTIAL;
+			break;
 		default:
 			return 1;
 	}
@@ -969,6 +973,7 @@ static int parseargs(int argc, char *argv[])
 		{"logfile",    required_argument, 0, OP_LOGFILE},
 		{"ignoregroup", required_argument, 0, OP_IGNOREGROUP},
 		{"needed",     no_argument,       0, OP_NEEDED},
+		{"partial",     no_argument,      0, OP_PARTIAL},
 		{"asexplicit",     no_argument,   0, OP_ASEXPLICIT},
 		{"arch",       required_argument, 0, OP_ARCH},
 		{"print-format", required_argument, 0, OP_PRINTFORMAT},

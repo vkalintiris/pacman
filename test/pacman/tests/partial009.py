@@ -1,4 +1,4 @@
-self.description = "An unresolvable dependency"
+self.description = "Partial upgrade due to unresolvable dependency"
 
 packageA1 = pmpkg("dep")
 self.addpkg2db("local", packageA1)
@@ -11,9 +11,8 @@ packageA2up = pmpkg("package")
 packageA2up.depends = ["dep"];
 self.addpkg2db("sync", packageA2up)
 
-self.args = "-S package dep --ask=16 --partial"
+self.args = "-S package dep --ask=16"
 
-self.addrule("PACMAN_RETCODE=0")
-self.addrule("PKG_EXIST=package")
+self.addrule("!PACMAN_RETCODE=0")
+self.addrule("!PKG_EXIST=package")
 self.addrule("PKG_EXIST=dep")
-self.addrule("PKG_VERSION=dep|1.0-1")

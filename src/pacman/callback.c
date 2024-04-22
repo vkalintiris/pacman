@@ -453,7 +453,8 @@ void cb_question(void *ctx, alpm_question_t *question)
 		case ALPM_QUESTION_REPLACE_PKG:
 			{
 				alpm_question_replace_t *q = &question->replace;
-				q->replace = yesno(_("Replace %s with %s/%s?"),
+				q->replace = 1;
+				colon_printf(_("Replacing %s with %s/%s"),
 						alpm_pkg_get_name(q->oldpkg),
 						alpm_db_get_name(q->newdb),
 						alpm_pkg_get_name(q->newpkg));
