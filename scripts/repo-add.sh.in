@@ -631,6 +631,7 @@ while true; do
 			GPGKEY=$1
 			;;
 		-v|--verify)
+			SIGN=1
 			VERIFY=1
 			;;
 		-p|--prevent-downgrade)
