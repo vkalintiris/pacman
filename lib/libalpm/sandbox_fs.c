@@ -160,10 +160,13 @@ bool _alpm_sandbox_fs_restrict_writes_to(alpm_handle_t *handle, const char *path
 		_alpm_log(handle, ALPM_LOG_ERROR, _("restricting filesystem access failed because the landlock rule for the temporary download directory could not be added!\n"));
 	}
 
-	_alpm_log(handle, ALPM_LOG_DEBUG, _("filesystem access has been restricted to %s, landlock ABI is %d\n"), path, abi);
 	close(path_beneath.parent_fd);
 	close(ruleset_fd);
-	return result == 0;
+	if(result == 0) {
+		_alpm_log(handle, ALPM_LOG_DEBUG, _("filesystem access has been restricted to %s, landlock ABI is %d\n"), path, abi);
+		return true;
+        }
+	return false;
 #else /* HAVE_LINUX_LANDLOCK_H */
 	return true;
 #endif /* HAVE_LINUX_LANDLOCK_H */
