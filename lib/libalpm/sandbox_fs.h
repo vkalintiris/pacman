@@ -20,7 +20,8 @@
 #define ALPM_SANDBOX_FS_H
 
 #include <stdbool.h>
+#include "alpm.h"
 
-bool _alpm_sandbox_fs_restrict_writes_to(const char *path);
+bool _alpm_sandbox_fs_restrict_writes_to(alpm_handle_t *handle, const char *path);
 
 #endif /* ALPM_SANDBOX_FS_H */
