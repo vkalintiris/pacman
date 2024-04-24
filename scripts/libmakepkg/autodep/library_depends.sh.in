@@ -27,8 +27,9 @@ autodep_functions+=('library_depends')
 
 library_depends() {
 	if check_option "autodeps" "y"; then
-		local dep filename libdeps libdir libpath prefix sofile
-		declare -a libdeps
+		local dep filename libdeps libdir libpath prefix sofile isoptdep
+		declare -A libdeps
+		declare -A optlibdeps
 
 		while IFS= read -rd '' filename; do
 			for sofile in $(LC_ALL=C readelf -d $filename 2>/dev/null | sed -nr 's/.*Shared library: \[(.*)\].*/\1/p'); do
@@ -65,11 +66,43 @@ library_depends() {
 					continue
 				fi
 
-				libdeps+=("$prefix:$sofile")
+				# if the binary marked as optional, add its dependencies to optdepends
+				unset isoptdep
+				for optbinary in "${optbinaries[@]}"
+				do
+					IFS=':'; local optbinarydata=($optbinary); unset IFS;
+					if [[ "${optbinarydata[0]}" == "${filename#$pkgdir/}" ]] ; then
+						if [[ -z ${optbinarydata[1]} ]]; then
+							optlibdeps["$prefix:$sofile"]+=""
+						else
+							optlibdeps["$prefix:$sofile"]+="${optbinarydata[1]# }; "
+						fi
+						isoptdep=1
+					fi
+				done
+
+				if [[ -n ${isoptdep} ]]; then
+					continue
+				fi
+
+				libdeps["$prefix:$sofile"]=1
 			done
 
 		done < <(find "$pkgdir" -type f -perm -u+x -print0)
 
-		depends+=($(printf '%s\n' "${libdeps[@]}" | LC_ALL=C sort -u))
+		# remove optlibdep if already in libdep
+		for libdep in ${!libdeps[@]}; do
+			unset optlibdeps["$libdep"]
+		done
+
+		depends+=(${!libdeps[@]})
+
+		for optlibdep in "${!optlibdeps[@]}"; do
+			if [[ -z ${optlibdeps[${optlibdep}]} ]]; then
+				optdepends+=("$optlibdep")
+			else
+				optdepends+=("$optlibdep: ${optlibdeps[${optlibdep}]%; }")
+			fi
+		done
 	fi
 }
