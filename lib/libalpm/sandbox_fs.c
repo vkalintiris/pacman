@@ -126,7 +126,7 @@ bool _alpm_sandbox_fs_restrict_writes_to(const char *path)
 
 	/* allow / as read-only */
 	path_beneath.parent_fd = open("/", O_PATH | O_CLOEXEC | O_DIRECTORY);
-	path_beneath.allowed_access = _LANDLOCK_ACCESS_FS_READ | LANDLOCK_ACCESS_FS_EXECUTE;
+	path_beneath.allowed_access = _LANDLOCK_ACCESS_FS_READ;
 
 	if(landlock_add_rule(ruleset_fd, LANDLOCK_RULE_PATH_BENEATH, &path_beneath, 0) != 0) {
 		close(path_beneath.parent_fd);
@@ -138,7 +138,7 @@ bool _alpm_sandbox_fs_restrict_writes_to(const char *path)
 
 	/* allow read-write access to the directory passed as parameter */
 	path_beneath.parent_fd = open(path, O_PATH | O_CLOEXEC | O_DIRECTORY);
-	path_beneath.allowed_access = _LANDLOCK_ACCESS_FS_READ | _LANDLOCK_ACCESS_FS_WRITE | _LANDLOCK_ACCESS_FS_TRUNCATE | LANDLOCK_ACCESS_FS_EXECUTE;
+	path_beneath.allowed_access = _LANDLOCK_ACCESS_FS_READ | _LANDLOCK_ACCESS_FS_WRITE | _LANDLOCK_ACCESS_FS_TRUNCATE;
 
 	if(!landlock_add_rule(ruleset_fd, LANDLOCK_RULE_PATH_BENEATH, &path_beneath, 0) != 0) {
 		if(landlock_restrict_self(ruleset_fd, 0)) {
