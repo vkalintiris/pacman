@@ -70,6 +70,19 @@ static inline int landlock_restrict_self(const int ruleset_fd, const __u32 flags
 #define _LANDLOCK_ACCESS_FS_READ ( \
   LANDLOCK_ACCESS_FS_READ_FILE | \
   LANDLOCK_ACCESS_FS_READ_DIR)
+
+#ifdef LANDLOCK_ACCESS_FS_REFER
+#define _LANDLOCK_ACCESS_FS_REFER LANDLOCK_ACCESS_FS_REFER
+#else
+#define _LANDLOCK_ACCESS_FS_REFER 0
+#endif /* LANDLOCK_ACCESS_FS_REFER */
+
+#ifdef LANDLOCK_ACCESS_FS_TRUNCATE
+#define _LANDLOCK_ACCESS_FS_TRUNCATE LANDLOCK_ACCESS_FS_TRUNCATE
+#else
+#define _LANDLOCK_ACCESS_FS_TRUNCATE 0
+#endif /* LANDLOCK_ACCESS_FS_TRUNCATE */
+
 #endif /* HAVE_LINUX_LANDLOCK_H */
 
 bool _alpm_sandbox_fs_restrict_writes_to(const char *path)
@@ -79,6 +92,8 @@ bool _alpm_sandbox_fs_restrict_writes_to(const char *path)
 		.handled_access_fs = \
 			_LANDLOCK_ACCESS_FS_READ | \
 			_LANDLOCK_ACCESS_FS_WRITE | \
+			_LANDLOCK_ACCESS_FS_REFER | \
+			_LANDLOCK_ACCESS_FS_TRUNCATE | \
 			LANDLOCK_ACCESS_FS_EXECUTE,
 	};
 	struct landlock_path_beneath_attr path_beneath = {
@@ -93,9 +108,14 @@ bool _alpm_sandbox_fs_restrict_writes_to(const char *path)
 		/* landlock is not supported/enabled in the kernel */
 		return true;
 	}
+#ifdef LANDLOCK_ACCESS_FS_REFER
+	if(abi < 2) {
+		ruleset_attr.handled_access_fs &= ~LANDLOCK_ACCESS_FS_REFER;
+	}
+#endif /* LANDLOCK_ACCESS_FS_TRUNCATE */
 #ifdef LANDLOCK_ACCESS_FS_TRUNCATE
-	if(abi >= 2) {
-		ruleset_attr.handled_access_fs |= LANDLOCK_ACCESS_FS_TRUNCATE;
+	if(abi < 3) {
+		ruleset_attr.handled_access_fs &= ~LANDLOCK_ACCESS_FS_TRUNCATE;
 	}
 #endif /* LANDLOCK_ACCESS_FS_TRUNCATE */
 
@@ -117,7 +137,7 @@ bool _alpm_sandbox_fs_restrict_writes_to(const char *path)
 	if(result == 0) {
 		/* allow read-write access to the directory passed as parameter */
 		path_beneath.parent_fd = open(path, O_PATH | O_CLOEXEC | O_DIRECTORY);
-		path_beneath.allowed_access = _LANDLOCK_ACCESS_FS_READ | _LANDLOCK_ACCESS_FS_WRITE | LANDLOCK_ACCESS_FS_EXECUTE;
+		path_beneath.allowed_access = _LANDLOCK_ACCESS_FS_READ | _LANDLOCK_ACCESS_FS_WRITE | _LANDLOCK_ACCESS_FS_TRUNCATE | LANDLOCK_ACCESS_FS_EXECUTE;
 
 		if(!landlock_add_rule(ruleset_fd, LANDLOCK_RULE_PATH_BENEATH, &path_beneath, 0)) {
 			if(landlock_restrict_self(ruleset_fd, 0)) {
