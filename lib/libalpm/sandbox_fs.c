@@ -128,28 +128,27 @@ bool _alpm_sandbox_fs_restrict_writes_to(const char *path)
 	path_beneath.parent_fd = open("/", O_PATH | O_CLOEXEC | O_DIRECTORY);
 	path_beneath.allowed_access = _LANDLOCK_ACCESS_FS_READ | LANDLOCK_ACCESS_FS_EXECUTE;
 
-	if(landlock_add_rule(ruleset_fd, LANDLOCK_RULE_PATH_BENEATH, &path_beneath, 0)) {
-		result = errno;
+	if(landlock_add_rule(ruleset_fd, LANDLOCK_RULE_PATH_BENEATH, &path_beneath, 0) != 0) {
+		close(path_beneath.parent_fd);
+		close(ruleset_fd);
+		return false;
 	}
 
 	close(path_beneath.parent_fd);
 
-	if(result == 0) {
-		/* allow read-write access to the directory passed as parameter */
-		path_beneath.parent_fd = open(path, O_PATH | O_CLOEXEC | O_DIRECTORY);
-		path_beneath.allowed_access = _LANDLOCK_ACCESS_FS_READ | _LANDLOCK_ACCESS_FS_WRITE | _LANDLOCK_ACCESS_FS_TRUNCATE | LANDLOCK_ACCESS_FS_EXECUTE;
+	/* allow read-write access to the directory passed as parameter */
+	path_beneath.parent_fd = open(path, O_PATH | O_CLOEXEC | O_DIRECTORY);
+	path_beneath.allowed_access = _LANDLOCK_ACCESS_FS_READ | _LANDLOCK_ACCESS_FS_WRITE | _LANDLOCK_ACCESS_FS_TRUNCATE | LANDLOCK_ACCESS_FS_EXECUTE;
 
-		if(!landlock_add_rule(ruleset_fd, LANDLOCK_RULE_PATH_BENEATH, &path_beneath, 0)) {
-			if(landlock_restrict_self(ruleset_fd, 0)) {
-				result = errno;
-			}
-		} else {
+	if(!landlock_add_rule(ruleset_fd, LANDLOCK_RULE_PATH_BENEATH, &path_beneath, 0) != 0) {
+		if(landlock_restrict_self(ruleset_fd, 0)) {
 			result = errno;
 		}
-
-		close(path_beneath.parent_fd);
+	} else {
+		result = errno;
 	}
 
+	close(path_beneath.parent_fd);
 	close(ruleset_fd);
 	return result == 0;
 #else /* HAVE_LINUX_LANDLOCK_H */
