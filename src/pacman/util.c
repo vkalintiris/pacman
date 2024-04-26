@@ -120,6 +120,7 @@ int trans_release(void)
 	return 0;
 }
 
+#if 0
 int needs_root(void)
 {
 	switch(config->op) {
@@ -138,6 +139,12 @@ int needs_root(void)
 			return 0;
 	}
 }
+#else
+int needs_root(void)
+{
+	return 0;
+}
+#endif
 
 int check_syncdbs(size_t need_repos, int check_valid)
 {
